@@ -50,28 +50,27 @@ namespace ClassExercise01
             SetIC_Defaults();
         }
 
+        #endregion
+
+
+
+        #region Guess The Number Game
+
+
+
+        #region Defaults
         /// <summary>
         /// Method containing default settings for Guess the number game
         /// </summary>
         private void SetGTN_Defaults()
         {
             cbo_GTN_Difficulty.SelectedIndex = 0;
-            nudGuessedNumber.Minimum = 1;
+            nudGuessedNumber.Minimum = Settings.GTN_DEF_MINIMUMNUMBER;
             SetGTNMaximum();
         }
-
-        /// <summary>
-        /// Method containing default settings for Ice cream application
-        /// </summary>
-        private void SetIC_Defaults()
-        {
-
-        }
-
         #endregion
 
-        #region Custom Methods for Guess The Number Game
-
+        #region Custom Methods
         /// <summary>
         /// Method to set the guessing range according to difficulty
         /// </summary>
@@ -103,11 +102,9 @@ namespace ClassExercise01
             nudGTNNumGuesses.Value = 0;
 
         }
-
         #endregion
 
-        #region General Events for Guess The Number Game
-        
+        #region General Events
         /// <summary>
         /// Method to reset settings on changing difficulty
         /// </summary>
@@ -127,8 +124,17 @@ namespace ClassExercise01
         /// <param name="e"></param>
         private void btnGuessTheNumber_Click(object sender, EventArgs e)
         {
-            panGuessTheNumber.Visible = !panGuessTheNumber.Visible;
-            SetGTN_Defaults();
+            if (panGuessTheNumber.Visible)
+            {
+                panGuessTheNumber.Visible = false;
+            }
+            else
+            {
+                panIceCream.Visible = false;
+                panGuessTheNumber.Visible = true;
+                SetGTN_Defaults();
+            }
+
         }
 
         /// <summary>
@@ -184,6 +190,119 @@ namespace ClassExercise01
         {
             panGuessTheNumber.Visible = false;
         }
+        #endregion
+
+        #endregion
+
+
+
+        #region Ice Cream Application
+
+
+        #region Defaults
+        /// <summary>
+        /// Method containing default settings for Ice cream application
+        /// </summary>
+        private void SetIC_Defaults()
+        {
+            Reset_IC_ItemDetails();
+            Reset_IC_Cart();
+
+        }
+
+        /// <summary>
+        /// Method containing default settings for Payment summary panel
+        /// </summary>
+        private void SetPS_Defaults()
+        {
+            lbl_PS_TotalAmount.Text = "- -";
+            nud_PS_CashReceived.Value = 0;
+            lbl_PS_ChangePrice.Text = "- -";
+            gbx_PS_SalesDetails.Visible = false;
+        }
+        #endregion
+
+        #region Custom Methods
+        private void Reset_IC_ItemDetails()
+        {
+            lbl_IC_ItemPrice.Text = "- -";
+            lbl_IC_ItemTotalPrice.Text = "- -";
+            lbl_IC_ItemName.Text = "Item";
+            nud_IC_Quantity.Value = 0;
+            nud_IC_Quantity.Enabled = false;
+        }
+
+        private void Reset_IC_Cart()
+        {
+            lbl_IC_CartItem1.Text = "";
+            lbl_IC_CartItem2.Text = "";
+            lbl_IC_CartItem3.Text = "";
+            lbl_IC_CartItem4.Text = "";
+            lbl_IC_CartItem5.Text = "";
+
+            nud_IC_CartItem1_Quantity.Value = 0;
+            nud_IC_CartItem1_Quantity.Visible = false;
+
+            nud_IC_CartItem2_Quantity.Value = 0;
+            nud_IC_CartItem2_Quantity.Visible = false;
+
+            nud_IC_CartItem3_Quantity.Value = 0;
+            nud_IC_CartItem3_Quantity.Visible = false;
+
+            nud_IC_CartItem4_Quantity.Value = 0;
+            nud_IC_CartItem4_Quantity.Visible = false;
+
+            nud_IC_CartItem5_Quantity.Value = 0;
+            nud_IC_CartItem5_Quantity.Visible = false;
+
+            lbl_IC_CartTotalPrice.Text = "- -";
+        }
+
+        private void set_IC_ItemDetails(String itemName, int price)
+        {
+            Reset_IC_ItemDetails();
+            lbl_IC_ItemName.Text = itemName;
+            nud_IC_Quantity.Enabled = true;
+            lbl_IC_ItemPrice.Text = "" + price + " $";
+
+        }
+
+        #endregion
+
+        #region General Events
+
+        #endregion
+
+
+        #endregion
+
+
+
+
+        #region Startup
+
+
+
+
+
+
+
+
+
+        #endregion
+
+        #region Custom Methods for Guess The Number Game
+
+
+
+        #endregion
+
+        #region General Events for Guess The Number Game
+
+
+
+
+
 
         #endregion
 
@@ -191,16 +310,263 @@ namespace ClassExercise01
 
 
 
+
+
+
         #endregion
 
         #region General Events for Ice Cream Application
 
+        private void btn_IC_ClearItem_Click(object sender, EventArgs e)
+        {
+            Reset_IC_ItemDetails();
+        }
+
+        private void btn_IC_EditCart_Click(object sender, EventArgs e)
+        {
+            if (nud_IC_CartItem1_Quantity.Visible) nud_IC_CartItem1_Quantity.Enabled = true;
+            if (nud_IC_CartItem2_Quantity.Visible) nud_IC_CartItem2_Quantity.Enabled = true;
+            if (nud_IC_CartItem3_Quantity.Visible) nud_IC_CartItem3_Quantity.Enabled = true;
+            if (nud_IC_CartItem4_Quantity.Visible) nud_IC_CartItem4_Quantity.Enabled = true;
+            if (nud_IC_CartItem5_Quantity.Visible) nud_IC_CartItem5_Quantity.Enabled = true;
+
+        }
+
+        private void btn_IC_Exit_Click(object sender, EventArgs e)
+        {
+            panIceCream.Visible = false;
+        }
+
+        private void btnIceCream_Click(object sender, EventArgs e)
+        {
+            if (panIceCream.Visible)
+            {
+                panIceCream.Visible = false;
+            }
+            else
+            {
+                panGuessTheNumber.Visible = false;
+                panIceCream.Visible = true;
+                SetIC_Defaults();
+            }
+        }
+
+        private void btn_IC_ChocoFudge_Click(object sender, EventArgs e)
+        {
+            set_IC_ItemDetails("Choco Fudge", Settings.IC_DEF_CHOCOFUDGEPRICE);
+
+        }
+
+        private void btn_IC_AmericanNuts_Click(object sender, EventArgs e)
+        {
+            set_IC_ItemDetails("American Nuts", Settings.IC_DEF_AMERICANNUTSPRICE);
+        }
+
+        private void btn_IC_ChocoCrackleFlingo_Click(object sender, EventArgs e)
+        {
+            set_IC_ItemDetails("Choco Crackle Flingo", Settings.IC_DEF_CHOCOCRACKLEFLINGOPRICE);
+        }
+
+        private void btn_IC_CookieSandwich_Click(object sender, EventArgs e)
+        {
+            set_IC_ItemDetails("CookieSandwich", Settings.IC_DEF_COOKIESANDWICHPRICE);
+        }
+
+        private void btn_IC_ChocolateOverload_Click(object sender, EventArgs e)
+        {
+            set_IC_ItemDetails("Chocolate Overload", Settings.IC_DEF_CHOCOLATEOVERLOADPRICE);
+        }
+
+
+
 
 
         #endregion
 
-        
+        private void nud_IC_Quantity_ValueChanged(object sender, EventArgs e)
+        {
+            
 
-        
+            if (lbl_IC_ItemName.Text == "Choco Fudge") 
+            {
+                lbl_IC_ItemTotalPrice.Text = "" + (Settings.IC_DEF_CHOCOFUDGEPRICE * (int)nud_IC_Quantity.Value) + " $";
+            }
+            else if (lbl_IC_ItemName.Text == "American Nuts")
+            {
+                lbl_IC_ItemTotalPrice.Text = "" + (Settings.IC_DEF_AMERICANNUTSPRICE * (int)nud_IC_Quantity.Value) + " $";
+            }
+            else if (lbl_IC_ItemName.Text == "Choco Crackle Flingo")
+            {
+                lbl_IC_ItemTotalPrice.Text = "" + (Settings.IC_DEF_CHOCOCRACKLEFLINGOPRICE * (int)nud_IC_Quantity.Value) + " $";
+            }
+            else if (lbl_IC_ItemName.Text == "CookieSandwich")
+            {
+                lbl_IC_ItemTotalPrice.Text = "" + (Settings.IC_DEF_COOKIESANDWICHPRICE * (int)nud_IC_Quantity.Value) + " $";
+            }
+            else if (lbl_IC_ItemName.Text == "Chocolate Overload")
+            {
+                lbl_IC_ItemTotalPrice.Text = "" + (Settings.IC_DEF_CHOCOLATEOVERLOADPRICE * (int)nud_IC_Quantity.Value) + " $";
+            }
+        }
+
+        private void btn_IC_AddToCart_Click(object sender, EventArgs e)
+        {
+            if (lbl_IC_ItemName.Text == "Choco Fudge")
+            {
+                lbl_IC_CartItem1.Visible = true;
+                nud_IC_CartItem1_Quantity.Visible = true;
+                lbl_IC_CartItem1.Text = lbl_IC_ItemName.Text;
+                nud_IC_CartItem1_Quantity.Value += nud_IC_Quantity.Value;
+                
+            }
+            else if (lbl_IC_ItemName.Text == "American Nuts")
+            {
+                lbl_IC_CartItem2.Visible = true;
+                nud_IC_CartItem2_Quantity.Visible = true;
+                lbl_IC_CartItem2.Text = lbl_IC_ItemName.Text;
+                nud_IC_CartItem2_Quantity.Value += nud_IC_Quantity.Value;
+            }
+            else if (lbl_IC_ItemName.Text == "Choco Crackle Flingo")
+            {
+                lbl_IC_CartItem3.Visible = true;
+                nud_IC_CartItem3_Quantity.Visible = true;
+                lbl_IC_CartItem3.Text = lbl_IC_ItemName.Text;
+                nud_IC_CartItem3_Quantity.Value += nud_IC_Quantity.Value;
+            }
+            else if (lbl_IC_ItemName.Text == "CookieSandwich")
+            {
+                lbl_IC_CartItem4.Visible = true;
+                nud_IC_CartItem4_Quantity.Visible = true;
+                lbl_IC_CartItem4.Text = lbl_IC_ItemName.Text;
+                nud_IC_CartItem4_Quantity.Value += nud_IC_Quantity.Value;
+            }
+            else if (lbl_IC_ItemName.Text == "Chocolate Overload")
+            {
+                lbl_IC_CartItem5.Visible = true;
+                nud_IC_CartItem5_Quantity.Visible = true;
+                lbl_IC_CartItem5.Text = lbl_IC_ItemName.Text;
+                nud_IC_CartItem5_Quantity.Value += nud_IC_Quantity.Value;
+            }
+            Reset_IC_ItemDetails();
+            btn_IC_Total.Enabled = true;
+            btn_IC_EditCart.Enabled = true;
+        }
+
+        private void btn_IC_Total_Click(object sender, EventArgs e)
+        {
+            lbl_IC_CartTotalPrice.Visible = true;
+            lbl_IC_CartTotal.Visible = true;
+
+             Decimal cartTotal = Settings.IC_DEF_CHOCOFUDGEPRICE*nud_IC_CartItem1_Quantity.Value + Settings.IC_DEF_AMERICANNUTSPRICE*nud_IC_CartItem2_Quantity.Value +
+                Settings.IC_DEF_CHOCOCRACKLEFLINGOPRICE*nud_IC_CartItem3_Quantity.Value + Settings.IC_DEF_COOKIESANDWICHPRICE*nud_IC_CartItem4_Quantity.Value + 
+                Settings.IC_DEF_CHOCOLATEOVERLOADPRICE*nud_IC_CartItem5_Quantity.Value;
+
+            lbl_IC_CartTotalPrice.Text = "" + cartTotal + " $";
+
+            btn_IC_Buy.Enabled = true;
+
+        }
+
+        private void lbl_PS_TotalAmount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_IC_Buy_Click(object sender, EventArgs e)
+        {
+            pan_IC_PaymentSummary.Visible = true;
+            pan_IC_PaymentSummary.BringToFront();
+            lbl_PS_TotalAmount.Text = lbl_IC_CartTotalPrice.Text;
+        }
+
+        private void btn_PS_ContinueShopping_Click(object sender, EventArgs e)
+        {
+            pan_IC_PaymentSummary.Visible=false;
+            SetIC_Defaults();
+            SetPS_Defaults();
+        }
+
+        private void btn_PS_Back_Click(object sender, EventArgs e)
+        {
+            pan_IC_PaymentSummary.Visible = false;
+        }
+
+    
+
+        private void btn_PS_Card_Click(object sender, EventArgs e)
+        {
+            Decimal cartTotal = Settings.IC_DEF_CHOCOFUDGEPRICE * nud_IC_CartItem1_Quantity.Value + Settings.IC_DEF_AMERICANNUTSPRICE * nud_IC_CartItem2_Quantity.Value +
+                Settings.IC_DEF_CHOCOCRACKLEFLINGOPRICE * nud_IC_CartItem3_Quantity.Value + Settings.IC_DEF_COOKIESANDWICHPRICE * nud_IC_CartItem4_Quantity.Value +
+                Settings.IC_DEF_CHOCOLATEOVERLOADPRICE * nud_IC_CartItem5_Quantity.Value;
+
+            Settings.overallSaleAmount += (int)cartTotal;
+
+            pan_IC_PaymentSummary.Visible = false;
+            SetIC_Defaults();
+            SetPS_Defaults();
+        }
+
+        private void btn_PS_Cash_Click(object sender, EventArgs e)
+        {
+            gbx_PS_CashPayment.Enabled = true;
+        }
+
+        private void btn_PS_CashExact_Click(object sender, EventArgs e)
+        {
+            Decimal cartTotal = Settings.IC_DEF_CHOCOFUDGEPRICE * nud_IC_CartItem1_Quantity.Value + Settings.IC_DEF_AMERICANNUTSPRICE * nud_IC_CartItem2_Quantity.Value +
+                Settings.IC_DEF_CHOCOCRACKLEFLINGOPRICE * nud_IC_CartItem3_Quantity.Value + Settings.IC_DEF_COOKIESANDWICHPRICE * nud_IC_CartItem4_Quantity.Value +
+                Settings.IC_DEF_CHOCOLATEOVERLOADPRICE * nud_IC_CartItem5_Quantity.Value;
+
+            Settings.cashInDrawer += (int)cartTotal;
+            Settings.overallSaleAmount += (int)cartTotal;
+
+            pan_IC_PaymentSummary.Visible = false;
+            SetIC_Defaults();
+            SetPS_Defaults();
+        }
+
+        private void btn_PS_Cash_1_Click(object sender, EventArgs e)
+        {
+            nud_PS_CashReceived.Value += 1;
+        }
+
+        private void btn_PS_Cash_2_Click(object sender, EventArgs e)
+        {
+            nud_PS_CashReceived.Value += 2;
+        }
+
+        private void btn_PS_Cash_5_Click(object sender, EventArgs e)
+        {
+            nud_PS_CashReceived.Value += 5;
+        }
+
+        private void btn_PS_Cash_10_Click(object sender, EventArgs e)
+        {
+            nud_PS_CashReceived.Value += 10;
+        }
+
+        private void btn_PS_Cash_20_Click(object sender, EventArgs e)
+        {
+            nud_PS_CashReceived.Value += 20;
+        }
+
+        private void btn_PS_CalculateChange_Click(object sender, EventArgs e)
+        {
+            Decimal cartTotal = Settings.IC_DEF_CHOCOFUDGEPRICE * nud_IC_CartItem1_Quantity.Value + Settings.IC_DEF_AMERICANNUTSPRICE * nud_IC_CartItem2_Quantity.Value +
+                Settings.IC_DEF_CHOCOCRACKLEFLINGOPRICE * nud_IC_CartItem3_Quantity.Value + Settings.IC_DEF_COOKIESANDWICHPRICE * nud_IC_CartItem4_Quantity.Value +
+                Settings.IC_DEF_CHOCOLATEOVERLOADPRICE * nud_IC_CartItem5_Quantity.Value;
+
+            lbl_PS_ChangePrice.Text = "" + Tools.CalculateChange((int)nud_PS_CashReceived.Value, (int)cartTotal) + " $";
+
+            Settings.cashInDrawer += (int)cartTotal;
+            Settings.overallSaleAmount += (int)cartTotal;
+        }
+
+        private void btn_ShowSalesDetails_Click(object sender, EventArgs e)
+        {
+            gbx_PS_SalesDetails.Visible = true;
+            lbl_PS_CashInDrawerAmount.Text = "" + Settings.cashInDrawer + " $";
+            lbl_PS_OverallSaleAmount.Text = "" + Settings.overallSaleAmount + " $";
+        }
     }
 }

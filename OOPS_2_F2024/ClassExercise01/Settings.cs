@@ -15,10 +15,33 @@ namespace ClassExercise01
 {
     public static class Settings
     {
-        // Constants
+        #region Guess The Number game constants
+        // Min and Max Constants
         public const int GTN_DEF_MINIMUMNUMBER = 1;
         public const int GTN_DEF_MAXIMUMNUMBER_EASY = 10;
         public const int GTN_DEF_MAXIMUMNUMBER_MEDIUM = 100;
         public const int GTN_DEF_MAXIMUMNUMBER_HARD = 1000;
+        #endregion
+
+        #region Ice Cream application constants
+        // Constant Prices
+        public const int IC_DEF_CHOCOFUDGEPRICE = 3;
+        public const int IC_DEF_AMERICANNUTSPRICE = 2;
+        public const int IC_DEF_CHOCOCRACKLEFLINGOPRICE = 4;
+        public const int IC_DEF_COOKIESANDWICHPRICE = 2;
+        public const int IC_DEF_CHOCOLATEOVERLOADPRICE = 5;
+
+        // Cash in drawer
+        public const int IC_DEF_INITIALCASH = 100;
+
+        //global variable
+        public static int cashInDrawer = 100;
+        public static int overallSaleAmount = 0;
+
+        #endregion
+
+
+
+
     }
 }

@@ -25,5 +25,11 @@ namespace ClassExercise01
             return Color.FromArgb(255, RandomInt(0, 255), RandomInt(0, 255), RandomInt(0, 255));
         }
 
+        public static int CalculateChange(int amountReceived, int totalAmountDue)
+        { 
+            return amountReceived - totalAmountDue;
+        }
     }
+
+
 }
