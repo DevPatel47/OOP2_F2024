@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 
 namespace ClassExercise01
 {
+    /// <summary>
+    /// Method containing Default Settings
+    /// </summary>
     public static class Settings
     {
         #region Guess The Number game constants
