@@ -50,6 +50,12 @@
             this.toolTips = new System.Windows.Forms.ToolTip(this.components);
             this.panIceCream = new System.Windows.Forms.Panel();
             this.pan_IC_PaymentSummary = new System.Windows.Forms.Panel();
+            this.btn_ShowSalesDetails = new System.Windows.Forms.Button();
+            this.gbx_PS_SalesDetails = new System.Windows.Forms.GroupBox();
+            this.lbl_PS_CashInDrawerAmount = new System.Windows.Forms.Label();
+            this.lbl_PS_OverallSaleAmount = new System.Windows.Forms.Label();
+            this.lbl_PS_CashInDrawer = new System.Windows.Forms.Label();
+            this.lbl_OverallSale = new System.Windows.Forms.Label();
             this.gbx_PS_CashPayment = new System.Windows.Forms.GroupBox();
             this.lbl_PS_ChangePrice = new System.Windows.Forms.Label();
             this.lbl_PS_Return = new System.Windows.Forms.Label();
@@ -102,12 +108,6 @@
             this.btn_IC_ChocoCrackleFlingo = new System.Windows.Forms.Button();
             this.btn_IC_AmericanNuts = new System.Windows.Forms.Button();
             this.btn_IC_ChocoFudge = new System.Windows.Forms.Button();
-            this.gbx_PS_SalesDetails = new System.Windows.Forms.GroupBox();
-            this.lbl_OverallSale = new System.Windows.Forms.Label();
-            this.lbl_PS_CashInDrawer = new System.Windows.Forms.Label();
-            this.lbl_PS_OverallSaleAmount = new System.Windows.Forms.Label();
-            this.lbl_PS_CashInDrawerAmount = new System.Windows.Forms.Label();
-            this.btn_ShowSalesDetails = new System.Windows.Forms.Button();
             this.panMenu.SuspendLayout();
             this.panGuessTheNumber.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGTNRandomNumber)).BeginInit();
@@ -116,6 +116,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudGTNNumGuesses)).BeginInit();
             this.panIceCream.SuspendLayout();
             this.pan_IC_PaymentSummary.SuspendLayout();
+            this.gbx_PS_SalesDetails.SuspendLayout();
             this.gbx_PS_CashPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_PS_CashReceived)).BeginInit();
             this.gbx_PS_PaymentType.SuspendLayout();
@@ -128,7 +129,6 @@
             this.gbx_IC_ItemDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_IC_Quantity)).BeginInit();
             this.gbx_IC_Menu.SuspendLayout();
-            this.gbx_PS_SalesDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // panMenu
@@ -155,6 +155,7 @@
             this.btnIceCream.Size = new System.Drawing.Size(92, 52);
             this.btnIceCream.TabIndex = 2;
             this.btnIceCream.Text = "&Ice Cream";
+            this.toolTips.SetToolTip(this.btnIceCream, "Click to open Ice Cream Application (ALT + I)");
             this.btnIceCream.UseVisualStyleBackColor = false;
             this.btnIceCream.Click += new System.EventHandler(this.btnIceCream_Click);
             // 
@@ -375,11 +376,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panIceCream.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panIceCream.Controls.Add(this.pan_IC_PaymentSummary);
+            this.panIceCream.Controls.Add(this.gbx_IC_Menu);
             this.panIceCream.Controls.Add(this.btn_IC_Exit);
             this.panIceCream.Controls.Add(this.btn_IC_Buy);
             this.panIceCream.Controls.Add(this.gbx_IC_Cart);
             this.panIceCream.Controls.Add(this.gbx_IC_ItemDetails);
-            this.panIceCream.Controls.Add(this.gbx_IC_Menu);
             this.panIceCream.Location = new System.Drawing.Point(103, 0);
             this.panIceCream.Name = "panIceCream";
             this.panIceCream.Size = new System.Drawing.Size(460, 459);
@@ -406,6 +407,67 @@
             this.pan_IC_PaymentSummary.Size = new System.Drawing.Size(441, 445);
             this.pan_IC_PaymentSummary.TabIndex = 3;
             this.pan_IC_PaymentSummary.Visible = false;
+            // 
+            // btn_ShowSalesDetails
+            // 
+            this.btn_ShowSalesDetails.Location = new System.Drawing.Point(163, 342);
+            this.btn_ShowSalesDetails.Name = "btn_ShowSalesDetails";
+            this.btn_ShowSalesDetails.Size = new System.Drawing.Size(116, 23);
+            this.btn_ShowSalesDetails.TabIndex = 26;
+            this.btn_ShowSalesDetails.Text = "Show Sales Details";
+            this.toolTips.SetToolTip(this.btn_ShowSalesDetails, "Click to See Sales Details");
+            this.btn_ShowSalesDetails.UseVisualStyleBackColor = true;
+            this.btn_ShowSalesDetails.Click += new System.EventHandler(this.btn_ShowSalesDetails_Click);
+            // 
+            // gbx_PS_SalesDetails
+            // 
+            this.gbx_PS_SalesDetails.Controls.Add(this.lbl_PS_CashInDrawerAmount);
+            this.gbx_PS_SalesDetails.Controls.Add(this.lbl_PS_OverallSaleAmount);
+            this.gbx_PS_SalesDetails.Controls.Add(this.lbl_PS_CashInDrawer);
+            this.gbx_PS_SalesDetails.Controls.Add(this.lbl_OverallSale);
+            this.gbx_PS_SalesDetails.Location = new System.Drawing.Point(6, 366);
+            this.gbx_PS_SalesDetails.Name = "gbx_PS_SalesDetails";
+            this.gbx_PS_SalesDetails.Size = new System.Drawing.Size(431, 42);
+            this.gbx_PS_SalesDetails.TabIndex = 8;
+            this.gbx_PS_SalesDetails.TabStop = false;
+            this.gbx_PS_SalesDetails.Text = "Sales Details";
+            this.gbx_PS_SalesDetails.Visible = false;
+            // 
+            // lbl_PS_CashInDrawerAmount
+            // 
+            this.lbl_PS_CashInDrawerAmount.AutoSize = true;
+            this.lbl_PS_CashInDrawerAmount.Location = new System.Drawing.Point(128, 18);
+            this.lbl_PS_CashInDrawerAmount.Name = "lbl_PS_CashInDrawerAmount";
+            this.lbl_PS_CashInDrawerAmount.Size = new System.Drawing.Size(16, 13);
+            this.lbl_PS_CashInDrawerAmount.TabIndex = 3;
+            this.lbl_PS_CashInDrawerAmount.Text = "- -";
+            // 
+            // lbl_PS_OverallSaleAmount
+            // 
+            this.lbl_PS_OverallSaleAmount.AutoSize = true;
+            this.lbl_PS_OverallSaleAmount.Location = new System.Drawing.Point(301, 18);
+            this.lbl_PS_OverallSaleAmount.Name = "lbl_PS_OverallSaleAmount";
+            this.lbl_PS_OverallSaleAmount.Size = new System.Drawing.Size(16, 13);
+            this.lbl_PS_OverallSaleAmount.TabIndex = 2;
+            this.lbl_PS_OverallSaleAmount.Text = "- -";
+            // 
+            // lbl_PS_CashInDrawer
+            // 
+            this.lbl_PS_CashInDrawer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PS_CashInDrawer.Location = new System.Drawing.Point(21, 16);
+            this.lbl_PS_CashInDrawer.Name = "lbl_PS_CashInDrawer";
+            this.lbl_PS_CashInDrawer.Size = new System.Drawing.Size(132, 23);
+            this.lbl_PS_CashInDrawer.TabIndex = 1;
+            this.lbl_PS_CashInDrawer.Text = "Cash In Drawer:";
+            // 
+            // lbl_OverallSale
+            // 
+            this.lbl_OverallSale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_OverallSale.Location = new System.Drawing.Point(209, 16);
+            this.lbl_OverallSale.Name = "lbl_OverallSale";
+            this.lbl_OverallSale.Size = new System.Drawing.Size(100, 23);
+            this.lbl_OverallSale.TabIndex = 0;
+            this.lbl_OverallSale.Text = "Overall Sale: ";
             // 
             // gbx_PS_CashPayment
             // 
@@ -450,8 +512,9 @@
             this.btn_PS_CalculateChange.Location = new System.Drawing.Point(262, 69);
             this.btn_PS_CalculateChange.Name = "btn_PS_CalculateChange";
             this.btn_PS_CalculateChange.Size = new System.Drawing.Size(158, 23);
-            this.btn_PS_CalculateChange.TabIndex = 7;
+            this.btn_PS_CalculateChange.TabIndex = 25;
             this.btn_PS_CalculateChange.Text = "Calculate Change";
+            this.toolTips.SetToolTip(this.btn_PS_CalculateChange, "Click to Calculate Amount to be returned");
             this.btn_PS_CalculateChange.UseVisualStyleBackColor = true;
             this.btn_PS_CalculateChange.Click += new System.EventHandler(this.btn_PS_CalculateChange_Click);
             // 
@@ -461,8 +524,9 @@
             this.btn_PS_Cash_20.Location = new System.Drawing.Point(345, 23);
             this.btn_PS_Cash_20.Name = "btn_PS_Cash_20";
             this.btn_PS_Cash_20.Size = new System.Drawing.Size(75, 40);
-            this.btn_PS_Cash_20.TabIndex = 6;
+            this.btn_PS_Cash_20.TabIndex = 24;
             this.btn_PS_Cash_20.Text = "20$";
+            this.toolTips.SetToolTip(this.btn_PS_Cash_20, "Click to Add 20$");
             this.btn_PS_Cash_20.UseVisualStyleBackColor = true;
             this.btn_PS_Cash_20.Click += new System.EventHandler(this.btn_PS_Cash_20_Click);
             // 
@@ -472,8 +536,9 @@
             this.btn_PS_Cash_10.Location = new System.Drawing.Point(262, 23);
             this.btn_PS_Cash_10.Name = "btn_PS_Cash_10";
             this.btn_PS_Cash_10.Size = new System.Drawing.Size(75, 40);
-            this.btn_PS_Cash_10.TabIndex = 5;
+            this.btn_PS_Cash_10.TabIndex = 23;
             this.btn_PS_Cash_10.Text = "10$";
+            this.toolTips.SetToolTip(this.btn_PS_Cash_10, "Click to Add 10$");
             this.btn_PS_Cash_10.UseVisualStyleBackColor = true;
             this.btn_PS_Cash_10.Click += new System.EventHandler(this.btn_PS_Cash_10_Click);
             // 
@@ -483,8 +548,9 @@
             this.btn_PS_Cash_5.Location = new System.Drawing.Point(179, 23);
             this.btn_PS_Cash_5.Name = "btn_PS_Cash_5";
             this.btn_PS_Cash_5.Size = new System.Drawing.Size(75, 40);
-            this.btn_PS_Cash_5.TabIndex = 4;
+            this.btn_PS_Cash_5.TabIndex = 22;
             this.btn_PS_Cash_5.Text = "5$";
+            this.toolTips.SetToolTip(this.btn_PS_Cash_5, "Click to Add 5$");
             this.btn_PS_Cash_5.UseVisualStyleBackColor = true;
             this.btn_PS_Cash_5.Click += new System.EventHandler(this.btn_PS_Cash_5_Click);
             // 
@@ -494,8 +560,9 @@
             this.btn_PS_Cash_2.Location = new System.Drawing.Point(96, 23);
             this.btn_PS_Cash_2.Name = "btn_PS_Cash_2";
             this.btn_PS_Cash_2.Size = new System.Drawing.Size(75, 40);
-            this.btn_PS_Cash_2.TabIndex = 3;
+            this.btn_PS_Cash_2.TabIndex = 21;
             this.btn_PS_Cash_2.Text = "2$";
+            this.toolTips.SetToolTip(this.btn_PS_Cash_2, "Click to Add 2$");
             this.btn_PS_Cash_2.UseVisualStyleBackColor = true;
             this.btn_PS_Cash_2.Click += new System.EventHandler(this.btn_PS_Cash_2_Click);
             // 
@@ -505,8 +572,9 @@
             this.btn_PS_Cash_1.Location = new System.Drawing.Point(13, 23);
             this.btn_PS_Cash_1.Name = "btn_PS_Cash_1";
             this.btn_PS_Cash_1.Size = new System.Drawing.Size(75, 40);
-            this.btn_PS_Cash_1.TabIndex = 2;
+            this.btn_PS_Cash_1.TabIndex = 20;
             this.btn_PS_Cash_1.Text = "1$";
+            this.toolTips.SetToolTip(this.btn_PS_Cash_1, "Click to Add 1$");
             this.btn_PS_Cash_1.UseVisualStyleBackColor = true;
             this.btn_PS_Cash_1.Click += new System.EventHandler(this.btn_PS_Cash_1_Click);
             // 
@@ -520,7 +588,8 @@
             0});
             this.nud_PS_CashReceived.Name = "nud_PS_CashReceived";
             this.nud_PS_CashReceived.Size = new System.Drawing.Size(91, 20);
-            this.nud_PS_CashReceived.TabIndex = 1;
+            this.nud_PS_CashReceived.TabIndex = 25;
+            this.toolTips.SetToolTip(this.nud_PS_CashReceived, "Click to Enter or Edit Cash Amount");
             // 
             // lbl_PS_EnterCashReceived
             // 
@@ -552,8 +621,9 @@
             this.btn_PS_CashExact.Location = new System.Drawing.Point(284, 20);
             this.btn_PS_CashExact.Name = "btn_PS_CashExact";
             this.btn_PS_CashExact.Size = new System.Drawing.Size(116, 70);
-            this.btn_PS_CashExact.TabIndex = 7;
+            this.btn_PS_CashExact.TabIndex = 19;
             this.btn_PS_CashExact.Text = "Cash Exact";
+            this.toolTips.SetToolTip(this.btn_PS_CashExact, "Click to Pay Exact Cash");
             this.btn_PS_CashExact.UseVisualStyleBackColor = true;
             this.btn_PS_CashExact.Click += new System.EventHandler(this.btn_PS_CashExact_Click);
             // 
@@ -563,8 +633,9 @@
             this.btn_PS_Cash.Location = new System.Drawing.Point(160, 20);
             this.btn_PS_Cash.Name = "btn_PS_Cash";
             this.btn_PS_Cash.Size = new System.Drawing.Size(116, 70);
-            this.btn_PS_Cash.TabIndex = 1;
+            this.btn_PS_Cash.TabIndex = 18;
             this.btn_PS_Cash.Text = "Cash";
+            this.toolTips.SetToolTip(this.btn_PS_Cash, "Click to Pay by Cash");
             this.btn_PS_Cash.UseVisualStyleBackColor = true;
             this.btn_PS_Cash.Click += new System.EventHandler(this.btn_PS_Cash_Click);
             // 
@@ -574,29 +645,33 @@
             this.btn_PS_Card.Location = new System.Drawing.Point(36, 20);
             this.btn_PS_Card.Name = "btn_PS_Card";
             this.btn_PS_Card.Size = new System.Drawing.Size(116, 70);
-            this.btn_PS_Card.TabIndex = 0;
+            this.btn_PS_Card.TabIndex = 17;
             this.btn_PS_Card.Text = "Card";
+            this.toolTips.SetToolTip(this.btn_PS_Card, "Click to Pay by Card");
             this.btn_PS_Card.UseVisualStyleBackColor = true;
             this.btn_PS_Card.Click += new System.EventHandler(this.btn_PS_Card_Click);
             // 
             // btn_PS_Back
             // 
-            this.btn_PS_Back.Location = new System.Drawing.Point(224, 413);
+            this.btn_PS_Back.Location = new System.Drawing.Point(199, 413);
             this.btn_PS_Back.Margin = new System.Windows.Forms.Padding(2);
             this.btn_PS_Back.Name = "btn_PS_Back";
-            this.btn_PS_Back.Size = new System.Drawing.Size(104, 26);
-            this.btn_PS_Back.TabIndex = 5;
+            this.btn_PS_Back.Size = new System.Drawing.Size(117, 26);
+            this.btn_PS_Back.TabIndex = 27;
             this.btn_PS_Back.Text = "Back";
+            this.toolTips.SetToolTip(this.btn_PS_Back, "Click to Edit Order");
             this.btn_PS_Back.UseVisualStyleBackColor = true;
             this.btn_PS_Back.Click += new System.EventHandler(this.btn_PS_Back_Click);
             // 
             // btn_PS_ContinueShopping
             // 
-            this.btn_PS_ContinueShopping.Location = new System.Drawing.Point(333, 413);
+            this.btn_PS_ContinueShopping.Enabled = false;
+            this.btn_PS_ContinueShopping.Location = new System.Drawing.Point(320, 413);
             this.btn_PS_ContinueShopping.Name = "btn_PS_ContinueShopping";
-            this.btn_PS_ContinueShopping.Size = new System.Drawing.Size(104, 26);
-            this.btn_PS_ContinueShopping.TabIndex = 4;
-            this.btn_PS_ContinueShopping.Text = "Continue Shoping";
+            this.btn_PS_ContinueShopping.Size = new System.Drawing.Size(117, 26);
+            this.btn_PS_ContinueShopping.TabIndex = 28;
+            this.btn_PS_ContinueShopping.Text = "Continue Shopping";
+            this.toolTips.SetToolTip(this.btn_PS_ContinueShopping, "Click to Continue Shopping");
             this.btn_PS_ContinueShopping.UseVisualStyleBackColor = true;
             this.btn_PS_ContinueShopping.Click += new System.EventHandler(this.btn_PS_ContinueShopping_Click);
             // 
@@ -639,8 +714,9 @@
             this.btn_IC_Exit.Location = new System.Drawing.Point(328, 416);
             this.btn_IC_Exit.Name = "btn_IC_Exit";
             this.btn_IC_Exit.Size = new System.Drawing.Size(117, 37);
-            this.btn_IC_Exit.TabIndex = 4;
+            this.btn_IC_Exit.TabIndex = 16;
             this.btn_IC_Exit.Text = "E&xit";
+            this.toolTips.SetToolTip(this.btn_IC_Exit, "Click to Exit Ice Cream Application");
             this.btn_IC_Exit.UseVisualStyleBackColor = true;
             this.btn_IC_Exit.Click += new System.EventHandler(this.btn_IC_Exit_Click);
             // 
@@ -651,8 +727,9 @@
             this.btn_IC_Buy.Location = new System.Drawing.Point(207, 416);
             this.btn_IC_Buy.Name = "btn_IC_Buy";
             this.btn_IC_Buy.Size = new System.Drawing.Size(117, 37);
-            this.btn_IC_Buy.TabIndex = 3;
+            this.btn_IC_Buy.TabIndex = 15;
             this.btn_IC_Buy.Text = "&Buy";
+            this.toolTips.SetToolTip(this.btn_IC_Buy, "Click to Buy Cart Items");
             this.btn_IC_Buy.UseVisualStyleBackColor = true;
             this.btn_IC_Buy.Click += new System.EventHandler(this.btn_IC_Buy_Click);
             // 
@@ -689,8 +766,9 @@
             this.btn_IC_Total.Location = new System.Drawing.Point(6, 202);
             this.btn_IC_Total.Name = "btn_IC_Total";
             this.btn_IC_Total.Size = new System.Drawing.Size(224, 23);
-            this.btn_IC_Total.TabIndex = 15;
+            this.btn_IC_Total.TabIndex = 14;
             this.btn_IC_Total.Text = "Total";
+            this.toolTips.SetToolTip(this.btn_IC_Total, "Click to See Cart Total");
             this.btn_IC_Total.UseVisualStyleBackColor = true;
             this.btn_IC_Total.Click += new System.EventHandler(this.btn_IC_Total_Click);
             // 
@@ -700,7 +778,8 @@
             this.nud_IC_CartItem5_Quantity.Location = new System.Drawing.Point(163, 136);
             this.nud_IC_CartItem5_Quantity.Name = "nud_IC_CartItem5_Quantity";
             this.nud_IC_CartItem5_Quantity.Size = new System.Drawing.Size(52, 20);
-            this.nud_IC_CartItem5_Quantity.TabIndex = 14;
+            this.nud_IC_CartItem5_Quantity.TabIndex = 13;
+            this.toolTips.SetToolTip(this.nud_IC_CartItem5_Quantity, "Click to change Item Quantity");
             this.nud_IC_CartItem5_Quantity.Visible = false;
             // 
             // nud_IC_CartItem4_Quantity
@@ -709,7 +788,8 @@
             this.nud_IC_CartItem4_Quantity.Location = new System.Drawing.Point(163, 106);
             this.nud_IC_CartItem4_Quantity.Name = "nud_IC_CartItem4_Quantity";
             this.nud_IC_CartItem4_Quantity.Size = new System.Drawing.Size(52, 20);
-            this.nud_IC_CartItem4_Quantity.TabIndex = 13;
+            this.nud_IC_CartItem4_Quantity.TabIndex = 12;
+            this.toolTips.SetToolTip(this.nud_IC_CartItem4_Quantity, "Click to change Item Quantity");
             this.nud_IC_CartItem4_Quantity.Visible = false;
             // 
             // nud_IC_CartItem3_Quantity
@@ -718,7 +798,8 @@
             this.nud_IC_CartItem3_Quantity.Location = new System.Drawing.Point(163, 78);
             this.nud_IC_CartItem3_Quantity.Name = "nud_IC_CartItem3_Quantity";
             this.nud_IC_CartItem3_Quantity.Size = new System.Drawing.Size(52, 20);
-            this.nud_IC_CartItem3_Quantity.TabIndex = 12;
+            this.nud_IC_CartItem3_Quantity.TabIndex = 11;
+            this.toolTips.SetToolTip(this.nud_IC_CartItem3_Quantity, "Click to change Item Quantity");
             this.nud_IC_CartItem3_Quantity.Visible = false;
             // 
             // nud_IC_CartItem2_Quantity
@@ -727,7 +808,8 @@
             this.nud_IC_CartItem2_Quantity.Location = new System.Drawing.Point(163, 50);
             this.nud_IC_CartItem2_Quantity.Name = "nud_IC_CartItem2_Quantity";
             this.nud_IC_CartItem2_Quantity.Size = new System.Drawing.Size(52, 20);
-            this.nud_IC_CartItem2_Quantity.TabIndex = 11;
+            this.nud_IC_CartItem2_Quantity.TabIndex = 10;
+            this.toolTips.SetToolTip(this.nud_IC_CartItem2_Quantity, "Click to change Item Quantity");
             this.nud_IC_CartItem2_Quantity.Visible = false;
             // 
             // nud_IC_CartItem1_Quantity
@@ -736,7 +818,8 @@
             this.nud_IC_CartItem1_Quantity.Location = new System.Drawing.Point(163, 22);
             this.nud_IC_CartItem1_Quantity.Name = "nud_IC_CartItem1_Quantity";
             this.nud_IC_CartItem1_Quantity.Size = new System.Drawing.Size(52, 20);
-            this.nud_IC_CartItem1_Quantity.TabIndex = 10;
+            this.nud_IC_CartItem1_Quantity.TabIndex = 9;
+            this.toolTips.SetToolTip(this.nud_IC_CartItem1_Quantity, "Click to change Item Quantity");
             this.nud_IC_CartItem1_Quantity.Visible = false;
             // 
             // lbl_IC_CartItem5
@@ -819,8 +902,9 @@
             this.btn_IC_EditCart.Location = new System.Drawing.Point(6, 172);
             this.btn_IC_EditCart.Name = "btn_IC_EditCart";
             this.btn_IC_EditCart.Size = new System.Drawing.Size(226, 24);
-            this.btn_IC_EditCart.TabIndex = 1;
+            this.btn_IC_EditCart.TabIndex = 8;
             this.btn_IC_EditCart.Text = "Edit Cart";
+            this.toolTips.SetToolTip(this.btn_IC_EditCart, "Click to Edit Cart");
             this.btn_IC_EditCart.UseVisualStyleBackColor = true;
             this.btn_IC_EditCart.Click += new System.EventHandler(this.btn_IC_EditCart_Click);
             // 
@@ -865,9 +949,20 @@
             // 
             this.nud_IC_Quantity.Enabled = false;
             this.nud_IC_Quantity.Location = new System.Drawing.Point(127, 66);
+            this.nud_IC_Quantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nud_IC_Quantity.Name = "nud_IC_Quantity";
             this.nud_IC_Quantity.Size = new System.Drawing.Size(50, 20);
             this.nud_IC_Quantity.TabIndex = 5;
+            this.toolTips.SetToolTip(this.nud_IC_Quantity, "Click to change Item Quantity");
+            this.nud_IC_Quantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nud_IC_Quantity.ValueChanged += new System.EventHandler(this.nud_IC_Quantity_ValueChanged);
             // 
             // lbl_IC_ItemPrice
@@ -902,8 +997,9 @@
             this.btn_IC_ClearItem.Location = new System.Drawing.Point(5, 243);
             this.btn_IC_ClearItem.Name = "btn_IC_ClearItem";
             this.btn_IC_ClearItem.Size = new System.Drawing.Size(85, 23);
-            this.btn_IC_ClearItem.TabIndex = 1;
+            this.btn_IC_ClearItem.TabIndex = 6;
             this.btn_IC_ClearItem.Text = "&Clear Item";
+            this.toolTips.SetToolTip(this.btn_IC_ClearItem, "Click to clear Item Details");
             this.btn_IC_ClearItem.UseVisualStyleBackColor = true;
             this.btn_IC_ClearItem.Click += new System.EventHandler(this.btn_IC_ClearItem_Click);
             // 
@@ -913,8 +1009,9 @@
             this.btn_IC_AddToCart.Location = new System.Drawing.Point(96, 243);
             this.btn_IC_AddToCart.Name = "btn_IC_AddToCart";
             this.btn_IC_AddToCart.Size = new System.Drawing.Size(85, 23);
-            this.btn_IC_AddToCart.TabIndex = 0;
+            this.btn_IC_AddToCart.TabIndex = 7;
             this.btn_IC_AddToCart.Text = "&Add To Cart";
+            this.toolTips.SetToolTip(this.btn_IC_AddToCart, "Click to Add Item to Cart");
             this.btn_IC_AddToCart.UseVisualStyleBackColor = true;
             this.btn_IC_AddToCart.Click += new System.EventHandler(this.btn_IC_AddToCart_Click);
             // 
@@ -944,6 +1041,7 @@
             this.btn_IC_ChocolateOverload.Size = new System.Drawing.Size(75, 75);
             this.btn_IC_ChocolateOverload.TabIndex = 4;
             this.btn_IC_ChocolateOverload.Text = "Chocolate Overload";
+            this.toolTips.SetToolTip(this.btn_IC_ChocolateOverload, "Click to buy Chocolate Overload");
             this.btn_IC_ChocolateOverload.UseVisualStyleBackColor = false;
             this.btn_IC_ChocolateOverload.Click += new System.EventHandler(this.btn_IC_ChocolateOverload_Click);
             // 
@@ -956,6 +1054,7 @@
             this.btn_IC_CookieSandwich.Size = new System.Drawing.Size(75, 75);
             this.btn_IC_CookieSandwich.TabIndex = 3;
             this.btn_IC_CookieSandwich.Text = "Cookie Sandwich";
+            this.toolTips.SetToolTip(this.btn_IC_CookieSandwich, "Click to buy Cookie Sandwich");
             this.btn_IC_CookieSandwich.UseVisualStyleBackColor = false;
             this.btn_IC_CookieSandwich.Click += new System.EventHandler(this.btn_IC_CookieSandwich_Click);
             // 
@@ -968,6 +1067,7 @@
             this.btn_IC_ChocoCrackleFlingo.Size = new System.Drawing.Size(75, 75);
             this.btn_IC_ChocoCrackleFlingo.TabIndex = 2;
             this.btn_IC_ChocoCrackleFlingo.Text = "Choco Crackle Flingo";
+            this.toolTips.SetToolTip(this.btn_IC_ChocoCrackleFlingo, "Click to buy Choco Crackle Flingo");
             this.btn_IC_ChocoCrackleFlingo.UseVisualStyleBackColor = false;
             this.btn_IC_ChocoCrackleFlingo.Click += new System.EventHandler(this.btn_IC_ChocoCrackleFlingo_Click);
             // 
@@ -980,6 +1080,7 @@
             this.btn_IC_AmericanNuts.Size = new System.Drawing.Size(75, 75);
             this.btn_IC_AmericanNuts.TabIndex = 1;
             this.btn_IC_AmericanNuts.Text = "American Nuts";
+            this.toolTips.SetToolTip(this.btn_IC_AmericanNuts, "Click to buy American Nuts");
             this.btn_IC_AmericanNuts.UseVisualStyleBackColor = false;
             this.btn_IC_AmericanNuts.Click += new System.EventHandler(this.btn_IC_AmericanNuts_Click);
             // 
@@ -992,68 +1093,9 @@
             this.btn_IC_ChocoFudge.Size = new System.Drawing.Size(75, 75);
             this.btn_IC_ChocoFudge.TabIndex = 0;
             this.btn_IC_ChocoFudge.Text = "Choco Fudge";
+            this.toolTips.SetToolTip(this.btn_IC_ChocoFudge, "Click to buy Choco Fudge");
             this.btn_IC_ChocoFudge.UseVisualStyleBackColor = false;
             this.btn_IC_ChocoFudge.Click += new System.EventHandler(this.btn_IC_ChocoFudge_Click);
-            // 
-            // gbx_PS_SalesDetails
-            // 
-            this.gbx_PS_SalesDetails.Controls.Add(this.lbl_PS_CashInDrawerAmount);
-            this.gbx_PS_SalesDetails.Controls.Add(this.lbl_PS_OverallSaleAmount);
-            this.gbx_PS_SalesDetails.Controls.Add(this.lbl_PS_CashInDrawer);
-            this.gbx_PS_SalesDetails.Controls.Add(this.lbl_OverallSale);
-            this.gbx_PS_SalesDetails.Location = new System.Drawing.Point(6, 366);
-            this.gbx_PS_SalesDetails.Name = "gbx_PS_SalesDetails";
-            this.gbx_PS_SalesDetails.Size = new System.Drawing.Size(431, 42);
-            this.gbx_PS_SalesDetails.TabIndex = 8;
-            this.gbx_PS_SalesDetails.TabStop = false;
-            this.gbx_PS_SalesDetails.Text = "Sales Details";
-            this.gbx_PS_SalesDetails.Visible = false;
-            // 
-            // lbl_OverallSale
-            // 
-            this.lbl_OverallSale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_OverallSale.Location = new System.Drawing.Point(209, 16);
-            this.lbl_OverallSale.Name = "lbl_OverallSale";
-            this.lbl_OverallSale.Size = new System.Drawing.Size(100, 23);
-            this.lbl_OverallSale.TabIndex = 0;
-            this.lbl_OverallSale.Text = "Overall Sale: ";
-            // 
-            // lbl_PS_CashInDrawer
-            // 
-            this.lbl_PS_CashInDrawer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PS_CashInDrawer.Location = new System.Drawing.Point(21, 16);
-            this.lbl_PS_CashInDrawer.Name = "lbl_PS_CashInDrawer";
-            this.lbl_PS_CashInDrawer.Size = new System.Drawing.Size(132, 23);
-            this.lbl_PS_CashInDrawer.TabIndex = 1;
-            this.lbl_PS_CashInDrawer.Text = "Cash In Drawer:";
-            // 
-            // lbl_PS_OverallSaleAmount
-            // 
-            this.lbl_PS_OverallSaleAmount.AutoSize = true;
-            this.lbl_PS_OverallSaleAmount.Location = new System.Drawing.Point(301, 18);
-            this.lbl_PS_OverallSaleAmount.Name = "lbl_PS_OverallSaleAmount";
-            this.lbl_PS_OverallSaleAmount.Size = new System.Drawing.Size(16, 13);
-            this.lbl_PS_OverallSaleAmount.TabIndex = 2;
-            this.lbl_PS_OverallSaleAmount.Text = "- -";
-            // 
-            // lbl_PS_CashInDrawerAmount
-            // 
-            this.lbl_PS_CashInDrawerAmount.AutoSize = true;
-            this.lbl_PS_CashInDrawerAmount.Location = new System.Drawing.Point(128, 18);
-            this.lbl_PS_CashInDrawerAmount.Name = "lbl_PS_CashInDrawerAmount";
-            this.lbl_PS_CashInDrawerAmount.Size = new System.Drawing.Size(16, 13);
-            this.lbl_PS_CashInDrawerAmount.TabIndex = 3;
-            this.lbl_PS_CashInDrawerAmount.Text = "- -";
-            // 
-            // btn_ShowSalesDetails
-            // 
-            this.btn_ShowSalesDetails.Location = new System.Drawing.Point(163, 342);
-            this.btn_ShowSalesDetails.Name = "btn_ShowSalesDetails";
-            this.btn_ShowSalesDetails.Size = new System.Drawing.Size(116, 23);
-            this.btn_ShowSalesDetails.TabIndex = 9;
-            this.btn_ShowSalesDetails.Text = "Show Sales Details";
-            this.btn_ShowSalesDetails.UseVisualStyleBackColor = true;
-            this.btn_ShowSalesDetails.Click += new System.EventHandler(this.btn_ShowSalesDetails_Click);
             // 
             // frmMain
             // 
@@ -1080,6 +1122,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudGTNNumGuesses)).EndInit();
             this.panIceCream.ResumeLayout(false);
             this.pan_IC_PaymentSummary.ResumeLayout(false);
+            this.gbx_PS_SalesDetails.ResumeLayout(false);
+            this.gbx_PS_SalesDetails.PerformLayout();
             this.gbx_PS_CashPayment.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nud_PS_CashReceived)).EndInit();
             this.gbx_PS_PaymentType.ResumeLayout(false);
@@ -1094,8 +1138,6 @@
             this.gbx_IC_ItemDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_IC_Quantity)).EndInit();
             this.gbx_IC_Menu.ResumeLayout(false);
-            this.gbx_PS_SalesDetails.ResumeLayout(false);
-            this.gbx_PS_SalesDetails.PerformLayout();
             this.ResumeLayout(false);
 
         }

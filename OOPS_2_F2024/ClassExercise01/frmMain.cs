@@ -105,6 +105,7 @@ namespace ClassExercise01
         #endregion
 
         #region General Events
+
         /// <summary>
         /// Method to reset settings on changing difficulty
         /// </summary>
@@ -171,11 +172,6 @@ namespace ClassExercise01
 
         }
 
-        private void lblGTNMinimumLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void gbx_GTN_Settings_Enter(object sender, EventArgs e)
         {
 
@@ -219,19 +215,27 @@ namespace ClassExercise01
             nud_PS_CashReceived.Value = 0;
             lbl_PS_ChangePrice.Text = "- -";
             gbx_PS_SalesDetails.Visible = false;
+            btn_PS_ContinueShopping.Enabled = false;
         }
         #endregion
 
         #region Custom Methods
+
+        /// <summary>
+        /// Method to reset Item Details
+        /// </summary>
         private void Reset_IC_ItemDetails()
         {
             lbl_IC_ItemPrice.Text = "- -";
             lbl_IC_ItemTotalPrice.Text = "- -";
             lbl_IC_ItemName.Text = "Item";
-            nud_IC_Quantity.Value = 0;
+            nud_IC_Quantity.Value = 1;
             nud_IC_Quantity.Enabled = false;
         }
 
+        /// <summary>
+        /// Method to reset Cart
+        /// </summary>
         private void Reset_IC_Cart()
         {
             lbl_IC_CartItem1.Text = "";
@@ -258,6 +262,11 @@ namespace ClassExercise01
             lbl_IC_CartTotalPrice.Text = "- -";
         }
 
+        /// <summary>
+        /// Method to Set Item Details
+        /// </summary>
+        /// <param name="itemName"></param>
+        /// <param name="price"></param>
         private void set_IC_ItemDetails(String itemName, int price)
         {
             Reset_IC_ItemDetails();
@@ -270,73 +279,12 @@ namespace ClassExercise01
         #endregion
 
         #region General Events
-
-        #endregion
-
-
-        #endregion
-
-
-
-
-        #region Startup
-
-
-
-
-
-
-
-
-
-        #endregion
-
-        #region Custom Methods for Guess The Number Game
-
-
-
-        #endregion
-
-        #region General Events for Guess The Number Game
-
-
-
-
-
-
-        #endregion
-
-        #region Custom Methods for Ice Cream Application
-
-
-
-
-
-
-        #endregion
-
-        #region General Events for Ice Cream Application
-
-        private void btn_IC_ClearItem_Click(object sender, EventArgs e)
-        {
-            Reset_IC_ItemDetails();
-        }
-
-        private void btn_IC_EditCart_Click(object sender, EventArgs e)
-        {
-            if (nud_IC_CartItem1_Quantity.Visible) nud_IC_CartItem1_Quantity.Enabled = true;
-            if (nud_IC_CartItem2_Quantity.Visible) nud_IC_CartItem2_Quantity.Enabled = true;
-            if (nud_IC_CartItem3_Quantity.Visible) nud_IC_CartItem3_Quantity.Enabled = true;
-            if (nud_IC_CartItem4_Quantity.Visible) nud_IC_CartItem4_Quantity.Enabled = true;
-            if (nud_IC_CartItem5_Quantity.Visible) nud_IC_CartItem5_Quantity.Enabled = true;
-
-        }
-
-        private void btn_IC_Exit_Click(object sender, EventArgs e)
-        {
-            panIceCream.Visible = false;
-        }
-
+        
+        /// <summary>
+        /// Method to Open Ice cream application on clicking ice cream button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIceCream_Click(object sender, EventArgs e)
         {
             if (panIceCream.Visible)
@@ -351,43 +299,102 @@ namespace ClassExercise01
             }
         }
 
+        /// <summary>
+        /// Method to reset item details on clicking clear button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_IC_ClearItem_Click(object sender, EventArgs e)
+        {
+            Reset_IC_ItemDetails();
+        }
+
+        /// <summary>
+        /// Method to Edit Cart on clicking edit cart 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_IC_EditCart_Click(object sender, EventArgs e)
+        {
+            if (nud_IC_CartItem1_Quantity.Visible) nud_IC_CartItem1_Quantity.Enabled = true;
+            if (nud_IC_CartItem2_Quantity.Visible) nud_IC_CartItem2_Quantity.Enabled = true;
+            if (nud_IC_CartItem3_Quantity.Visible) nud_IC_CartItem3_Quantity.Enabled = true;
+            if (nud_IC_CartItem4_Quantity.Visible) nud_IC_CartItem4_Quantity.Enabled = true;
+            if (nud_IC_CartItem5_Quantity.Visible) nud_IC_CartItem5_Quantity.Enabled = true;
+
+        }
+
+        /// <summary>
+        /// Method to Exit ice cream application on clicking exit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_IC_Exit_Click(object sender, EventArgs e)
+        {
+            panIceCream.Visible = false;
+        }
+        
+        /// <summary>
+        /// Method to set Choco fudge in item details
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_IC_ChocoFudge_Click(object sender, EventArgs e)
         {
             set_IC_ItemDetails("Choco Fudge", Settings.IC_DEF_CHOCOFUDGEPRICE);
 
         }
 
+        /// <summary>
+        /// Method to set American Nuts in item details
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_IC_AmericanNuts_Click(object sender, EventArgs e)
         {
             set_IC_ItemDetails("American Nuts", Settings.IC_DEF_AMERICANNUTSPRICE);
         }
 
+        /// <summary>
+        /// Method to set Choco Crackle Flingo in item details
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_IC_ChocoCrackleFlingo_Click(object sender, EventArgs e)
         {
             set_IC_ItemDetails("Choco Crackle Flingo", Settings.IC_DEF_CHOCOCRACKLEFLINGOPRICE);
         }
 
+        /// <summary>
+        /// Method to set Cookie Sandwich in item details
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_IC_CookieSandwich_Click(object sender, EventArgs e)
         {
-            set_IC_ItemDetails("CookieSandwich", Settings.IC_DEF_COOKIESANDWICHPRICE);
+            set_IC_ItemDetails("Cookie Sandwich", Settings.IC_DEF_COOKIESANDWICHPRICE);
         }
 
+        /// <summary>
+        /// Method to set Chocolate Overload in item details
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_IC_ChocolateOverload_Click(object sender, EventArgs e)
         {
             set_IC_ItemDetails("Chocolate Overload", Settings.IC_DEF_CHOCOLATEOVERLOADPRICE);
         }
 
-
-
-
-
-        #endregion
-
+        /// <summary>
+        /// Method to show price of respective items in item details on changing quantity
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void nud_IC_Quantity_ValueChanged(object sender, EventArgs e)
         {
-            
 
-            if (lbl_IC_ItemName.Text == "Choco Fudge") 
+
+            if (lbl_IC_ItemName.Text == "Choco Fudge")
             {
                 lbl_IC_ItemTotalPrice.Text = "" + (Settings.IC_DEF_CHOCOFUDGEPRICE * (int)nud_IC_Quantity.Value) + " $";
             }
@@ -409,6 +416,11 @@ namespace ClassExercise01
             }
         }
 
+        /// <summary>
+        /// Method to Add selected item to Cart on clicking add to cart
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_IC_AddToCart_Click(object sender, EventArgs e)
         {
             if (lbl_IC_ItemName.Text == "Choco Fudge")
@@ -417,7 +429,7 @@ namespace ClassExercise01
                 nud_IC_CartItem1_Quantity.Visible = true;
                 lbl_IC_CartItem1.Text = lbl_IC_ItemName.Text;
                 nud_IC_CartItem1_Quantity.Value += nud_IC_Quantity.Value;
-                
+
             }
             else if (lbl_IC_ItemName.Text == "American Nuts")
             {
@@ -452,14 +464,19 @@ namespace ClassExercise01
             btn_IC_EditCart.Enabled = true;
         }
 
+        /// <summary>
+        /// Method to show total amount on clicking total
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_IC_Total_Click(object sender, EventArgs e)
         {
             lbl_IC_CartTotalPrice.Visible = true;
             lbl_IC_CartTotal.Visible = true;
 
-             Decimal cartTotal = Settings.IC_DEF_CHOCOFUDGEPRICE*nud_IC_CartItem1_Quantity.Value + Settings.IC_DEF_AMERICANNUTSPRICE*nud_IC_CartItem2_Quantity.Value +
-                Settings.IC_DEF_CHOCOCRACKLEFLINGOPRICE*nud_IC_CartItem3_Quantity.Value + Settings.IC_DEF_COOKIESANDWICHPRICE*nud_IC_CartItem4_Quantity.Value + 
-                Settings.IC_DEF_CHOCOLATEOVERLOADPRICE*nud_IC_CartItem5_Quantity.Value;
+            Decimal cartTotal = Settings.IC_DEF_CHOCOFUDGEPRICE * nud_IC_CartItem1_Quantity.Value + Settings.IC_DEF_AMERICANNUTSPRICE * nud_IC_CartItem2_Quantity.Value +
+               Settings.IC_DEF_CHOCOCRACKLEFLINGOPRICE * nud_IC_CartItem3_Quantity.Value + Settings.IC_DEF_COOKIESANDWICHPRICE * nud_IC_CartItem4_Quantity.Value +
+               Settings.IC_DEF_CHOCOLATEOVERLOADPRICE * nud_IC_CartItem5_Quantity.Value;
 
             lbl_IC_CartTotalPrice.Text = "" + cartTotal + " $";
 
@@ -472,27 +489,47 @@ namespace ClassExercise01
 
         }
 
+        /// <summary>
+        /// Method to go on a payment page on clicking buy
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_IC_Buy_Click(object sender, EventArgs e)
         {
             pan_IC_PaymentSummary.Visible = true;
+            pan_IC_PaymentSummary.Focus();
             pan_IC_PaymentSummary.BringToFront();
             lbl_PS_TotalAmount.Text = lbl_IC_CartTotalPrice.Text;
         }
 
+        /// <summary>
+        /// Method to get back to Main panel on clicking continue shopping
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_PS_ContinueShopping_Click(object sender, EventArgs e)
         {
-            pan_IC_PaymentSummary.Visible=false;
+            pan_IC_PaymentSummary.Visible = false;
             SetIC_Defaults();
             SetPS_Defaults();
         }
 
+        /// <summary>
+        /// Method to get back to Main panel to edit cart on clicking back
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_PS_Back_Click(object sender, EventArgs e)
         {
             pan_IC_PaymentSummary.Visible = false;
         }
 
-    
 
+        /// <summary>
+        /// Method to pay with card on clicking card
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_PS_Card_Click(object sender, EventArgs e)
         {
             Decimal cartTotal = Settings.IC_DEF_CHOCOFUDGEPRICE * nud_IC_CartItem1_Quantity.Value + Settings.IC_DEF_AMERICANNUTSPRICE * nud_IC_CartItem2_Quantity.Value +
@@ -504,13 +541,25 @@ namespace ClassExercise01
             pan_IC_PaymentSummary.Visible = false;
             SetIC_Defaults();
             SetPS_Defaults();
+            
         }
 
+        /// <summary>
+        /// Method to pay with cash on clicking cash
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_PS_Cash_Click(object sender, EventArgs e)
         {
             gbx_PS_CashPayment.Enabled = true;
+            btn_PS_ContinueShopping.Enabled = true;
         }
 
+        /// <summary>
+        /// Method to pay exact cash on clicking cash exact
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_PS_CashExact_Click(object sender, EventArgs e)
         {
             Decimal cartTotal = Settings.IC_DEF_CHOCOFUDGEPRICE * nud_IC_CartItem1_Quantity.Value + Settings.IC_DEF_AMERICANNUTSPRICE * nud_IC_CartItem2_Quantity.Value +
@@ -525,31 +574,61 @@ namespace ClassExercise01
             SetPS_Defaults();
         }
 
+        /// <summary>
+        /// Method to add 1$ to cash recieved on clicking 1$ button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_PS_Cash_1_Click(object sender, EventArgs e)
         {
             nud_PS_CashReceived.Value += 1;
         }
 
+        /// <summary>
+        /// Method to add 2$ to cash recieved on clicking 2$ button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_PS_Cash_2_Click(object sender, EventArgs e)
         {
             nud_PS_CashReceived.Value += 2;
         }
 
+        /// <summary>
+        /// Method to add 5$ to cash recieved on clicking 5$ button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_PS_Cash_5_Click(object sender, EventArgs e)
         {
             nud_PS_CashReceived.Value += 5;
         }
 
+        /// <summary>
+        /// Method to add 10$ to cash recieved on clicking 10$ button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_PS_Cash_10_Click(object sender, EventArgs e)
         {
             nud_PS_CashReceived.Value += 10;
         }
 
+        /// <summary>
+        /// Method to add 20$ to cash recieved on clicking 20$ button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_PS_Cash_20_Click(object sender, EventArgs e)
         {
             nud_PS_CashReceived.Value += 20;
         }
 
+        /// <summary>
+        /// Method to calculate change amount with the help of a tool method on clicking calculate change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_PS_CalculateChange_Click(object sender, EventArgs e)
         {
             Decimal cartTotal = Settings.IC_DEF_CHOCOFUDGEPRICE * nud_IC_CartItem1_Quantity.Value + Settings.IC_DEF_AMERICANNUTSPRICE * nud_IC_CartItem2_Quantity.Value +
@@ -562,11 +641,21 @@ namespace ClassExercise01
             Settings.overallSaleAmount += (int)cartTotal;
         }
 
+        /// <summary>
+        /// Method to show sales details on clicking sales details
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ShowSalesDetails_Click(object sender, EventArgs e)
         {
             gbx_PS_SalesDetails.Visible = true;
             lbl_PS_CashInDrawerAmount.Text = "" + Settings.cashInDrawer + " $";
             lbl_PS_OverallSaleAmount.Text = "" + Settings.overallSaleAmount + " $";
         }
+        #endregion
+
+
+        #endregion
+
     }
 }
