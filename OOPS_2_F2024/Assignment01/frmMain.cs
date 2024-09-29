@@ -12,6 +12,9 @@ namespace Assignment01
     
     public partial class frmMain : Form
     {
+        /// <summary>
+        /// Main form constructor
+        /// </summary>
         public frmMain()
         {
             InitializeComponent();
