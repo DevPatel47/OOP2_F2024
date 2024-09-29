@@ -16,3 +16,21 @@ D:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\Assi
 D:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\Assignment01.genruntimeconfig.cache
 D:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\ref\Assignment01.dll
 D:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\Assignment01.Properties.Resources.resources
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\bin\Debug\net8.0-windows\Assignment01.exe
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\bin\Debug\net8.0-windows\Assignment01.deps.json
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\bin\Debug\net8.0-windows\Assignment01.runtimeconfig.json
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\bin\Debug\net8.0-windows\Assignment01.dll
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\bin\Debug\net8.0-windows\Assignment01.pdb
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\Assignment01.frmMain.resources
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\Assignment01.Properties.Resources.resources
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\Assignment01.csproj.GenerateResource.cache
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\Assignment01.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\Assignment01.AssemblyInfoInputs.cache
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\Assignment01.AssemblyInfo.cs
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\Assignment01.csproj.CoreCompileInputs.cache
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\Assignment01.sourcelink.json
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\Assignment01.dll
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\refint\Assignment01.dll
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\Assignment01.pdb
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\Assignment01.genruntimeconfig.cache
+C:\Users\dev08\OneDrive\Desktop\New folder\OOP2_F2024\OOPS_2_F2024\Assignment01\obj\Debug\net8.0-windows\ref\Assignment01.dll
