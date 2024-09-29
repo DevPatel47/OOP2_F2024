@@ -1,9 +1,9 @@
-﻿/* **************************************
- * COSC2100 Section 4 F2024
- * Dev Mayurkumar Patel
- * Sept 19, 2024
- * General Tools File
- * ***********************************  */
+﻿/*============================================================
+ * Title    :   Assignment - 1 Tic-Tac-Toe
+ * Name     :   Dev Mayurkumar Patel
+ * Date     :   27 September 2024
+ * Purpose  :   General Tools file
+ *===========================================================*/
 
 using System;
 using System.Drawing;
@@ -49,15 +49,11 @@ namespace Assignment01
 
         #region Tic-Tac-Toe
 
-        public static string RandomPlayer(string player1, string player2)
-        {
-            int randomInt = RandomInt(0, 1);
-
-            if (randomInt == 0) return player1;
-            else return player2;
-            
-        }
-
+        /// <summary>
+        /// Method to validate string (player names)
+        /// </summary>
+        /// <param name="stringToCheck"></param>
+        /// <returns></returns>
         public static bool isStringCorrect(string stringToCheck)
         {
             if (stringToCheck.Trim().Length > 1 & stringToCheck.Trim().Length < 11) return true;

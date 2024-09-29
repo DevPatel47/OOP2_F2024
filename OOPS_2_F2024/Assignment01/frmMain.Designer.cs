@@ -54,11 +54,11 @@
             lbl_GW_X = new Label();
             toolTip1 = new ToolTip(components);
             btn_Exit = new Button();
-            pan_ResultWindow = new Panel();
             btn_StartNewGame = new Button();
             btn_Continue = new Button();
-            lbl_RW_Result = new Label();
             btn_RestartGame = new Button();
+            pan_ResultWindow = new Panel();
+            lbl_RW_Result = new Label();
             pan_StartWindow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbx_SW_Logo).BeginInit();
             pan_GameWindow.SuspendLayout();
@@ -101,8 +101,9 @@
             rdb_SW_Random.Location = new Point(1030, 541);
             rdb_SW_Random.Name = "rdb_SW_Random";
             rdb_SW_Random.Size = new Size(192, 46);
-            rdb_SW_Random.TabIndex = 4;
+            rdb_SW_Random.TabIndex = 5;
             rdb_SW_Random.Text = "Random";
+            toolTip1.SetToolTip(rdb_SW_Random, "Click to select Random");
             rdb_SW_Random.UseVisualStyleBackColor = true;
             // 
             // rdb_SW_O
@@ -112,8 +113,9 @@
             rdb_SW_O.Location = new Point(852, 541);
             rdb_SW_O.Name = "rdb_SW_O";
             rdb_SW_O.Size = new Size(93, 46);
-            rdb_SW_O.TabIndex = 3;
+            rdb_SW_O.TabIndex = 4;
             rdb_SW_O.Text = "O";
+            toolTip1.SetToolTip(rdb_SW_O, "Click to select O");
             rdb_SW_O.UseVisualStyleBackColor = true;
             // 
             // rdb_SW_X
@@ -127,6 +129,7 @@
             rdb_SW_X.TabIndex = 3;
             rdb_SW_X.TabStop = true;
             rdb_SW_X.Text = "X";
+            toolTip1.SetToolTip(rdb_SW_X, "Click to select X");
             rdb_SW_X.UseVisualStyleBackColor = true;
             // 
             // lbl_SW_SelectSign
@@ -163,6 +166,7 @@
             tbx_SW_Player02.TabIndex = 2;
             tbx_SW_Player02.Text = "Player-2";
             tbx_SW_Player02.TextAlign = HorizontalAlignment.Center;
+            toolTip1.SetToolTip(tbx_SW_Player02, "Click to enter player 2 name");
             // 
             // tbx_SW_Player01
             // 
@@ -176,6 +180,7 @@
             tbx_SW_Player01.TabIndex = 1;
             tbx_SW_Player01.Text = "Player-1";
             tbx_SW_Player01.TextAlign = HorizontalAlignment.Center;
+            toolTip1.SetToolTip(tbx_SW_Player01, "Click to enter player 1 name");
             // 
             // btn_SW_Start
             // 
@@ -184,8 +189,9 @@
             btn_SW_Start.Location = new Point(445, 706);
             btn_SW_Start.Name = "btn_SW_Start";
             btn_SW_Start.Size = new Size(500, 143);
-            btn_SW_Start.TabIndex = 4;
-            btn_SW_Start.Text = "Start";
+            btn_SW_Start.TabIndex = 6;
+            btn_SW_Start.Text = "&Start";
+            toolTip1.SetToolTip(btn_SW_Start, "Click to start the game");
             btn_SW_Start.UseVisualStyleBackColor = true;
             btn_SW_Start.Click += btn_SW_Start_Click;
             // 
@@ -237,6 +243,7 @@
             btn_GW_ResetScore.Size = new Size(210, 70);
             btn_GW_ResetScore.TabIndex = 11;
             btn_GW_ResetScore.Text = "Reset Score";
+            toolTip1.SetToolTip(btn_GW_ResetScore, "Click to clear current score");
             btn_GW_ResetScore.UseVisualStyleBackColor = true;
             btn_GW_ResetScore.Click += btn_GW_ResetScore_Click;
             // 
@@ -248,6 +255,7 @@
             btn_GW_ResetBoard.Size = new Size(210, 70);
             btn_GW_ResetBoard.TabIndex = 10;
             btn_GW_ResetBoard.Text = "Reset Board";
+            toolTip1.SetToolTip(btn_GW_ResetBoard, "Click to clear current board");
             btn_GW_ResetBoard.UseVisualStyleBackColor = true;
             btn_GW_ResetBoard.Click += btn_GW_ResetBoard_Click;
             // 
@@ -336,10 +344,49 @@
             btn_Exit.Location = new Point(1192, 926);
             btn_Exit.Name = "btn_Exit";
             btn_Exit.Size = new Size(210, 70);
-            btn_Exit.TabIndex = 6;
+            btn_Exit.TabIndex = 8;
             btn_Exit.Text = "E&xit Game";
+            toolTip1.SetToolTip(btn_Exit, "Click to exit the game");
             btn_Exit.UseVisualStyleBackColor = true;
             btn_Exit.Click += btn_Exit_Click;
+            // 
+            // btn_StartNewGame
+            // 
+            btn_StartNewGame.Anchor = AnchorStyles.None;
+            btn_StartNewGame.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_StartNewGame.Location = new Point(751, 602);
+            btn_StartNewGame.Name = "btn_StartNewGame";
+            btn_StartNewGame.Size = new Size(251, 112);
+            btn_StartNewGame.TabIndex = 2;
+            btn_StartNewGame.Text = "Start &New Game";
+            toolTip1.SetToolTip(btn_StartNewGame, "Click to start a new game");
+            btn_StartNewGame.UseVisualStyleBackColor = true;
+            btn_StartNewGame.Click += btn_StartNewGame_Click;
+            // 
+            // btn_Continue
+            // 
+            btn_Continue.Anchor = AnchorStyles.None;
+            btn_Continue.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Continue.Location = new Point(389, 602);
+            btn_Continue.Name = "btn_Continue";
+            btn_Continue.Size = new Size(251, 112);
+            btn_Continue.TabIndex = 1;
+            btn_Continue.Text = "&Continue Game";
+            toolTip1.SetToolTip(btn_Continue, "Click to continue playing current game");
+            btn_Continue.UseVisualStyleBackColor = true;
+            btn_Continue.Click += btn_Continue_Click;
+            // 
+            // btn_RestartGame
+            // 
+            btn_RestartGame.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_RestartGame.Location = new Point(960, 927);
+            btn_RestartGame.Name = "btn_RestartGame";
+            btn_RestartGame.Size = new Size(210, 70);
+            btn_RestartGame.TabIndex = 7;
+            btn_RestartGame.Text = "&Restart Game";
+            toolTip1.SetToolTip(btn_RestartGame, "Click to restart a new game");
+            btn_RestartGame.UseVisualStyleBackColor = true;
+            btn_RestartGame.Click += btn_RestartGame_Click;
             // 
             // pan_ResultWindow
             // 
@@ -352,52 +399,17 @@
             pan_ResultWindow.Size = new Size(1397, 905);
             pan_ResultWindow.TabIndex = 19;
             // 
-            // btn_StartNewGame
-            // 
-            btn_StartNewGame.Anchor = AnchorStyles.None;
-            btn_StartNewGame.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_StartNewGame.Location = new Point(751, 636);
-            btn_StartNewGame.Name = "btn_StartNewGame";
-            btn_StartNewGame.Size = new Size(251, 112);
-            btn_StartNewGame.TabIndex = 2;
-            btn_StartNewGame.Text = "Start New Game";
-            btn_StartNewGame.UseVisualStyleBackColor = true;
-            btn_StartNewGame.Click += btn_StartNewGame_Click;
-            // 
-            // btn_Continue
-            // 
-            btn_Continue.Anchor = AnchorStyles.None;
-            btn_Continue.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_Continue.Location = new Point(389, 636);
-            btn_Continue.Name = "btn_Continue";
-            btn_Continue.Size = new Size(251, 112);
-            btn_Continue.TabIndex = 1;
-            btn_Continue.Text = "Continue Game";
-            btn_Continue.UseVisualStyleBackColor = true;
-            btn_Continue.Click += btn_Continue_Click;
-            // 
             // lbl_RW_Result
             // 
             lbl_RW_Result.Anchor = AnchorStyles.None;
-            lbl_RW_Result.Font = new Font("Brush Script MT", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbl_RW_Result.ForeColor = Color.YellowGreen;
+            lbl_RW_Result.Font = new Font("Edwardian Script ITC", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_RW_Result.ForeColor = Color.IndianRed;
             lbl_RW_Result.Location = new Point(169, 96);
             lbl_RW_Result.Name = "lbl_RW_Result";
             lbl_RW_Result.Size = new Size(1059, 456);
             lbl_RW_Result.TabIndex = 0;
-            lbl_RW_Result.Text = "Congratulations! \r\nPlayer-1 Won the Game";
+            lbl_RW_Result.Text = "Congratulations! \r\nPlayer-1 Won The Game";
             lbl_RW_Result.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btn_RestartGame
-            // 
-            btn_RestartGame.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btn_RestartGame.Location = new Point(960, 927);
-            btn_RestartGame.Name = "btn_RestartGame";
-            btn_RestartGame.Size = new Size(210, 70);
-            btn_RestartGame.TabIndex = 5;
-            btn_RestartGame.Text = "Restart Game";
-            btn_RestartGame.UseVisualStyleBackColor = true;
-            btn_RestartGame.Click += btn_RestartGame_Click;
             // 
             // frmMain
             // 
@@ -406,9 +418,9 @@
             ClientSize = new Size(1414, 1009);
             Controls.Add(btn_RestartGame);
             Controls.Add(btn_Exit);
+            Controls.Add(pan_StartWindow);
             Controls.Add(pan_ResultWindow);
             Controls.Add(pan_GameWindow);
-            Controls.Add(pan_StartWindow);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(6);
             MinimumSize = new Size(1440, 1080);
