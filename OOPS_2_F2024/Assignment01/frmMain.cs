@@ -48,6 +48,7 @@ namespace Assignment01
             lbl_GW_X_Score.Text = Settings.scoreOfPlayer_X.ToString();
             lbl_GW_O_Score.Text = Settings.scoreOfPlayer_O.ToString();
             Settings.isPlayer_X = true;
+            AcceptButton = btn_SW_Start;
         }
 
         #endregion
@@ -122,6 +123,7 @@ namespace Assignment01
             lbl_GW_O_PlayerName.Text = Settings.nameOfPlayer_O;
             lbl_GW_X_Score.Text = Settings.scoreOfPlayer_X.ToString();
             lbl_GW_O_Score.Text = Settings.scoreOfPlayer_O.ToString();
+            AcceptButton = Settings.buttons[1,1];
         }
 
         /// <summary>
@@ -177,8 +179,8 @@ namespace Assignment01
                     button.BackColor = Color.White;
                     button.Enabled = true;
                 }
-            }
-
+            }    
+            
         }
 
         /// <summary>
@@ -257,8 +259,9 @@ namespace Assignment01
             lbl_GW_X_Score.Text = (Settings.scoreOfPlayer_X).ToString();
             pan_GameWindow.Visible = false;
             pan_ResultWindow.Visible = true;
-            pan_StartWindow.Focus();
+            pan_ResultWindow.Focus();
             lbl_RW_Result.Text = "Congratulations!!\n" + Settings.nameOfPlayer_X + " Won The Round";
+            AcceptButton = btn_Continue;
         }
 
         /// <summary>
@@ -272,6 +275,7 @@ namespace Assignment01
             pan_ResultWindow.Visible = true;
             pan_ResultWindow.Focus();
             lbl_RW_Result.Text = "Congratulations!!\n" + Settings.nameOfPlayer_O + " Won The Round";
+            AcceptButton = btn_Continue;
         }
 
         /// <summary>
@@ -283,6 +287,7 @@ namespace Assignment01
             pan_ResultWindow.Visible = true;
             pan_ResultWindow.Focus();
             lbl_RW_Result.Text = "Board Full!!\nIt's a Draw";
+            AcceptButton = btn_Continue;
         }
         #endregion
 
@@ -332,7 +337,7 @@ namespace Assignment01
                 btn.Enabled = false;
                 btn.BackColor = Color.OrangeRed;
             }
-            IsPlayerWon();
+            IsPlayerWon();            
         }
 
         /// <summary>

@@ -162,7 +162,7 @@
             tbx_SW_Player02.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
             tbx_SW_Player02.Location = new Point(889, 453);
             tbx_SW_Player02.Name = "tbx_SW_Player02";
-            tbx_SW_Player02.Size = new Size(333, 44);
+            tbx_SW_Player02.Size = new Size(333, 38);
             tbx_SW_Player02.TabIndex = 2;
             tbx_SW_Player02.Text = "Player-2";
             tbx_SW_Player02.TextAlign = HorizontalAlignment.Center;
@@ -176,7 +176,7 @@
             tbx_SW_Player01.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
             tbx_SW_Player01.Location = new Point(540, 453);
             tbx_SW_Player01.Name = "tbx_SW_Player01";
-            tbx_SW_Player01.Size = new Size(333, 44);
+            tbx_SW_Player01.Size = new Size(333, 38);
             tbx_SW_Player01.TabIndex = 1;
             tbx_SW_Player01.Text = "Player-1";
             tbx_SW_Player01.TextAlign = HorizontalAlignment.Center;
@@ -413,14 +413,16 @@
             // 
             // frmMain
             // 
+            AcceptButton = btn_SW_Start;
             AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.AliceBlue;
-            ClientSize = new Size(1414, 1009);
+            CancelButton = btn_Exit;
+            ClientSize = new Size(1416, 1016);
             Controls.Add(btn_RestartGame);
             Controls.Add(btn_Exit);
-            Controls.Add(pan_StartWindow);
             Controls.Add(pan_ResultWindow);
             Controls.Add(pan_GameWindow);
+            Controls.Add(pan_StartWindow);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(6);
             MinimumSize = new Size(1440, 1080);
