@@ -391,6 +391,7 @@
             // pan_ResultWindow
             // 
             pan_ResultWindow.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pan_ResultWindow.BackColor = Color.Transparent;
             pan_ResultWindow.Controls.Add(btn_StartNewGame);
             pan_ResultWindow.Controls.Add(btn_Continue);
             pan_ResultWindow.Controls.Add(lbl_RW_Result);
