@@ -1,0 +1,10 @@
+D:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment02\obj\Debug\Assignment02.csproj.AssemblyReference.cache
+D:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment02\obj\Debug\Assignment02.frmBattleShip.resources
+D:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment02\obj\Debug\Assignment02.Properties.Resources.resources
+D:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment02\obj\Debug\Assignment02.csproj.GenerateResource.cache
+D:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment02\obj\Debug\Assignment02.csproj.CoreCompileInputs.cache
+D:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment02\bin\Debug\Assignment02.exe.config
+D:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment02\bin\Debug\Assignment02.exe
+D:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment02\bin\Debug\Assignment02.pdb
+D:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment02\obj\Debug\Assignment02.exe
+D:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment02\obj\Debug\Assignment02.pdb
