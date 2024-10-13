@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BS.cs" />
+    <Compile Include="BS_Student.cs" />
     <Compile Include="frmBattleShip.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,7 +84,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="big-bubble-1-169075.wav" />
+    <Content Include="drowning-34415-[AudioTrimmer.com].wav" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\wp11552736-battleship-game-wallpapers %281%29.jpg" />
   </ItemGroup>

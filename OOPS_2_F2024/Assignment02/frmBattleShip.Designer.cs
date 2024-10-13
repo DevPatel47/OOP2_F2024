@@ -38,7 +38,15 @@ namespace Assignment02
             this.btn_NewGame = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_ShowBoats = new System.Windows.Forms.Button();
+            this.cbo_LM_X = new System.Windows.Forms.ComboBox();
+            this.cbo_LM_Y = new System.Windows.Forms.ComboBox();
+            this.btn_LM_Launch = new System.Windows.Forms.Button();
             this.pan_GameWindow = new System.Windows.Forms.Panel();
+            this.pan_GW_LaunchMissile = new System.Windows.Forms.Panel();
+            this.lbl_LM_Y = new System.Windows.Forms.Label();
+            this.lbl_LM_X = new System.Windows.Forms.Label();
+            this.lbl_LM_SelectCoordinates = new System.Windows.Forms.Label();
+            this.lbl_LM_LaunchMissile = new System.Windows.Forms.Label();
             this.lbl_GW_2 = new System.Windows.Forms.Label();
             this.lbl_GW_3 = new System.Windows.Forms.Label();
             this.lbl_GW_4 = new System.Windows.Forms.Label();
@@ -73,19 +81,11 @@ namespace Assignment02
             this.lbl_BS_Battleship = new System.Windows.Forms.Label();
             this.lbl_BS_Carrier = new System.Windows.Forms.Label();
             this.lbl_BS_BoatStatuses = new System.Windows.Forms.Label();
-            this.pan_GW_LaunchMissile = new System.Windows.Forms.Panel();
-            this.lbl_LM_LaunchMissile = new System.Windows.Forms.Label();
-            this.lbl_LM_SelectCoordinates = new System.Windows.Forms.Label();
-            this.cbo_LM_X = new System.Windows.Forms.ComboBox();
-            this.cbo_LM_Y = new System.Windows.Forms.ComboBox();
-            this.lbl_LM_X = new System.Windows.Forms.Label();
-            this.lbl_LM_Y = new System.Windows.Forms.Label();
-            this.btn_LM_Launch = new System.Windows.Forms.Button();
             this.pan_BattleShip_Heading.SuspendLayout();
             this.pan_GameWindow.SuspendLayout();
+            this.pan_GW_LaunchMissile.SuspendLayout();
             this.pan_GW_BoatStatuses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_BS_TurnTakenCount)).BeginInit();
-            this.pan_GW_LaunchMissile.SuspendLayout();
             this.SuspendLayout();
             // 
             // pan_BattleShip_Heading
@@ -94,7 +94,7 @@ namespace Assignment02
             this.pan_BattleShip_Heading.Controls.Add(this.lbl_BSH_BattleShip);
             this.pan_BattleShip_Heading.Dock = System.Windows.Forms.DockStyle.Top;
             this.pan_BattleShip_Heading.Location = new System.Drawing.Point(0, 0);
-            this.pan_BattleShip_Heading.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pan_BattleShip_Heading.Margin = new System.Windows.Forms.Padding(2);
             this.pan_BattleShip_Heading.Name = "pan_BattleShip_Heading";
             this.pan_BattleShip_Heading.Size = new System.Drawing.Size(734, 54);
             this.pan_BattleShip_Heading.TabIndex = 0;
@@ -118,7 +118,7 @@ namespace Assignment02
             this.btn_NewGame.BackColor = System.Drawing.Color.Black;
             this.btn_NewGame.ForeColor = System.Drawing.Color.White;
             this.btn_NewGame.Location = new System.Drawing.Point(7, 3);
-            this.btn_NewGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_NewGame.Margin = new System.Windows.Forms.Padding(2);
             this.btn_NewGame.Name = "btn_NewGame";
             this.btn_NewGame.Size = new System.Drawing.Size(71, 30);
             this.btn_NewGame.TabIndex = 0;
@@ -134,20 +134,21 @@ namespace Assignment02
             this.btn_Exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_Exit.ForeColor = System.Drawing.Color.White;
             this.btn_Exit.Location = new System.Drawing.Point(661, 625);
-            this.btn_Exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Exit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(71, 30);
             this.btn_Exit.TabIndex = 105;
             this.btn_Exit.Text = "E&xit";
             this.toolTip1.SetToolTip(this.btn_Exit, "Click to Exit");
             this.btn_Exit.UseVisualStyleBackColor = false;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // btn_ShowBoats
             // 
             this.btn_ShowBoats.BackColor = System.Drawing.Color.Black;
             this.btn_ShowBoats.ForeColor = System.Drawing.Color.White;
             this.btn_ShowBoats.Location = new System.Drawing.Point(81, 3);
-            this.btn_ShowBoats.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_ShowBoats.Margin = new System.Windows.Forms.Padding(2);
             this.btn_ShowBoats.Name = "btn_ShowBoats";
             this.btn_ShowBoats.Size = new System.Drawing.Size(76, 30);
             this.btn_ShowBoats.TabIndex = 1;
@@ -155,6 +156,59 @@ namespace Assignment02
             this.toolTip1.SetToolTip(this.btn_ShowBoats, "Click to See Boat Locations");
             this.btn_ShowBoats.UseVisualStyleBackColor = false;
             this.btn_ShowBoats.Click += new System.EventHandler(this.btn_ShowBoats_Click);
+            // 
+            // cbo_LM_X
+            // 
+            this.cbo_LM_X.FormattingEnabled = true;
+            this.cbo_LM_X.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbo_LM_X.Location = new System.Drawing.Point(67, 101);
+            this.cbo_LM_X.Name = "cbo_LM_X";
+            this.cbo_LM_X.Size = new System.Drawing.Size(121, 21);
+            this.cbo_LM_X.TabIndex = 102;
+            this.toolTip1.SetToolTip(this.cbo_LM_X, "Select X Coordinates");
+            // 
+            // cbo_LM_Y
+            // 
+            this.cbo_LM_Y.FormattingEnabled = true;
+            this.cbo_LM_Y.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J"});
+            this.cbo_LM_Y.Location = new System.Drawing.Point(67, 144);
+            this.cbo_LM_Y.Name = "cbo_LM_Y";
+            this.cbo_LM_Y.Size = new System.Drawing.Size(121, 21);
+            this.cbo_LM_Y.TabIndex = 103;
+            this.toolTip1.SetToolTip(this.cbo_LM_Y, "Select Y Coordinates");
+            // 
+            // btn_LM_Launch
+            // 
+            this.btn_LM_Launch.BackColor = System.Drawing.Color.White;
+            this.btn_LM_Launch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_LM_Launch.Location = new System.Drawing.Point(16, 190);
+            this.btn_LM_Launch.Name = "btn_LM_Launch";
+            this.btn_LM_Launch.Size = new System.Drawing.Size(172, 38);
+            this.btn_LM_Launch.TabIndex = 104;
+            this.btn_LM_Launch.Text = "&Launch";
+            this.toolTip1.SetToolTip(this.btn_LM_Launch, "Click to launch");
+            this.btn_LM_Launch.UseVisualStyleBackColor = false;
+            this.btn_LM_Launch.Click += new System.EventHandler(this.btn_LM_Launch_Click);
             // 
             // pan_GameWindow
             // 
@@ -187,10 +241,76 @@ namespace Assignment02
             this.pan_GameWindow.Controls.Add(this.btn_NewGame);
             this.pan_GameWindow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_GameWindow.Location = new System.Drawing.Point(0, 54);
-            this.pan_GameWindow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pan_GameWindow.Margin = new System.Windows.Forms.Padding(2);
             this.pan_GameWindow.Name = "pan_GameWindow";
             this.pan_GameWindow.Size = new System.Drawing.Size(734, 657);
             this.pan_GameWindow.TabIndex = 1;
+            // 
+            // pan_GW_LaunchMissile
+            // 
+            this.pan_GW_LaunchMissile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pan_GW_LaunchMissile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pan_GW_LaunchMissile.Controls.Add(this.btn_LM_Launch);
+            this.pan_GW_LaunchMissile.Controls.Add(this.lbl_LM_Y);
+            this.pan_GW_LaunchMissile.Controls.Add(this.lbl_LM_X);
+            this.pan_GW_LaunchMissile.Controls.Add(this.cbo_LM_Y);
+            this.pan_GW_LaunchMissile.Controls.Add(this.cbo_LM_X);
+            this.pan_GW_LaunchMissile.Controls.Add(this.lbl_LM_SelectCoordinates);
+            this.pan_GW_LaunchMissile.Controls.Add(this.lbl_LM_LaunchMissile);
+            this.pan_GW_LaunchMissile.Location = new System.Drawing.Point(520, 263);
+            this.pan_GW_LaunchMissile.Name = "pan_GW_LaunchMissile";
+            this.pan_GW_LaunchMissile.Size = new System.Drawing.Size(204, 260);
+            this.pan_GW_LaunchMissile.TabIndex = 103;
+            // 
+            // lbl_LM_Y
+            // 
+            this.lbl_LM_Y.AutoSize = true;
+            this.lbl_LM_Y.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_LM_Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lbl_LM_Y.ForeColor = System.Drawing.Color.Transparent;
+            this.lbl_LM_Y.Location = new System.Drawing.Point(13, 145);
+            this.lbl_LM_Y.Name = "lbl_LM_Y";
+            this.lbl_LM_Y.Size = new System.Drawing.Size(15, 15);
+            this.lbl_LM_Y.TabIndex = 107;
+            this.lbl_LM_Y.Text = "Y";
+            this.lbl_LM_Y.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_LM_X
+            // 
+            this.lbl_LM_X.AutoSize = true;
+            this.lbl_LM_X.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_LM_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lbl_LM_X.ForeColor = System.Drawing.Color.Transparent;
+            this.lbl_LM_X.Location = new System.Drawing.Point(13, 102);
+            this.lbl_LM_X.Name = "lbl_LM_X";
+            this.lbl_LM_X.Size = new System.Drawing.Size(16, 15);
+            this.lbl_LM_X.TabIndex = 106;
+            this.lbl_LM_X.Text = "X";
+            this.lbl_LM_X.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_LM_SelectCoordinates
+            // 
+            this.lbl_LM_SelectCoordinates.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_LM_SelectCoordinates.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lbl_LM_SelectCoordinates.ForeColor = System.Drawing.Color.Transparent;
+            this.lbl_LM_SelectCoordinates.Location = new System.Drawing.Point(0, 49);
+            this.lbl_LM_SelectCoordinates.Name = "lbl_LM_SelectCoordinates";
+            this.lbl_LM_SelectCoordinates.Size = new System.Drawing.Size(200, 23);
+            this.lbl_LM_SelectCoordinates.TabIndex = 1;
+            this.lbl_LM_SelectCoordinates.Text = "Select Coordinates";
+            this.lbl_LM_SelectCoordinates.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_LM_LaunchMissile
+            // 
+            this.lbl_LM_LaunchMissile.BackColor = System.Drawing.Color.Black;
+            this.lbl_LM_LaunchMissile.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Bold);
+            this.lbl_LM_LaunchMissile.ForeColor = System.Drawing.Color.Transparent;
+            this.lbl_LM_LaunchMissile.Location = new System.Drawing.Point(0, 0);
+            this.lbl_LM_LaunchMissile.Name = "lbl_LM_LaunchMissile";
+            this.lbl_LM_LaunchMissile.Size = new System.Drawing.Size(204, 34);
+            this.lbl_LM_LaunchMissile.TabIndex = 0;
+            this.lbl_LM_LaunchMissile.Text = "Launch Missile";
+            this.lbl_LM_LaunchMissile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_GW_2
             // 
@@ -490,7 +610,7 @@ namespace Assignment02
             this.pan_GW_BoatStatuses.Controls.Add(this.lbl_BS_Carrier);
             this.pan_GW_BoatStatuses.Controls.Add(this.lbl_BS_BoatStatuses);
             this.pan_GW_BoatStatuses.Location = new System.Drawing.Point(520, 9);
-            this.pan_GW_BoatStatuses.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pan_GW_BoatStatuses.Margin = new System.Windows.Forms.Padding(2);
             this.pan_GW_BoatStatuses.Name = "pan_GW_BoatStatuses";
             this.pan_GW_BoatStatuses.Size = new System.Drawing.Size(204, 216);
             this.pan_GW_BoatStatuses.TabIndex = 3;
@@ -521,9 +641,11 @@ namespace Assignment02
             this.pgb_BS_Battleship.BackColor = System.Drawing.Color.White;
             this.pgb_BS_Battleship.ForeColor = System.Drawing.Color.Lime;
             this.pgb_BS_Battleship.Location = new System.Drawing.Point(106, 75);
-            this.pgb_BS_Battleship.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pgb_BS_Battleship.Margin = new System.Windows.Forms.Padding(2);
+            this.pgb_BS_Battleship.Maximum = 1;
             this.pgb_BS_Battleship.Name = "pgb_BS_Battleship";
             this.pgb_BS_Battleship.Size = new System.Drawing.Size(86, 14);
+            this.pgb_BS_Battleship.Step = 1;
             this.pgb_BS_Battleship.TabIndex = 10;
             // 
             // pgb_BS_Cruiser
@@ -531,9 +653,11 @@ namespace Assignment02
             this.pgb_BS_Cruiser.BackColor = System.Drawing.Color.White;
             this.pgb_BS_Cruiser.ForeColor = System.Drawing.Color.Lime;
             this.pgb_BS_Cruiser.Location = new System.Drawing.Point(106, 104);
-            this.pgb_BS_Cruiser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pgb_BS_Cruiser.Margin = new System.Windows.Forms.Padding(2);
+            this.pgb_BS_Cruiser.Maximum = 1;
             this.pgb_BS_Cruiser.Name = "pgb_BS_Cruiser";
             this.pgb_BS_Cruiser.Size = new System.Drawing.Size(86, 14);
+            this.pgb_BS_Cruiser.Step = 1;
             this.pgb_BS_Cruiser.TabIndex = 9;
             // 
             // pgb_BS_Destroyer
@@ -541,9 +665,11 @@ namespace Assignment02
             this.pgb_BS_Destroyer.BackColor = System.Drawing.Color.White;
             this.pgb_BS_Destroyer.ForeColor = System.Drawing.Color.Lime;
             this.pgb_BS_Destroyer.Location = new System.Drawing.Point(106, 161);
-            this.pgb_BS_Destroyer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pgb_BS_Destroyer.Margin = new System.Windows.Forms.Padding(2);
+            this.pgb_BS_Destroyer.Maximum = 1;
             this.pgb_BS_Destroyer.Name = "pgb_BS_Destroyer";
             this.pgb_BS_Destroyer.Size = new System.Drawing.Size(86, 14);
+            this.pgb_BS_Destroyer.Step = 1;
             this.pgb_BS_Destroyer.TabIndex = 8;
             // 
             // pgb_BS_Submarine
@@ -551,9 +677,11 @@ namespace Assignment02
             this.pgb_BS_Submarine.BackColor = System.Drawing.Color.White;
             this.pgb_BS_Submarine.ForeColor = System.Drawing.Color.Lime;
             this.pgb_BS_Submarine.Location = new System.Drawing.Point(106, 133);
-            this.pgb_BS_Submarine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pgb_BS_Submarine.Margin = new System.Windows.Forms.Padding(2);
+            this.pgb_BS_Submarine.Maximum = 1;
             this.pgb_BS_Submarine.Name = "pgb_BS_Submarine";
             this.pgb_BS_Submarine.Size = new System.Drawing.Size(86, 14);
+            this.pgb_BS_Submarine.Step = 1;
             this.pgb_BS_Submarine.TabIndex = 7;
             // 
             // pgb_BS_Carrier
@@ -561,9 +689,11 @@ namespace Assignment02
             this.pgb_BS_Carrier.BackColor = System.Drawing.Color.White;
             this.pgb_BS_Carrier.ForeColor = System.Drawing.Color.Lime;
             this.pgb_BS_Carrier.Location = new System.Drawing.Point(106, 47);
-            this.pgb_BS_Carrier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pgb_BS_Carrier.Margin = new System.Windows.Forms.Padding(2);
+            this.pgb_BS_Carrier.Maximum = 1;
             this.pgb_BS_Carrier.Name = "pgb_BS_Carrier";
             this.pgb_BS_Carrier.Size = new System.Drawing.Size(86, 14);
+            this.pgb_BS_Carrier.Step = 1;
             this.pgb_BS_Carrier.TabIndex = 6;
             // 
             // lbl_BS_Destroyer
@@ -644,125 +774,6 @@ namespace Assignment02
             this.lbl_BS_BoatStatuses.Text = "Boat Statuses";
             this.lbl_BS_BoatStatuses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pan_GW_LaunchMissile
-            // 
-            this.pan_GW_LaunchMissile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pan_GW_LaunchMissile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pan_GW_LaunchMissile.Controls.Add(this.btn_LM_Launch);
-            this.pan_GW_LaunchMissile.Controls.Add(this.lbl_LM_Y);
-            this.pan_GW_LaunchMissile.Controls.Add(this.lbl_LM_X);
-            this.pan_GW_LaunchMissile.Controls.Add(this.cbo_LM_Y);
-            this.pan_GW_LaunchMissile.Controls.Add(this.cbo_LM_X);
-            this.pan_GW_LaunchMissile.Controls.Add(this.lbl_LM_SelectCoordinates);
-            this.pan_GW_LaunchMissile.Controls.Add(this.lbl_LM_LaunchMissile);
-            this.pan_GW_LaunchMissile.Location = new System.Drawing.Point(520, 263);
-            this.pan_GW_LaunchMissile.Name = "pan_GW_LaunchMissile";
-            this.pan_GW_LaunchMissile.Size = new System.Drawing.Size(204, 260);
-            this.pan_GW_LaunchMissile.TabIndex = 103;
-            // 
-            // lbl_LM_LaunchMissile
-            // 
-            this.lbl_LM_LaunchMissile.BackColor = System.Drawing.Color.Black;
-            this.lbl_LM_LaunchMissile.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.14286F, System.Drawing.FontStyle.Bold);
-            this.lbl_LM_LaunchMissile.ForeColor = System.Drawing.Color.Transparent;
-            this.lbl_LM_LaunchMissile.Location = new System.Drawing.Point(0, 0);
-            this.lbl_LM_LaunchMissile.Name = "lbl_LM_LaunchMissile";
-            this.lbl_LM_LaunchMissile.Size = new System.Drawing.Size(204, 34);
-            this.lbl_LM_LaunchMissile.TabIndex = 0;
-            this.lbl_LM_LaunchMissile.Text = "Launch Missile";
-            this.lbl_LM_LaunchMissile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_LM_SelectCoordinates
-            // 
-            this.lbl_LM_SelectCoordinates.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_LM_SelectCoordinates.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lbl_LM_SelectCoordinates.ForeColor = System.Drawing.Color.Transparent;
-            this.lbl_LM_SelectCoordinates.Location = new System.Drawing.Point(0, 49);
-            this.lbl_LM_SelectCoordinates.Name = "lbl_LM_SelectCoordinates";
-            this.lbl_LM_SelectCoordinates.Size = new System.Drawing.Size(200, 23);
-            this.lbl_LM_SelectCoordinates.TabIndex = 1;
-            this.lbl_LM_SelectCoordinates.Text = "Select Coordinates";
-            this.lbl_LM_SelectCoordinates.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbo_LM_X
-            // 
-            this.cbo_LM_X.FormattingEnabled = true;
-            this.cbo_LM_X.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"});
-            this.cbo_LM_X.Location = new System.Drawing.Point(67, 101);
-            this.cbo_LM_X.Name = "cbo_LM_X";
-            this.cbo_LM_X.Size = new System.Drawing.Size(121, 21);
-            this.cbo_LM_X.TabIndex = 102;
-            this.toolTip1.SetToolTip(this.cbo_LM_X, "Select X Coordinates");
-            this.cbo_LM_X.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // cbo_LM_Y
-            // 
-            this.cbo_LM_Y.FormattingEnabled = true;
-            this.cbo_LM_Y.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J"});
-            this.cbo_LM_Y.Location = new System.Drawing.Point(67, 144);
-            this.cbo_LM_Y.Name = "cbo_LM_Y";
-            this.cbo_LM_Y.Size = new System.Drawing.Size(121, 21);
-            this.cbo_LM_Y.TabIndex = 103;
-            this.toolTip1.SetToolTip(this.cbo_LM_Y, "Select Y Coordinates");
-            // 
-            // lbl_LM_X
-            // 
-            this.lbl_LM_X.AutoSize = true;
-            this.lbl_LM_X.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_LM_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lbl_LM_X.ForeColor = System.Drawing.Color.Transparent;
-            this.lbl_LM_X.Location = new System.Drawing.Point(13, 102);
-            this.lbl_LM_X.Name = "lbl_LM_X";
-            this.lbl_LM_X.Size = new System.Drawing.Size(16, 15);
-            this.lbl_LM_X.TabIndex = 106;
-            this.lbl_LM_X.Text = "X";
-            this.lbl_LM_X.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_LM_Y
-            // 
-            this.lbl_LM_Y.AutoSize = true;
-            this.lbl_LM_Y.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_LM_Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lbl_LM_Y.ForeColor = System.Drawing.Color.Transparent;
-            this.lbl_LM_Y.Location = new System.Drawing.Point(13, 145);
-            this.lbl_LM_Y.Name = "lbl_LM_Y";
-            this.lbl_LM_Y.Size = new System.Drawing.Size(15, 15);
-            this.lbl_LM_Y.TabIndex = 107;
-            this.lbl_LM_Y.Text = "Y";
-            this.lbl_LM_Y.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btn_LM_Launch
-            // 
-            this.btn_LM_Launch.BackColor = System.Drawing.Color.White;
-            this.btn_LM_Launch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_LM_Launch.Location = new System.Drawing.Point(16, 190);
-            this.btn_LM_Launch.Name = "btn_LM_Launch";
-            this.btn_LM_Launch.Size = new System.Drawing.Size(172, 38);
-            this.btn_LM_Launch.TabIndex = 104;
-            this.btn_LM_Launch.Text = "&Launch";
-            this.toolTip1.SetToolTip(this.btn_LM_Launch, "Click to launch");
-            this.btn_LM_Launch.UseVisualStyleBackColor = false;
-            // 
             // frmBattleShip
             // 
             this.AcceptButton = this.btn_NewGame;
@@ -775,7 +786,7 @@ namespace Assignment02
             this.Controls.Add(this.pan_GameWindow);
             this.Controls.Add(this.pan_BattleShip_Heading);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(750, 750);
             this.MinimumSize = new System.Drawing.Size(750, 750);
             this.Name = "frmBattleShip";
@@ -784,11 +795,11 @@ namespace Assignment02
             this.Load += new System.EventHandler(this.frmBattleShip_Load);
             this.pan_BattleShip_Heading.ResumeLayout(false);
             this.pan_GameWindow.ResumeLayout(false);
+            this.pan_GW_LaunchMissile.ResumeLayout(false);
+            this.pan_GW_LaunchMissile.PerformLayout();
             this.pan_GW_BoatStatuses.ResumeLayout(false);
             this.pan_GW_BoatStatuses.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_BS_TurnTakenCount)).EndInit();
-            this.pan_GW_LaunchMissile.ResumeLayout(false);
-            this.pan_GW_LaunchMissile.PerformLayout();
             this.ResumeLayout(false);
 
         }
