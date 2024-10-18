@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* **************************************
+* COSC2100 Section 4 F2024
+* Dev Mayurkumar Patel
+* Oct 18, 2024
+* Tshirt Class File
+* ***********************************  */
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
