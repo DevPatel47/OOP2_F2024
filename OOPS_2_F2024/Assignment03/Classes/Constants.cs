@@ -15,5 +15,24 @@ namespace Assignment03.Classes
 {
     internal class Constants
     {
+        public enum Alignment
+        {
+            LawfulGood,
+            NeutralGood,
+            ChaoticGood,
+            LawfulNeutral,
+            Neutral,
+            ChaoticNeutral,
+            LawfulEvil,
+            NeutralEvil,
+            ChaoticEvil
+        }
+
+        public enum Armor
+        {
+            MediumArmor,
+            HeavyArmor,
+            Shield
+        }
     }
 }
