@@ -19,7 +19,7 @@ namespace Assignment03.Classes
         #region Class Scope Variable
 
         // Stores Classes
-        public static List<Race> Races = new List<Race>();
+        public static List<Race> races = new List<Race>();
 
         #endregion
 
@@ -57,17 +57,26 @@ namespace Assignment03.Classes
 
         public static void PopulateRaces()
         {
-            Races.Add(new Race("Dwarf",         "Dwarves were raised from the earth in the elder days by a deity of the forge.",                2,  0,  2,  0,  0,  0));
-            Races.Add(new Race("Elf (High)",    "The elves’ curiosity led many of them to explore other planes of existence.",                  0,  2,  0,  1,  0,  0));
-            Races.Add(new Race("Elf (Wood)",    "The elves’ curiosity led many of them to explore other planes of existence.",                  0,  2,  0,  0,  1,  0));
-            Races.Add(new Race("Halfling",      "Halflings possess a brave and adventurous spirit that leads them on journeys of discovery.",   0,  2,  0,  0,  0,  1));
-            Races.Add(new Race("Human",         "Found throughout the multiverse, humans are as varied as they are numerous.",                  1,  1,  1,  1,  1,  1));
-            Races.Add(new Race("Dragonborn",    "The ancestors of dragonborn hatched from the eggs of chromatic and metallic dragons.",         2,  0,  0,  0,  0,  1));
-            Races.Add(new Race("Gnome",         "Gnomes are magical folk created by gods of invention, illusions, and life underground.",       0,  1,  0,  2,  0,  0));
-            Races.Add(new Race("Half-Elf",      "Half-elves combine what some say are the best qualities of their elf and human parents.",      0,  1,  0,  1,  0,  2));
-            Races.Add(new Race("Half-Orc",      "Some half-orcs rise to become proud leaders of orc communities. Some venture into the world to prove their worth. Many of these become adventurers, achieving greatness for their mighty deeds.", 2, 0, 1, 0, 0, 0));
-            Races.Add(new Race("Tiefling",      "Tieflings are either born in the Lower Planes or have fiendish ancestors who originated there.", 0, 0, 0, 1, 0, 2));
-            Races.Add(new Race("Githyanki",     "Githyanki complement their physical prowess with psionic might, instilled in them by mind flayers and cultivated over eons in the Astral Plane.", 1, 2, 0, 0, 0, 0));
+            races.Add(new Race("Dwarf",         "Dwarves were raised from the earth in the elder days by a deity of the forge.",                2,  0,  2,  0,  0,  0));
+            races.Add(new Race("Elf (High)",    "The elves’ curiosity led many of them to explore other planes of existence.",                  0,  2,  0,  1,  0,  0));
+            races.Add(new Race("Elf (Wood)",    "The elves’ curiosity led many of them to explore other planes of existence.",                  0,  2,  0,  0,  1,  0));
+            races.Add(new Race("Halfling",      "Halflings possess a brave and adventurous spirit that leads them on journeys of discovery.",   0,  2,  0,  0,  0,  1));
+            races.Add(new Race("Human",         "Found throughout the multiverse, humans are as varied as they are numerous.",                  1,  1,  1,  1,  1,  1));
+            races.Add(new Race("Dragonborn",    "The ancestors of dragonborn hatched from the eggs of chromatic and metallic dragons.",         2,  0,  0,  0,  0,  1));
+            races.Add(new Race("Gnome",         "Gnomes are magical folk created by gods of invention, illusions, and life underground.",       0,  1,  0,  2,  0,  0));
+            races.Add(new Race("Half-Elf",      "Half-elves combine what some say are the best qualities of their elf and human parents.",      0,  1,  0,  1,  0,  2));
+            races.Add(new Race("Half-Orc",      "Some half-orcs rise to become proud leaders of orc communities. Some venture into the world to prove their worth. Many of these become adventurers, achieving greatness for their mighty deeds.", 2, 0, 1, 0, 0, 0));
+            races.Add(new Race("Tiefling",      "Tieflings are either born in the Lower Planes or have fiendish ancestors who originated there.", 0, 0, 0, 1, 0, 2));
+            races.Add(new Race("Githyanki",     "Githyanki complement their physical prowess with psionic might, instilled in them by mind flayers and cultivated over eons in the Astral Plane.", 1, 2, 0, 0, 0, 0));
+        }
+
+        public static Race FindRaceByName(string name) 
+        {
+            foreach (Race race in races) 
+            { 
+                if (race.Name == name) return race;
+            }
+            return null;
         }
     }
 }

@@ -49,6 +49,11 @@ namespace Assignment03.Classes
 
         #region Constructor
 
+        public Character()
+        {
+            SetDefault();
+        }
+
         public Character(string name, Class characterClass, int level, Race characterRace, Constants.Alignment alignment, string gender, int experiencePoints,
             int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, Constants.Armor armor, int intiative, int speed, int hitPoints) 
         { 
@@ -72,5 +77,25 @@ namespace Assignment03.Classes
         }
         #endregion
 
+        public void SetDefault() 
+        {
+            Name = Constants.DEFAULT_NAME;
+            CharacterClass = Constants.DEFAULT_CLASS;
+            Level = Constants.DEFAULT_LEVEL;
+            CharacterRace = Constants.DEFAULT_RACE;
+            Alignment = Constants.DEFAULT_ALIGNMENT;
+            Gender = Constants.DEFAULT_GENDER;
+            ExperiencePoints = Constants.DEFAULT_EXPERIENCE_POINTS;
+            Strength = Constants.DEFAULT_STRENGTH; 
+            Dexterity = Constants.DEFAULT_DEXTERITY;
+            Constitution = Constants.DEFAULT_CONSTITUTION;
+            Intelligence = Constants.DEFAULT_INTELLIGENCE;
+            Wisdom = Constants.DEFAULT_WISDOM;
+            Charisma = Constants.DEFAULT_CHARISMA;
+            Armor = Constants.DEFAULT_ARMOR;
+            Initiative = Constants.DEFAULT_INITIATIVE;
+            Speed = Constants.DEFAULT_SPEED;
+            HitPoints = Constants.DEFAULT_HIT_POINTS;
+        }
     }
 }

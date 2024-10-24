@@ -23,5 +23,18 @@ namespace Assignment03
         {
             InitializeComponent();
         }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes) Application.Exit();
+        }
+
+        private void btn_Start_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMain frm = new frmMain();
+            frm.Show();
+            
+        }
     }
 }
