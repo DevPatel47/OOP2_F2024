@@ -8,3 +8,4 @@ C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment03\obj\Debug\Assignment03.csproj
 C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment03\obj\Debug\Assignment03.csproj.CoreCompileInputs.cache
 C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment03\obj\Debug\Assignment03.exe
 C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment03\obj\Debug\Assignment03.pdb
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment03\obj\Debug\Assignment03.frmMain.resources

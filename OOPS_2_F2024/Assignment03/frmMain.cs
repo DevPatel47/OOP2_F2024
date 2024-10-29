@@ -5,6 +5,7 @@
  * Purpose  :   Main screen form file
  *===========================================================*/
 
+using Assignment03.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,30 @@ namespace Assignment03
         public frmMain()
         {
             InitializeComponent();
+            SetDefaults();
+        }
+
+        private void SetDefaults()
+        {
+            foreach (Character character in Classes.Character.characters)
+            {
+                cbo_Characters.Items.Add(character.Name);
+            }
+        }
+
+        private void SetCharacterDetails()
+        {
+            tbx_CharacterDetails.Text = Classes.Character.ShowCharacterDetails(cbo_Characters.SelectedItem.ToString());
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes) Application.Exit();
+        }
+
+        private void cbo_Characters_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetCharacterDetails();
         }
     }
 }

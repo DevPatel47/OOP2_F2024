@@ -71,6 +71,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSplashScreen.resx">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +102,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Your paragraph text.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainFrm_Bg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

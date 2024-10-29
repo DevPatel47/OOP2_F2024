@@ -19,7 +19,7 @@ namespace Assignment03.Classes
         #region Class Scope Variable
 
         // Stores Classes
-        public static List<Character> Characters = new List<Character>();
+        public static List<Character> characters = new List<Character>();
 
         #endregion
 
@@ -96,6 +96,56 @@ namespace Assignment03.Classes
             Initiative = Constants.DEFAULT_INITIATIVE;
             Speed = Constants.DEFAULT_SPEED;
             HitPoints = Constants.DEFAULT_HIT_POINTS;
+        }
+
+        public static string ShowCharacterDetails(string name)
+        {
+            Character character = FindCharacterByName(name);
+
+            if (character == null)
+            {
+                return $"Character with name '{name}' not found.";
+            }
+
+            StringBuilder retString = new StringBuilder();
+
+            retString.AppendLine("Character Details:");
+            retString.AppendLine("\n");
+            retString.AppendLine($"Name: {character.Name}");
+            retString.AppendLine($"Class: {character.CharacterClass.Name}");
+            retString.AppendLine($"Level: {character.Level}");
+            retString.AppendLine($"Race: {character.CharacterRace.Name}");
+            retString.AppendLine($"Alignment: {character.Alignment}");
+            retString.AppendLine($"Gender: {character.Gender}");
+            retString.AppendLine($"Experience Points: {character.ExperiencePoints}");
+            retString.AppendLine($"Strength: {character.Strength}");
+            retString.AppendLine($"Dexterity: {character.Dexterity}");
+            retString.AppendLine($"Constitution: {character.Constitution}");
+            retString.AppendLine($"Intelligence: {character.Intelligence}");
+            retString.AppendLine($"Wisdom: {character.Wisdom}");
+            retString.AppendLine($"Charisma: {character.Charisma}");
+            retString.AppendLine($"Armor: {character.Armor}");
+            retString.AppendLine($"Initiative: {character.Initiative}");
+            retString.AppendLine($"Speed: {character.Speed}");
+            retString.AppendLine($"Hit Points: {character.HitPoints}");
+
+            return retString.ToString();
+        }
+
+        public static Character FindCharacterByName(string name)
+        {
+            foreach (Character character in characters)
+            {
+                if (character.Name == name) return character;
+            }
+            return null;
+        }
+
+        public static void PopulateCharacters() 
+        {
+            characters.Add(new Character("Lira Thornbrook", Class.FindClassByName("Barbarian"), 5,
+                Race.FindRaceByName("Half-Elf"), Constants.Alignment.Neutral, "Female", 1250, 8, 
+                16, 10, 14, 12, 16, Constants.Armor.Light, 3, 30, 40));
         }
     }
 }

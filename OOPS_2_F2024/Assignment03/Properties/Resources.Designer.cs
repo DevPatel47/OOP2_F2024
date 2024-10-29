@@ -63,6 +63,16 @@ namespace Assignment03.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MainFrm_Bg {
+            get {
+                object obj = ResourceManager.GetObject("MainFrm_Bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Your_paragraph_text {
             get {
                 object obj = ResourceManager.GetObject("Your paragraph text", resourceCulture);

@@ -5,6 +5,7 @@
  * Purpose  :   Splash screen form file
  *===========================================================*/
 
+using Assignment03.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,9 @@ namespace Assignment03
         public frmSplashScreen()
         {
             InitializeComponent();
+            Classes.Class.PopulateClasses();
+            Classes.Race.PopulateRaces();
+            Classes.Character.PopulateCharacters();
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -33,8 +37,9 @@ namespace Assignment03
         {
             this.Hide();
             frmMain frm = new frmMain();
-            frm.Show();
-            
+            frm.Show();            
         }
+
+        
     }
 }

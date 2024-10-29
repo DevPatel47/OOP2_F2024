@@ -37,9 +37,7 @@
             // 
             // btn_Start
             // 
-            this.btn_Start.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Start.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_Start.BackColor = System.Drawing.Color.Firebrick;
             this.btn_Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Start.Font = new System.Drawing.Font("Stencil", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -78,7 +76,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Assignment03.Properties.Resources.Your_paragraph_text;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btn_Exit;
             this.ClientSize = new System.Drawing.Size(973, 547);
             this.Controls.Add(this.btn_Exit);
