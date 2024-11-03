@@ -23,5 +23,10 @@ namespace Assignment03
         {
             InitializeComponent();
         }
+
+        private void frmCharacterEditor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

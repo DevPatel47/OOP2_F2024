@@ -34,17 +34,6 @@ namespace Assignment03.Classes
         }
         #endregion
 
-        #region Armor Enums
-        public enum Armor
-        {
-            Light,
-            Medium,
-            Heavy,
-            Shield,
-            None
-        }
-        #endregion
-
         #region Character Default Properties
 
         public const string DEFAULT_NAME = "Character Name";
@@ -60,7 +49,7 @@ namespace Assignment03.Classes
         public const int DEFAULT_INTELLIGENCE = 0;
         public const int DEFAULT_WISDOM = 0;   
         public const int DEFAULT_CHARISMA = 0;
-        public const Armor DEFAULT_ARMOR = Armor.None;
+        public const int DEFAULT_ARMOR = 0;
         public const int DEFAULT_INITIATIVE = 0;
         public const int DEFAULT_SPEED = 0;
         public const int DEFAULT_HIT_POINTS = 0;

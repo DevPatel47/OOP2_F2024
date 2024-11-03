@@ -39,7 +39,7 @@ namespace Assignment03.Classes
         public int Intelligence { get; set; }
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
-        public Constants.Armor Armor { get; set; }
+        public int Armor { get; set; }
         public int Initiative { get; set; }
         public int Speed { get; set; }
         public int HitPoints { get; set; }
@@ -55,7 +55,7 @@ namespace Assignment03.Classes
         }
 
         public Character(string name, Class characterClass, int level, Race characterRace, Constants.Alignment alignment, string gender, int experiencePoints,
-            int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, Constants.Armor armor, int intiative, int speed, int hitPoints) 
+            int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int armor, int intiative, int speed, int hitPoints) 
         { 
             Name = name;
             CharacterClass = characterClass;
@@ -145,7 +145,7 @@ namespace Assignment03.Classes
         {
             characters.Add(new Character("Lira Thornbrook", Class.FindClassByName("Barbarian"), 5,
                 Race.FindRaceByName("Half-Elf"), Constants.Alignment.Neutral, "Female", 1250, 8, 
-                16, 10, 14, 12, 16, Constants.Armor.Light, 3, 30, 40));
+                16, 10, 14, 12, 16, 20, 3, 30, 40));
         }
     }
 }
