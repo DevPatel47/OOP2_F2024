@@ -37,7 +37,6 @@ namespace Assignment03
             this.btn_CreateCharacter = new System.Windows.Forms.Button();
             this.btn_EditCharacter = new System.Windows.Forms.Button();
             this.tbx_CharacterDetails = new System.Windows.Forms.TextBox();
-            this.btn_CopyCharacter = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_SelectCharacter
@@ -95,6 +94,7 @@ namespace Assignment03
             this.btn_CreateCharacter.TabIndex = 4;
             this.btn_CreateCharacter.Text = "Create New Character";
             this.btn_CreateCharacter.UseVisualStyleBackColor = false;
+            this.btn_CreateCharacter.Click += new System.EventHandler(this.btn_CreateCharacter_Click);
             // 
             // btn_EditCharacter
             // 
@@ -111,6 +111,7 @@ namespace Assignment03
             this.btn_EditCharacter.TabIndex = 5;
             this.btn_EditCharacter.Text = "Edit Character";
             this.btn_EditCharacter.UseVisualStyleBackColor = false;
+            this.btn_EditCharacter.Click += new System.EventHandler(this.btn_EditCharacter_Click);
             // 
             // tbx_CharacterDetails
             // 
@@ -126,23 +127,6 @@ namespace Assignment03
             this.tbx_CharacterDetails.Size = new System.Drawing.Size(1421, 646);
             this.tbx_CharacterDetails.TabIndex = 6;
             // 
-            // btn_CopyCharacter
-            // 
-            this.btn_CopyCharacter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_CopyCharacter.BackColor = System.Drawing.Color.Firebrick;
-            this.btn_CopyCharacter.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_CopyCharacter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CopyCharacter.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CopyCharacter.ForeColor = System.Drawing.Color.White;
-            this.btn_CopyCharacter.Location = new System.Drawing.Point(733, 737);
-            this.btn_CopyCharacter.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_CopyCharacter.Name = "btn_CopyCharacter";
-            this.btn_CopyCharacter.Size = new System.Drawing.Size(495, 74);
-            this.btn_CopyCharacter.TabIndex = 7;
-            this.btn_CopyCharacter.Text = "Create A Copy of Character";
-            this.btn_CopyCharacter.UseVisualStyleBackColor = false;
-            this.btn_CopyCharacter.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmMain
             // 
             this.AcceptButton = this.btn_CreateCharacter;
@@ -151,7 +135,6 @@ namespace Assignment03
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btn_Exit;
             this.ClientSize = new System.Drawing.Size(1467, 831);
-            this.Controls.Add(this.btn_CopyCharacter);
             this.Controls.Add(this.tbx_CharacterDetails);
             this.Controls.Add(this.btn_EditCharacter);
             this.Controls.Add(this.btn_CreateCharacter);
@@ -176,6 +159,5 @@ namespace Assignment03
         private System.Windows.Forms.Button btn_CreateCharacter;
         private System.Windows.Forms.Button btn_EditCharacter;
         private System.Windows.Forms.TextBox tbx_CharacterDetails;
-        private System.Windows.Forms.Button btn_CopyCharacter;
     }
 }

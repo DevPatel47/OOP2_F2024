@@ -49,14 +49,35 @@ namespace Assignment03
             SetCharacterDetails();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btn_EditCharacter_Click(object sender, EventArgs e)
+        {
+            if (cbo_Characters.SelectedIndex != -1)
+            {
+                Character character = Classes.Character.FindCharacterByName(cbo_Characters.SelectedItem.ToString());
+                if (character != null)
+                {
+                    this.Hide();
+                    frmCharacterEditor frm = new frmCharacterEditor();
+                    frm.SetCharacterDetails(character, "old");
+                    frm.ShowDialog();
+                }
+
+            }
+            
+        }
+
+        private void btn_CreateCharacter_Click(object sender, EventArgs e)
+        {
+            Character character = new Character();
+            this.Hide();
+            frmCharacterEditor frm = new frmCharacterEditor();
+            frm.SetCharacterDetails(character, "new");
+            frm.ShowDialog();
         }
     }
 }

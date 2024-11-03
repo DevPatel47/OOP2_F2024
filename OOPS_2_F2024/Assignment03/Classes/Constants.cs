@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Assignment03.Classes
 {
-    internal class Constants
+    public class Constants
     {
         
         #region Alignment Enums
@@ -43,16 +43,17 @@ namespace Assignment03.Classes
         public const Alignment DEFAULT_ALIGNMENT = Alignment.None;
         public const string DEFAULT_GENDER = "Male";
         public const int DEFAULT_EXPERIENCE_POINTS = 0;
-        public const int DEFAULT_STRENGTH = 0;
-        public const int DEFAULT_DEXTERITY = 0;
-        public const int DEFAULT_CONSTITUTION = 0;
-        public const int DEFAULT_INTELLIGENCE = 0;
-        public const int DEFAULT_WISDOM = 0;   
-        public const int DEFAULT_CHARISMA = 0;
+        public const int DEFAULT_STRENGTH = 8;
+        public const int DEFAULT_DEXTERITY = 8;
+        public const int DEFAULT_CONSTITUTION = 8;
+        public const int DEFAULT_INTELLIGENCE = 8;
+        public const int DEFAULT_WISDOM = 8;   
+        public const int DEFAULT_CHARISMA = 8;
         public const int DEFAULT_ARMOR = 0;
         public const int DEFAULT_INITIATIVE = 0;
         public const int DEFAULT_SPEED = 0;
         public const int DEFAULT_HIT_POINTS = 0;
+        public const int DEFAULT_ATTRIBUTE_POINTS = 27;
 
         #endregion
     }

@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Assignment03.Classes
 {
-    internal class Class
+    public class Class
     {
 
         #region Class Scope Variable

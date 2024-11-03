@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Assignment03.Classes
 {
-    internal class Character
+    public class Character
     {
 
         #region Class Scope Variable
@@ -44,6 +44,8 @@ namespace Assignment03.Classes
         public int Speed { get; set; }
         public int HitPoints { get; set; }
 
+        public int AttributePoints { get; set; }
+
         #endregion
 
 
@@ -55,7 +57,7 @@ namespace Assignment03.Classes
         }
 
         public Character(string name, Class characterClass, int level, Race characterRace, Constants.Alignment alignment, string gender, int experiencePoints,
-            int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int armor, int intiative, int speed, int hitPoints) 
+            int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int armor, int intiative, int speed, int hitPoints, int attributePoints) 
         { 
             Name = name;
             CharacterClass = characterClass;
@@ -74,6 +76,7 @@ namespace Assignment03.Classes
             Initiative = intiative;
             Speed = speed;
             HitPoints = hitPoints;
+            AttributePoints = attributePoints;
         }
         #endregion
 
@@ -96,6 +99,7 @@ namespace Assignment03.Classes
             Initiative = Constants.DEFAULT_INITIATIVE;
             Speed = Constants.DEFAULT_SPEED;
             HitPoints = Constants.DEFAULT_HIT_POINTS;
+            AttributePoints = Constants.DEFAULT_ATTRIBUTE_POINTS;
         }
 
         public static string ShowCharacterDetails(string name)
@@ -145,7 +149,7 @@ namespace Assignment03.Classes
         {
             characters.Add(new Character("Lira Thornbrook", Class.FindClassByName("Barbarian"), 5,
                 Race.FindRaceByName("Half-Elf"), Constants.Alignment.Neutral, "Female", 1250, 8, 
-                16, 10, 14, 12, 16, 20, 3, 30, 40));
+                16, 10, 14, 12, 16, 20, 3, 30, 40, 27));
         }
     }
 }

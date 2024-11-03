@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Assignment03.Classes
 {
-    internal class Tools
+    public class Tools
     {
         static Random random = new Random();
 

@@ -61,7 +61,7 @@
             this.nud_HitPoints = new System.Windows.Forms.NumericUpDown();
             this.cbo_Gender = new System.Windows.Forms.ComboBox();
             this.lbl_Points = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nud_AttributePoints = new System.Windows.Forms.NumericUpDown();
             this.btn_Back = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.gbx_BasicInformation = new System.Windows.Forms.GroupBox();
@@ -71,7 +71,7 @@
             this.nud_Armor = new System.Windows.Forms.NumericUpDown();
             this.gbx_CharacterStats = new System.Windows.Forms.GroupBox();
             this.lbl_XP = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.nud_XP = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Strength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Level)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Dexterity)).BeginInit();
@@ -82,12 +82,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_Initiative)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Speed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_HitPoints)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_AttributePoints)).BeginInit();
             this.gbx_BasicInformation.SuspendLayout();
             this.gbx_Attributes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Armor)).BeginInit();
             this.gbx_CharacterStats.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_XP)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Name
@@ -135,6 +135,19 @@
             // cbo_Class
             // 
             this.cbo_Class.FormattingEnabled = true;
+            this.cbo_Class.Items.AddRange(new object[] {
+            "Barbarian",
+            "Cleric",
+            "Druid",
+            "Bard",
+            "Fighter",
+            "Monk",
+            "Paladin",
+            "Ranger",
+            "Rogue",
+            "Sorcerer",
+            "Warlock",
+            "Wizard"});
             this.cbo_Class.Location = new System.Drawing.Point(233, 100);
             this.cbo_Class.Name = "cbo_Class";
             this.cbo_Class.Size = new System.Drawing.Size(393, 40);
@@ -170,6 +183,18 @@
             // cbo_Race
             // 
             this.cbo_Race.FormattingEnabled = true;
+            this.cbo_Race.Items.AddRange(new object[] {
+            "Dwarf",
+            "Elf (High)",
+            "Elf (Wood)",
+            "Halfling",
+            "Human",
+            "Dragonborn",
+            "Gnome",
+            "Half-Elf",
+            "Half-Orc",
+            "Tiefling",
+            "Githyanki"});
             this.cbo_Race.Location = new System.Drawing.Point(233, 151);
             this.cbo_Race.Name = "cbo_Race";
             this.cbo_Race.Size = new System.Drawing.Size(393, 40);
@@ -188,6 +213,16 @@
             // cbo_Alignment
             // 
             this.cbo_Alignment.FormattingEnabled = true;
+            this.cbo_Alignment.Items.AddRange(new object[] {
+            "LawfulGood",
+            "NeutralGood",
+            "ChaoticGood",
+            "LawfulNeutral",
+            "Neutral",
+            "ChaoticNeutral",
+            "LawfulEvil",
+            "NeutralEvil",
+            "ChaoticEvil"});
             this.cbo_Alignment.Location = new System.Drawing.Point(233, 202);
             this.cbo_Alignment.Name = "cbo_Alignment";
             this.cbo_Alignment.Size = new System.Drawing.Size(393, 40);
@@ -363,6 +398,10 @@
             // cbo_Gender
             // 
             this.cbo_Gender.FormattingEnabled = true;
+            this.cbo_Gender.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Gender-Diverse"});
             this.cbo_Gender.Location = new System.Drawing.Point(233, 256);
             this.cbo_Gender.Name = "cbo_Gender";
             this.cbo_Gender.Size = new System.Drawing.Size(393, 40);
@@ -378,13 +417,13 @@
             this.lbl_Points.TabIndex = 31;
             this.lbl_Points.Text = "Points";
             // 
-            // numericUpDown1
+            // nud_AttributePoints
             // 
-            this.numericUpDown1.Enabled = false;
-            this.numericUpDown1.Location = new System.Drawing.Point(233, 49);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 39);
-            this.numericUpDown1.TabIndex = 32;
+            this.nud_AttributePoints.Enabled = false;
+            this.nud_AttributePoints.Location = new System.Drawing.Point(233, 49);
+            this.nud_AttributePoints.Name = "nud_AttributePoints";
+            this.nud_AttributePoints.Size = new System.Drawing.Size(120, 39);
+            this.nud_AttributePoints.TabIndex = 32;
             // 
             // btn_Back
             // 
@@ -449,7 +488,7 @@
             this.gbx_Attributes.Controls.Add(this.lbl_Wisdom);
             this.gbx_Attributes.Controls.Add(this.nud_Charisma);
             this.gbx_Attributes.Controls.Add(this.lbl_Charisma);
-            this.gbx_Attributes.Controls.Add(this.numericUpDown1);
+            this.gbx_Attributes.Controls.Add(this.nud_AttributePoints);
             this.gbx_Attributes.Controls.Add(this.nud_Wisdom);
             this.gbx_Attributes.Controls.Add(this.lbl_Points);
             this.gbx_Attributes.Controls.Add(this.nud_Intelligence);
@@ -494,7 +533,7 @@
             // 
             this.gbx_CharacterStats.Controls.Add(this.lbl_XP);
             this.gbx_CharacterStats.Controls.Add(this.lbl_Armor);
-            this.gbx_CharacterStats.Controls.Add(this.numericUpDown2);
+            this.gbx_CharacterStats.Controls.Add(this.nud_XP);
             this.gbx_CharacterStats.Controls.Add(this.nud_Armor);
             this.gbx_CharacterStats.Controls.Add(this.lbl_Level);
             this.gbx_CharacterStats.Controls.Add(this.lbl_Speed);
@@ -522,13 +561,18 @@
             this.lbl_XP.TabIndex = 41;
             this.lbl_XP.Text = "XP";
             // 
-            // numericUpDown2
+            // nud_XP
             // 
-            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown2.Location = new System.Drawing.Point(237, 48);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 39);
-            this.numericUpDown2.TabIndex = 42;
+            this.nud_XP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nud_XP.Location = new System.Drawing.Point(237, 48);
+            this.nud_XP.Maximum = new decimal(new int[] {
+            355000,
+            0,
+            0,
+            0});
+            this.nud_XP.Name = "nud_XP";
+            this.nud_XP.Size = new System.Drawing.Size(120, 39);
+            this.nud_XP.TabIndex = 42;
             // 
             // frmCharacterEditor
             // 
@@ -557,7 +601,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_Initiative)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Speed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_HitPoints)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_AttributePoints)).EndInit();
             this.gbx_BasicInformation.ResumeLayout(false);
             this.gbx_BasicInformation.PerformLayout();
             this.gbx_Attributes.ResumeLayout(false);
@@ -565,7 +609,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_Armor)).EndInit();
             this.gbx_CharacterStats.ResumeLayout(false);
             this.gbx_CharacterStats.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_XP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -605,7 +649,7 @@
         private System.Windows.Forms.NumericUpDown nud_HitPoints;
         private System.Windows.Forms.ComboBox cbo_Gender;
         private System.Windows.Forms.Label lbl_Points;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nud_AttributePoints;
         private System.Windows.Forms.Button btn_Back;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.GroupBox gbx_BasicInformation;
@@ -615,6 +659,6 @@
         private System.Windows.Forms.NumericUpDown nud_Armor;
         private System.Windows.Forms.GroupBox gbx_CharacterStats;
         private System.Windows.Forms.Label lbl_XP;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nud_XP;
     }
 }
