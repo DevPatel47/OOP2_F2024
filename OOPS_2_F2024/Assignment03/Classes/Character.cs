@@ -8,8 +8,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace Assignment03.Classes
 {
@@ -26,25 +28,246 @@ namespace Assignment03.Classes
 
         #region Properties
 
-        public string Name { get; set; }
-        public Class CharacterClass { get; set; }
-        public int Level { get; set; }
-        public Race CharacterRace { get; set; }
-        public Constants.Alignment Alignment { get; set; }
-        public string Gender { get; set; }
-        public int ExperiencePoints { get; set; }
-        public int Strength { get; set; }
-        public int Dexterity { get; set; }
-        public int Constitution { get; set; }
-        public int Intelligence { get; set; }
-        public int Wisdom { get; set; }
-        public int Charisma { get; set; }
-        public int Armor { get; set; }
-        public int Initiative { get; set; }
-        public int Speed { get; set; }
-        public int HitPoints { get; set; }
+        private string _name;
+        public string Name 
+        {
+            get 
+            { 
+                return _name;
+            }
+            set 
+            {
+                if (value.Trim().Length >= 2 && value.Trim().Length <= 20) _name = value;
+                else throw new Exception("Invalid Name");
+            } 
+        }
 
-        public int AttributePoints { get; set; }
+        private Class _class;
+        public Class CharacterClass 
+        {
+            get 
+            {
+                return _class;
+            }
+            set 
+            {
+                if (value != null) _class = value;
+                else throw new Exception("Invalid Class");
+            } 
+        
+        }
+
+        private int _level;
+        public int Level 
+        {
+            get 
+            {
+                return _level;
+            }
+            set 
+            { 
+                if (value >= 1 && value <= 20) _level = value;
+                else throw new Exception("Invalid Level");
+            } 
+        }
+
+        private Race _characterRace;
+        public Race CharacterRace 
+        {
+            get
+            {
+                return _characterRace;
+            }
+            set
+            {
+                if (value != null) _characterRace = value;
+                else throw new Exception("Invalid Race");
+            }
+        }
+        public Constants.Alignment Alignment { get; set; }
+
+        private string _gender;
+        public string Gender 
+        { 
+            get
+            { 
+                return _gender;
+            }
+            set 
+            {
+                if (value.Trim().ToLower() == "male" || value.Trim().ToLower() == "female" || value.Trim().ToLower() == "gender-diverse") _gender = value;
+                else throw new Exception("Invalid Gender");
+            } 
+        
+        }
+
+        private int _experiencePoints;
+        public int ExperiencePoints 
+        {
+            get
+            {
+                return _experiencePoints;
+            }
+            set
+            { 
+                if(value >= 0 && value <= 355000) _experiencePoints = value;
+                else throw new Exception("Invalid Experience Points");
+            }
+        }
+
+        private int _strength;
+        public int Strength 
+        {
+            get
+            { 
+                return _strength;
+            }
+            set 
+            {
+                if (value >= 8 && value <= 20) _strength = value;
+                else throw new Exception("Invalid Strength");
+            }
+        }
+
+        private int _dexterity;
+        public int Dexterity
+        {
+            get
+            {
+                return _dexterity;
+            }
+            set
+            {
+                if (value >= 8 && value <= 20) _dexterity = value;
+                else throw new Exception("Invalid Dexterity");
+            }
+        }
+
+        private int _constitution;
+        public int Constitution
+        {
+            get
+            {
+                return _constitution;
+            }
+            set
+            {
+                if (value >= 8 && value <= 20) _constitution = value;
+                else throw new Exception("Invalid Constitution");
+            }
+        }
+
+        private int _intelligence;
+        public int Intelligence
+        {
+            get
+            {
+                return _intelligence;
+            }
+            set
+            {
+                if (value >= 8 && value <= 20) _intelligence = value;
+                else throw new Exception("Invalid Intelligence");
+            }
+        }
+
+        private int _wisdom;
+        public int Wisdom
+        {
+            get
+            {
+                return _wisdom;
+            }
+            set
+            {
+                if (value >= 8 && value <= 20) _wisdom = value;
+                else throw new Exception("Invalid Wisdom");
+            }
+        }
+
+        private int _charisma;
+        public int Charisma
+        {
+            get
+            {
+                return _charisma;
+            }
+            set
+            {
+                if (value >= 8 && value <= 20) _charisma = value;
+                else throw new Exception("Invalid Charisma");
+            }
+        }
+
+        private int _armor;
+        public int Armor
+        {
+            get
+            {
+                return _armor;
+            }
+            set
+            {
+                if (value >= 0) _armor = value;
+                else throw new Exception("Invalid Armor");
+            }
+        }
+
+        private int _initiative;
+        public int Initiative
+        {
+            get
+            {
+                return _initiative;
+            }
+            set
+            {
+                if (value >= 0 && value <= 25) _initiative = value;
+                else throw new Exception("Invalid Initiative");
+            }
+        }
+
+        private int _speed;
+        public int Speed
+        {
+            get
+            {
+                return _speed;
+            }
+            set
+            {
+                if (value >= 0) _initiative = value;
+                else throw new Exception("Invalid Speed");
+            }
+        }
+
+        private int _hitPoints;
+        public int HitPoints
+        {
+            get
+            {
+                return _hitPoints;
+            }
+            set
+            {
+                if (value >= 0) _hitPoints = value;
+                else throw new Exception("Invalid Hitpoints");
+            }
+        }
+
+        private int _attributePoints;
+        public int AttributePoints
+        {
+            get
+            {
+                return _attributePoints;
+            }
+            set
+            {
+                if (value >= 0 && value <= 27) _attributePoints = value;
+                else throw new Exception("Invalid Attribute Points");
+            }
+        }
 
         #endregion
 
@@ -149,7 +372,7 @@ namespace Assignment03.Classes
         {
             characters.Add(new Character("Lira Thornbrook", Class.FindClassByName("Barbarian"), 5,
                 Race.FindRaceByName("Half-Elf"), Constants.Alignment.Neutral, "Female", 1250, 8, 
-                16, 10, 14, 12, 16, 20, 3, 30, 40, 27));
+                16, 10, 14, 12, 16, 20, 3, 25, 40, 27));
         }
     }
 }

@@ -21,26 +21,27 @@ namespace Assignment03.Classes
         #region Alignment Enums
         public enum Alignment
         {
-            LawfulGood,
-            NeutralGood,
-            ChaoticGood,
-            LawfulNeutral,
-            Neutral,
-            ChaoticNeutral,
-            LawfulEvil,
-            NeutralEvil,
-            ChaoticEvil,
-            None
+            LawfulGood = 0,
+            NeutralGood = 1,
+            ChaoticGood = 2,
+            LawfulNeutral = 3,
+            Neutral = 4,
+            ChaoticNeutral = 5,
+            LawfulEvil = 6,
+            NeutralEvil = 7,
+            ChaoticEvil = 8
         }
+
+        
         #endregion
 
         #region Character Default Properties
 
         public const string DEFAULT_NAME = "Character Name";
-        public const Class DEFAULT_CLASS = null;
-        public const int DEFAULT_LEVEL = 0;
-        public const Race DEFAULT_RACE = null;
-        public const Alignment DEFAULT_ALIGNMENT = Alignment.None;
+        public static Class DEFAULT_CLASS = Class.FindClassByName("Barbarian");
+        public const int DEFAULT_LEVEL = 1;
+        public static Race DEFAULT_RACE = Race.FindRaceByName("Human");
+        public const Alignment DEFAULT_ALIGNMENT = Alignment.Neutral;
         public const string DEFAULT_GENDER = "Male";
         public const int DEFAULT_EXPERIENCE_POINTS = 0;
         public const int DEFAULT_STRENGTH = 8;

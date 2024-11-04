@@ -102,5 +102,33 @@ namespace Assignment03
             nud_HitPoints.Value = character.HitPoints;
 
         }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to go back?", "Back Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes) 
+            { 
+            this.Hide();
+            frmMain frm = new frmMain();
+                frm.Show();
+            }
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                Character.characters.Add(new Character(tbx_Name.Text, Class.FindClassByName(cbo_Class.Text), (int)nud_Level.Value, Race.FindRaceByName(cbo_Race.Text), (Constants.Alignment)cbo_Alignment.SelectedIndex,
+                cbo_Gender.Text, (int)nud_XP.Value, (int)nud_Strength.Value, (int)nud_Dexterity.Value, (int)nud_Constitution.Value, (int)nud_Intelligence.Value, (int)nud_Wisdom.Value, (int)nud_Charisma.Value,
+                (int)nud_Armor.Value, (int)nud_Initiative.Value, (int)nud_Speed.Value, (int)nud_HitPoints.Value, (int)nud_AttributePoints.Value));
+                this.Hide();
+                frmMain frm = new frmMain();
+                frm.Show();
+            }
+            catch 
+            {
+                Exception exception = new Exception("Invalid Values entered, Please try again!!");
+                MessageBox.Show(exception.Message, "Error while saving");
+            }
+        }
     }
 }

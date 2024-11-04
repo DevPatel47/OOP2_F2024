@@ -37,6 +37,8 @@ namespace Assignment03
             this.btn_CreateCharacter = new System.Windows.Forms.Button();
             this.btn_EditCharacter = new System.Windows.Forms.Button();
             this.tbx_CharacterDetails = new System.Windows.Forms.TextBox();
+            this.pbx_CharacterImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_CharacterImage)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_SelectCharacter
@@ -124,8 +126,21 @@ namespace Assignment03
             this.tbx_CharacterDetails.Margin = new System.Windows.Forms.Padding(6);
             this.tbx_CharacterDetails.Multiline = true;
             this.tbx_CharacterDetails.Name = "tbx_CharacterDetails";
-            this.tbx_CharacterDetails.Size = new System.Drawing.Size(1421, 646);
+            this.tbx_CharacterDetails.Size = new System.Drawing.Size(952, 646);
             this.tbx_CharacterDetails.TabIndex = 6;
+            // 
+            // pbx_CharacterImage
+            // 
+            this.pbx_CharacterImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbx_CharacterImage.BackgroundImage = global::Assignment03.Properties.Resources.pngegg__1_;
+            this.pbx_CharacterImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbx_CharacterImage.Location = new System.Drawing.Point(983, 78);
+            this.pbx_CharacterImage.Name = "pbx_CharacterImage";
+            this.pbx_CharacterImage.Size = new System.Drawing.Size(464, 646);
+            this.pbx_CharacterImage.TabIndex = 7;
+            this.pbx_CharacterImage.TabStop = false;
             // 
             // frmMain
             // 
@@ -135,6 +150,7 @@ namespace Assignment03
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btn_Exit;
             this.ClientSize = new System.Drawing.Size(1467, 831);
+            this.Controls.Add(this.pbx_CharacterImage);
             this.Controls.Add(this.tbx_CharacterDetails);
             this.Controls.Add(this.btn_EditCharacter);
             this.Controls.Add(this.btn_CreateCharacter);
@@ -147,6 +163,7 @@ namespace Assignment03
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dungeons and Dragons";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_CharacterImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,5 +176,6 @@ namespace Assignment03
         private System.Windows.Forms.Button btn_CreateCharacter;
         private System.Windows.Forms.Button btn_EditCharacter;
         private System.Windows.Forms.TextBox tbx_CharacterDetails;
+        private System.Windows.Forms.PictureBox pbx_CharacterImage;
     }
 }

@@ -32,6 +32,7 @@ namespace Assignment03
             {
                 cbo_Characters.Items.Add(character.Name);
             }
+            tbx_CharacterDetails.Clear();
         }
 
         private void SetCharacterDetails()
@@ -56,28 +57,31 @@ namespace Assignment03
 
         private void btn_EditCharacter_Click(object sender, EventArgs e)
         {
-            if (cbo_Characters.SelectedIndex != -1)
+            if (cbo_Characters.SelectedIndex == -1) MessageBox.Show("Please select the Character that you want to Edit.");
+            else if (cbo_Characters.SelectedIndex != -1)
             {
                 Character character = Classes.Character.FindCharacterByName(cbo_Characters.SelectedItem.ToString());
-                if (character != null)
-                {
-                    this.Hide();
-                    frmCharacterEditor frm = new frmCharacterEditor();
-                    frm.SetCharacterDetails(character, "old");
-                    frm.ShowDialog();
-                }
-
-            }
+                LoadCharacterEditorFrm(character, "old");
+            }   
             
         }
 
         private void btn_CreateCharacter_Click(object sender, EventArgs e)
         {
             Character character = new Character();
-            this.Hide();
-            frmCharacterEditor frm = new frmCharacterEditor();
-            frm.SetCharacterDetails(character, "new");
-            frm.ShowDialog();
+            LoadCharacterEditorFrm(character, "new");
+        }
+
+        private void LoadCharacterEditorFrm(Character character, String characterStatus) 
+        {
+            if (character != null)
+            {
+
+                this.Hide();
+                frmCharacterEditor frm = new frmCharacterEditor();
+                frm.SetCharacterDetails(character, characterStatus);
+                frm.Show();
+            }
         }
     }
 }

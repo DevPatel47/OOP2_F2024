@@ -117,19 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lbl_Info.Text" xml:space="preserve">
-    <value>Info:
-
--    On entering/updating basic informations you will
-      be able to move to the next step of attribute points
-      allocation.
--    You will have 27 additional points to spend.
--    Attribute value for each attribute must start at 8 
-     and have a maximum of 20 including all bonuses.
--    For attribute value from 8 to 13 cost will be one
-     point, from 14 to 18 cost will be two point and 
-     from 19 to 20 cost will be 3 points.</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -37,7 +37,7 @@ namespace Assignment03
         {
             this.Hide();
             frmMain frm = new frmMain();
-            frm.ShowDialog();            
+            frm.Show();            
         }
 
         
