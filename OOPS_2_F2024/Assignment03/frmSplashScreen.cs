@@ -25,7 +25,6 @@ namespace Assignment03
             InitializeComponent();
             Classes.Class.PopulateClasses();
             Classes.Race.PopulateRaces();
-            Classes.Character.PopulateCharacters();
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)

@@ -37,7 +37,7 @@ namespace Assignment03.Classes
 
         #region Character Default Properties
 
-        public const string DEFAULT_NAME = "Character Name";
+        
         public static Class DEFAULT_CLASS = Class.FindClassByName("Barbarian");
         public const int DEFAULT_LEVEL = 1;
         public static Race DEFAULT_RACE = Race.FindRaceByName("Human");
@@ -51,10 +51,11 @@ namespace Assignment03.Classes
         public const int DEFAULT_WISDOM = 8;   
         public const int DEFAULT_CHARISMA = 8;
         public const int DEFAULT_ARMOR = 0;
-        public const int DEFAULT_INITIATIVE = 0;
+        public static int DEFAULT_INITIATIVE = 0;
         public const int DEFAULT_SPEED = 0;
         public const int DEFAULT_HIT_POINTS = 0;
         public const int DEFAULT_ATTRIBUTE_POINTS = 27;
+        
 
         #endregion
     }

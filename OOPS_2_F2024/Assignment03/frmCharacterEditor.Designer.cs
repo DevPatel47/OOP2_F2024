@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCharacterEditor));
             this.lbl_Name = new System.Windows.Forms.Label();
             this.tbx_Name = new System.Windows.Forms.TextBox();
@@ -66,13 +67,15 @@
             this.btn_Save = new System.Windows.Forms.Button();
             this.gbx_BasicInformation = new System.Windows.Forms.GroupBox();
             this.gbx_Attributes = new System.Windows.Forms.GroupBox();
-            this.btn_SaveAttributeChanges = new System.Windows.Forms.Button();
+            this.btn_ClaimBonusPoints = new System.Windows.Forms.Button();
             this.lbl_Armor = new System.Windows.Forms.Label();
             this.nud_Armor = new System.Windows.Forms.NumericUpDown();
             this.gbx_CharacterStats = new System.Windows.Forms.GroupBox();
             this.lbl_XP = new System.Windows.Forms.Label();
             this.nud_XP = new System.Windows.Forms.NumericUpDown();
             this.pbx_CharacterImage = new System.Windows.Forms.PictureBox();
+            this.cbx_isCharacterNew = new System.Windows.Forms.CheckBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nud_Strength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Level)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Dexterity)).BeginInit();
@@ -108,7 +111,8 @@
             this.tbx_Name.Location = new System.Drawing.Point(233, 42);
             this.tbx_Name.Name = "tbx_Name";
             this.tbx_Name.Size = new System.Drawing.Size(393, 34);
-            this.tbx_Name.TabIndex = 1;
+            this.tbx_Name.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.tbx_Name, "Click to enter name");
             // 
             // lbl_EnterCharacterDetails
             // 
@@ -154,7 +158,8 @@
             this.cbo_Class.Location = new System.Drawing.Point(233, 93);
             this.cbo_Class.Name = "cbo_Class";
             this.cbo_Class.Size = new System.Drawing.Size(393, 37);
-            this.cbo_Class.TabIndex = 4;
+            this.cbo_Class.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.cbo_Class, "Click to select class");
             // 
             // lbl_Level
             // 
@@ -183,11 +188,13 @@
             this.nud_Strength.Name = "nud_Strength";
             this.nud_Strength.Size = new System.Drawing.Size(120, 34);
             this.nud_Strength.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.nud_Strength, "Click to edit strength score");
             this.nud_Strength.Value = new decimal(new int[] {
             8,
             0,
             0,
             0});
+            this.nud_Strength.ValueChanged += new System.EventHandler(this.nud_Strength_ValueChanged);
             // 
             // lbl_Race
             // 
@@ -218,7 +225,8 @@
             this.cbo_Race.Location = new System.Drawing.Point(233, 144);
             this.cbo_Race.Name = "cbo_Race";
             this.cbo_Race.Size = new System.Drawing.Size(393, 37);
-            this.cbo_Race.TabIndex = 8;
+            this.cbo_Race.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.cbo_Race, "Click to select race");
             // 
             // lbl_Alignment
             // 
@@ -247,7 +255,8 @@
             this.cbo_Alignment.Location = new System.Drawing.Point(233, 195);
             this.cbo_Alignment.Name = "cbo_Alignment";
             this.cbo_Alignment.Size = new System.Drawing.Size(393, 37);
-            this.cbo_Alignment.TabIndex = 10;
+            this.cbo_Alignment.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.cbo_Alignment, "Click to select Alignment");
             // 
             // lbl_Strength
             // 
@@ -276,7 +285,7 @@
             0});
             this.nud_Level.Name = "nud_Level";
             this.nud_Level.Size = new System.Drawing.Size(120, 34);
-            this.nud_Level.TabIndex = 12;
+            this.nud_Level.TabIndex = 14;
             this.nud_Level.Value = new decimal(new int[] {
             1,
             0,
@@ -309,12 +318,14 @@
             0});
             this.nud_Dexterity.Name = "nud_Dexterity";
             this.nud_Dexterity.Size = new System.Drawing.Size(120, 34);
-            this.nud_Dexterity.TabIndex = 14;
+            this.nud_Dexterity.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.nud_Dexterity, "Click to edit dexterity score");
             this.nud_Dexterity.Value = new decimal(new int[] {
             8,
             0,
             0,
             0});
+            this.nud_Dexterity.ValueChanged += new System.EventHandler(this.nud_Dexterity_ValueChanged);
             // 
             // lbl_Constitution
             // 
@@ -412,12 +423,14 @@
             0});
             this.nud_Constitution.Name = "nud_Constitution";
             this.nud_Constitution.Size = new System.Drawing.Size(120, 34);
-            this.nud_Constitution.TabIndex = 23;
+            this.nud_Constitution.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.nud_Constitution, "Click to edit constitution score");
             this.nud_Constitution.Value = new decimal(new int[] {
             8,
             0,
             0,
             0});
+            this.nud_Constitution.ValueChanged += new System.EventHandler(this.nud_Constitution_ValueChanged);
             // 
             // nud_Intelligence
             // 
@@ -435,12 +448,14 @@
             0});
             this.nud_Intelligence.Name = "nud_Intelligence";
             this.nud_Intelligence.Size = new System.Drawing.Size(120, 34);
-            this.nud_Intelligence.TabIndex = 24;
+            this.nud_Intelligence.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.nud_Intelligence, "Click to edit intelligence score");
             this.nud_Intelligence.Value = new decimal(new int[] {
             8,
             0,
             0,
             0});
+            this.nud_Intelligence.ValueChanged += new System.EventHandler(this.nud_Intelligence_ValueChanged);
             // 
             // nud_Wisdom
             // 
@@ -458,12 +473,14 @@
             0});
             this.nud_Wisdom.Name = "nud_Wisdom";
             this.nud_Wisdom.Size = new System.Drawing.Size(120, 34);
-            this.nud_Wisdom.TabIndex = 25;
+            this.nud_Wisdom.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.nud_Wisdom, "Click to edit wisdom score");
             this.nud_Wisdom.Value = new decimal(new int[] {
             8,
             0,
             0,
             0});
+            this.nud_Wisdom.ValueChanged += new System.EventHandler(this.nud_Wisdom_ValueChanged);
             // 
             // nud_Charisma
             // 
@@ -481,16 +498,17 @@
             0});
             this.nud_Charisma.Name = "nud_Charisma";
             this.nud_Charisma.Size = new System.Drawing.Size(120, 34);
-            this.nud_Charisma.TabIndex = 26;
+            this.nud_Charisma.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.nud_Charisma, "Click to edit charisma score");
             this.nud_Charisma.Value = new decimal(new int[] {
             8,
             0,
             0,
             0});
+            this.nud_Charisma.ValueChanged += new System.EventHandler(this.nud_Charisma_ValueChanged);
             // 
             // nud_Initiative
             // 
-            this.nud_Initiative.Enabled = false;
             this.nud_Initiative.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nud_Initiative.Location = new System.Drawing.Point(237, 198);
             this.nud_Initiative.Maximum = new decimal(new int[] {
@@ -500,7 +518,8 @@
             0});
             this.nud_Initiative.Name = "nud_Initiative";
             this.nud_Initiative.Size = new System.Drawing.Size(120, 34);
-            this.nud_Initiative.TabIndex = 27;
+            this.nud_Initiative.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.nud_Initiative, "Click to edit Initiative points");
             // 
             // nud_Speed
             // 
@@ -513,11 +532,11 @@
             0});
             this.nud_Speed.Name = "nud_Speed";
             this.nud_Speed.Size = new System.Drawing.Size(120, 34);
-            this.nud_Speed.TabIndex = 28;
+            this.nud_Speed.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.nud_Speed, "Click to edit speed points");
             // 
             // nud_HitPoints
             // 
-            this.nud_HitPoints.Enabled = false;
             this.nud_HitPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nud_HitPoints.Location = new System.Drawing.Point(237, 298);
             this.nud_HitPoints.Maximum = new decimal(new int[] {
@@ -527,7 +546,8 @@
             0});
             this.nud_HitPoints.Name = "nud_HitPoints";
             this.nud_HitPoints.Size = new System.Drawing.Size(120, 34);
-            this.nud_HitPoints.TabIndex = 29;
+            this.nud_HitPoints.TabIndex = 18;
+            this.toolTip1.SetToolTip(this.nud_HitPoints, "Click to edit hit points");
             // 
             // cbo_Gender
             // 
@@ -540,7 +560,8 @@
             this.cbo_Gender.Location = new System.Drawing.Point(233, 246);
             this.cbo_Gender.Name = "cbo_Gender";
             this.cbo_Gender.Size = new System.Drawing.Size(393, 37);
-            this.cbo_Gender.TabIndex = 30;
+            this.cbo_Gender.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.cbo_Gender, "Click to select Gender");
             // 
             // lbl_Points
             // 
@@ -564,7 +585,7 @@
             0});
             this.nud_AttributePoints.Name = "nud_AttributePoints";
             this.nud_AttributePoints.Size = new System.Drawing.Size(120, 34);
-            this.nud_AttributePoints.TabIndex = 32;
+            this.nud_AttributePoints.TabIndex = 5;
             // 
             // btn_Back
             // 
@@ -578,8 +599,9 @@
             this.btn_Back.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(211, 74);
-            this.btn_Back.TabIndex = 33;
-            this.btn_Back.Text = "Back";
+            this.btn_Back.TabIndex = 20;
+            this.btn_Back.Text = "&Back";
+            this.toolTip1.SetToolTip(this.btn_Back, "Click to go back");
             this.btn_Back.UseVisualStyleBackColor = false;
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
@@ -588,6 +610,7 @@
             this.btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Save.BackColor = System.Drawing.Color.Firebrick;
             this.btn_Save.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_Save.Enabled = false;
             this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Save.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.ForeColor = System.Drawing.Color.White;
@@ -595,8 +618,9 @@
             this.btn_Save.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(211, 74);
-            this.btn_Save.TabIndex = 34;
-            this.btn_Save.Text = "Save";
+            this.btn_Save.TabIndex = 19;
+            this.btn_Save.Text = "&Save";
+            this.toolTip1.SetToolTip(this.btn_Save, "Click to save character");
             this.btn_Save.UseVisualStyleBackColor = false;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
@@ -622,7 +646,7 @@
             // 
             // gbx_Attributes
             // 
-            this.gbx_Attributes.Controls.Add(this.btn_SaveAttributeChanges);
+            this.gbx_Attributes.Controls.Add(this.btn_ClaimBonusPoints);
             this.gbx_Attributes.Controls.Add(this.nud_Strength);
             this.gbx_Attributes.Controls.Add(this.lbl_Strength);
             this.gbx_Attributes.Controls.Add(this.lbl_Dexterity);
@@ -645,21 +669,23 @@
             this.gbx_Attributes.TabStop = false;
             this.gbx_Attributes.Text = "Attributes";
             // 
-            // btn_SaveAttributeChanges
+            // btn_ClaimBonusPoints
             // 
-            this.btn_SaveAttributeChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SaveAttributeChanges.BackColor = System.Drawing.Color.Firebrick;
-            this.btn_SaveAttributeChanges.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_SaveAttributeChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_SaveAttributeChanges.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SaveAttributeChanges.ForeColor = System.Drawing.Color.White;
-            this.btn_SaveAttributeChanges.Location = new System.Drawing.Point(7, 382);
-            this.btn_SaveAttributeChanges.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_SaveAttributeChanges.Name = "btn_SaveAttributeChanges";
-            this.btn_SaveAttributeChanges.Size = new System.Drawing.Size(364, 58);
-            this.btn_SaveAttributeChanges.TabIndex = 42;
-            this.btn_SaveAttributeChanges.Text = "Save and Claim Bonus Points";
-            this.btn_SaveAttributeChanges.UseVisualStyleBackColor = false;
+            this.btn_ClaimBonusPoints.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_ClaimBonusPoints.BackColor = System.Drawing.Color.Firebrick;
+            this.btn_ClaimBonusPoints.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_ClaimBonusPoints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ClaimBonusPoints.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ClaimBonusPoints.ForeColor = System.Drawing.Color.White;
+            this.btn_ClaimBonusPoints.Location = new System.Drawing.Point(7, 382);
+            this.btn_ClaimBonusPoints.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_ClaimBonusPoints.Name = "btn_ClaimBonusPoints";
+            this.btn_ClaimBonusPoints.Size = new System.Drawing.Size(364, 58);
+            this.btn_ClaimBonusPoints.TabIndex = 12;
+            this.btn_ClaimBonusPoints.Text = "Claim Bonus Points";
+            this.toolTip1.SetToolTip(this.btn_ClaimBonusPoints, "Click to claim all bonus points");
+            this.btn_ClaimBonusPoints.UseVisualStyleBackColor = false;
+            this.btn_ClaimBonusPoints.Click += new System.EventHandler(this.btn_ClaimBonusPoints_Click);
             // 
             // lbl_Armor
             // 
@@ -682,7 +708,8 @@
             0});
             this.nud_Armor.Name = "nud_Armor";
             this.nud_Armor.Size = new System.Drawing.Size(120, 34);
-            this.nud_Armor.TabIndex = 39;
+            this.nud_Armor.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.nud_Armor, "Click to edit Armor Points");
             // 
             // gbx_CharacterStats
             // 
@@ -727,7 +754,9 @@
             0});
             this.nud_XP.Name = "nud_XP";
             this.nud_XP.Size = new System.Drawing.Size(120, 34);
-            this.nud_XP.TabIndex = 42;
+            this.nud_XP.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.nud_XP, "Click to edit Experience Points");
+            this.nud_XP.ValueChanged += new System.EventHandler(this.nud_XP_ValueChanged);
             // 
             // pbx_CharacterImage
             // 
@@ -742,11 +771,27 @@
             this.pbx_CharacterImage.TabIndex = 41;
             this.pbx_CharacterImage.TabStop = false;
             // 
+            // cbx_isCharacterNew
+            // 
+            this.cbx_isCharacterNew.AutoSize = true;
+            this.cbx_isCharacterNew.Checked = true;
+            this.cbx_isCharacterNew.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_isCharacterNew.Location = new System.Drawing.Point(832, 744);
+            this.cbx_isCharacterNew.Name = "cbx_isCharacterNew";
+            this.cbx_isCharacterNew.Size = new System.Drawing.Size(183, 29);
+            this.cbx_isCharacterNew.TabIndex = 42;
+            this.cbx_isCharacterNew.Text = "Is character New";
+            this.cbx_isCharacterNew.UseVisualStyleBackColor = true;
+            this.cbx_isCharacterNew.Visible = false;
+            // 
             // frmCharacterEditor
             // 
+            this.AcceptButton = this.btn_Save;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btn_Back;
             this.ClientSize = new System.Drawing.Size(1467, 831);
+            this.Controls.Add(this.cbx_isCharacterNew);
             this.Controls.Add(this.pbx_CharacterImage);
             this.Controls.Add(this.gbx_CharacterStats);
             this.Controls.Add(this.gbx_Attributes);
@@ -780,6 +825,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_XP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_CharacterImage)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -828,6 +874,8 @@
         private System.Windows.Forms.Label lbl_XP;
         private System.Windows.Forms.NumericUpDown nud_XP;
         private System.Windows.Forms.PictureBox pbx_CharacterImage;
-        private System.Windows.Forms.Button btn_SaveAttributeChanges;
+        private System.Windows.Forms.Button btn_ClaimBonusPoints;
+        private System.Windows.Forms.CheckBox cbx_isCharacterNew;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

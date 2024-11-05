@@ -30,6 +30,7 @@ namespace Assignment03
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.lbl_SelectCharacter = new System.Windows.Forms.Label();
             this.cbo_Characters = new System.Windows.Forms.ComboBox();
@@ -38,6 +39,7 @@ namespace Assignment03
             this.btn_EditCharacter = new System.Windows.Forms.Button();
             this.tbx_CharacterDetails = new System.Windows.Forms.TextBox();
             this.pbx_CharacterImage = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_CharacterImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +63,8 @@ namespace Assignment03
             this.cbo_Characters.Margin = new System.Windows.Forms.Padding(6);
             this.cbo_Characters.Name = "cbo_Characters";
             this.cbo_Characters.Size = new System.Drawing.Size(301, 32);
-            this.cbo_Characters.TabIndex = 2;
+            this.cbo_Characters.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.cbo_Characters, "Click to select character");
             this.cbo_Characters.SelectedIndexChanged += new System.EventHandler(this.cbo_Characters_SelectedIndexChanged);
             // 
             // btn_Exit
@@ -78,6 +81,7 @@ namespace Assignment03
             this.btn_Exit.Size = new System.Drawing.Size(211, 74);
             this.btn_Exit.TabIndex = 3;
             this.btn_Exit.Text = "E&xit";
+            this.toolTip1.SetToolTip(this.btn_Exit, "Click to Exit");
             this.btn_Exit.UseVisualStyleBackColor = false;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
@@ -93,8 +97,9 @@ namespace Assignment03
             this.btn_CreateCharacter.Margin = new System.Windows.Forms.Padding(4);
             this.btn_CreateCharacter.Name = "btn_CreateCharacter";
             this.btn_CreateCharacter.Size = new System.Drawing.Size(402, 74);
-            this.btn_CreateCharacter.TabIndex = 4;
-            this.btn_CreateCharacter.Text = "Create New Character";
+            this.btn_CreateCharacter.TabIndex = 2;
+            this.btn_CreateCharacter.Text = "Create &New Character";
+            this.toolTip1.SetToolTip(this.btn_CreateCharacter, "Click to create new character");
             this.btn_CreateCharacter.UseVisualStyleBackColor = false;
             this.btn_CreateCharacter.Click += new System.EventHandler(this.btn_CreateCharacter_Click);
             // 
@@ -110,16 +115,16 @@ namespace Assignment03
             this.btn_EditCharacter.Margin = new System.Windows.Forms.Padding(4);
             this.btn_EditCharacter.Name = "btn_EditCharacter";
             this.btn_EditCharacter.Size = new System.Drawing.Size(293, 74);
-            this.btn_EditCharacter.TabIndex = 5;
-            this.btn_EditCharacter.Text = "Edit Character";
+            this.btn_EditCharacter.TabIndex = 1;
+            this.btn_EditCharacter.Text = "&Edit Character";
+            this.toolTip1.SetToolTip(this.btn_EditCharacter, "Click to edit character");
             this.btn_EditCharacter.UseVisualStyleBackColor = false;
             this.btn_EditCharacter.Click += new System.EventHandler(this.btn_EditCharacter_Click);
             // 
             // tbx_CharacterDetails
             // 
-            this.tbx_CharacterDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbx_CharacterDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tbx_CharacterDetails.Enabled = false;
             this.tbx_CharacterDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbx_CharacterDetails.Location = new System.Drawing.Point(22, 78);
@@ -159,6 +164,7 @@ namespace Assignment03
             this.Controls.Add(this.lbl_SelectCharacter);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MinimumSize = new System.Drawing.Size(1491, 895);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dungeons and Dragons";
@@ -177,5 +183,6 @@ namespace Assignment03
         private System.Windows.Forms.Button btn_EditCharacter;
         private System.Windows.Forms.TextBox tbx_CharacterDetails;
         private System.Windows.Forms.PictureBox pbx_CharacterImage;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

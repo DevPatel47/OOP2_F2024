@@ -11,6 +11,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Schema;
 
 namespace Assignment03.Classes
@@ -37,7 +38,15 @@ namespace Assignment03.Classes
             }
             set 
             {
-                if (value.Trim().Length >= 2 && value.Trim().Length <= 20) _name = value;
+                if (value.Trim().Length >= 2 && value.Trim().Length <= 20) 
+                {   
+                    Boolean isUnique = true;
+                    foreach (Character character in characters) 
+                    { 
+                        if (value.Trim() == character.Name) isUnique = false;
+                    }
+                    if(isUnique) _name = value;                    
+                }
                 else throw new Exception("Invalid Name");
             } 
         }
@@ -269,6 +278,7 @@ namespace Assignment03.Classes
             }
         }
 
+
         #endregion
 
 
@@ -280,8 +290,8 @@ namespace Assignment03.Classes
         }
 
         public Character(string name, Class characterClass, int level, Race characterRace, Constants.Alignment alignment, string gender, int experiencePoints,
-            int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int armor, int intiative, int speed, int hitPoints, int attributePoints) 
-        { 
+            int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int armor, int intiative, int speed, int hitPoints, int attributePoints)
+        {
             Name = name;
             CharacterClass = characterClass;
             Level = level;
@@ -300,12 +310,13 @@ namespace Assignment03.Classes
             Speed = speed;
             HitPoints = hitPoints;
             AttributePoints = attributePoints;
+            
         }
         #endregion
 
         public void SetDefault() 
         {
-            Name = Constants.DEFAULT_NAME;
+            
             CharacterClass = Constants.DEFAULT_CLASS;
             Level = Constants.DEFAULT_LEVEL;
             CharacterRace = Constants.DEFAULT_RACE;
@@ -323,6 +334,7 @@ namespace Assignment03.Classes
             Speed = Constants.DEFAULT_SPEED;
             HitPoints = Constants.DEFAULT_HIT_POINTS;
             AttributePoints = Constants.DEFAULT_ATTRIBUTE_POINTS;
+            
         }
 
         public static string ShowCharacterDetails(string name)
@@ -368,11 +380,28 @@ namespace Assignment03.Classes
             return null;
         }
 
-        public static void PopulateCharacters() 
+        public static void SetLevelUsingXP(NumericUpDown experiencePoint, NumericUpDown level) 
         {
-            characters.Add(new Character("Lira Thornbrook", Class.FindClassByName("Barbarian"), 5,
-                Race.FindRaceByName("Half-Elf"), Constants.Alignment.Neutral, "Female", 1250, 8, 
-                16, 10, 14, 12, 16, 20, 3, 25, 40, 27));
+            if (experiencePoint.Value < 300) level.Value = 1;
+            else if (experiencePoint.Value >= 300 && experiencePoint.Value < 900) level.Value = 2;
+            else if (experiencePoint.Value >= 900 && experiencePoint.Value < 2700) level.Value = 3;
+            else if (experiencePoint.Value >= 2700 && experiencePoint.Value < 6500) level.Value = 4;
+            else if (experiencePoint.Value >= 6500 && experiencePoint.Value < 14000) level.Value = 5;
+            else if (experiencePoint.Value >= 14000 && experiencePoint.Value < 23000) level.Value = 6;
+            else if (experiencePoint.Value >= 23000 && experiencePoint.Value < 34000) level.Value = 7;
+            else if (experiencePoint.Value >= 34000 && experiencePoint.Value < 48000) level.Value = 8;
+            else if (experiencePoint.Value >= 48000 && experiencePoint.Value < 64000) level.Value = 9;
+            else if (experiencePoint.Value >= 64000 && experiencePoint.Value < 85000) level.Value = 10;
+            else if (experiencePoint.Value >= 85000 && experiencePoint.Value < 100000) level.Value = 11;
+            else if (experiencePoint.Value >= 100000 && experiencePoint.Value < 120000) level.Value = 12;
+            else if (experiencePoint.Value >= 120000 && experiencePoint.Value < 140000) level.Value = 13;
+            else if (experiencePoint.Value >= 140000 && experiencePoint.Value < 165000) level.Value = 14;
+            else if (experiencePoint.Value >= 165000 && experiencePoint.Value < 195000) level.Value = 15;
+            else if (experiencePoint.Value >= 195000 && experiencePoint.Value < 225000) level.Value = 16;
+            else if (experiencePoint.Value >= 225000 && experiencePoint.Value < 265000) level.Value = 17;
+            else if (experiencePoint.Value >= 265000 && experiencePoint.Value < 305000) level.Value = 18;
+            else if (experiencePoint.Value >= 305000 && experiencePoint.Value < 355000) level.Value = 19;
+            else if (experiencePoint.Value == 355000) level.Value = 20;
         }
     }
 }
