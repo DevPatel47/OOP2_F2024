@@ -57,7 +57,7 @@ namespace Assignment03
 
         private void btn_EditCharacter_Click(object sender, EventArgs e)
         {
-            if (cbo_Characters.SelectedIndex == -1) MessageBox.Show("Please select the Character that you want to Edit.");
+            if (cbo_Characters.SelectedIndex == -1) MessageBox.Show("Please select the Character that you want to edit.", "Select Character Notice");
             else if (cbo_Characters.SelectedIndex != -1)
             {
                 Character character = Classes.Character.FindCharacterByName(cbo_Characters.SelectedItem.ToString());

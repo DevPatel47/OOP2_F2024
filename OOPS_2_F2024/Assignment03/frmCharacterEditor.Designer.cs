@@ -76,6 +76,7 @@
             this.pbx_CharacterImage = new System.Windows.Forms.PictureBox();
             this.cbx_isCharacterNew = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_Info = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Strength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Level)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Dexterity)).BeginInit();
@@ -174,7 +175,7 @@
             // nud_Strength
             // 
             this.nud_Strength.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_Strength.Location = new System.Drawing.Point(233, 84);
+            this.nud_Strength.Location = new System.Drawing.Point(247, 84);
             this.nud_Strength.Maximum = new decimal(new int[] {
             20,
             0,
@@ -305,7 +306,7 @@
             // nud_Dexterity
             // 
             this.nud_Dexterity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_Dexterity.Location = new System.Drawing.Point(233, 134);
+            this.nud_Dexterity.Location = new System.Drawing.Point(247, 134);
             this.nud_Dexterity.Maximum = new decimal(new int[] {
             20,
             0,
@@ -410,7 +411,7 @@
             // nud_Constitution
             // 
             this.nud_Constitution.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_Constitution.Location = new System.Drawing.Point(233, 184);
+            this.nud_Constitution.Location = new System.Drawing.Point(247, 184);
             this.nud_Constitution.Maximum = new decimal(new int[] {
             20,
             0,
@@ -435,7 +436,7 @@
             // nud_Intelligence
             // 
             this.nud_Intelligence.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_Intelligence.Location = new System.Drawing.Point(233, 234);
+            this.nud_Intelligence.Location = new System.Drawing.Point(247, 234);
             this.nud_Intelligence.Maximum = new decimal(new int[] {
             20,
             0,
@@ -460,7 +461,7 @@
             // nud_Wisdom
             // 
             this.nud_Wisdom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_Wisdom.Location = new System.Drawing.Point(233, 284);
+            this.nud_Wisdom.Location = new System.Drawing.Point(247, 284);
             this.nud_Wisdom.Maximum = new decimal(new int[] {
             20,
             0,
@@ -485,7 +486,7 @@
             // nud_Charisma
             // 
             this.nud_Charisma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_Charisma.Location = new System.Drawing.Point(233, 334);
+            this.nud_Charisma.Location = new System.Drawing.Point(247, 334);
             this.nud_Charisma.Maximum = new decimal(new int[] {
             20,
             0,
@@ -577,7 +578,7 @@
             // 
             this.nud_AttributePoints.Enabled = false;
             this.nud_AttributePoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_AttributePoints.Location = new System.Drawing.Point(233, 37);
+            this.nud_AttributePoints.Location = new System.Drawing.Point(247, 37);
             this.nud_AttributePoints.Maximum = new decimal(new int[] {
             27,
             0,
@@ -784,6 +785,24 @@
             this.cbx_isCharacterNew.UseVisualStyleBackColor = true;
             this.cbx_isCharacterNew.Visible = false;
             // 
+            // btn_Info
+            // 
+            this.btn_Info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Info.BackColor = System.Drawing.Color.White;
+            this.btn_Info.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Info.Font = new System.Drawing.Font("Vani", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Info.ForeColor = System.Drawing.Color.Firebrick;
+            this.btn_Info.Location = new System.Drawing.Point(1409, 9);
+            this.btn_Info.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Info.Name = "btn_Info";
+            this.btn_Info.Size = new System.Drawing.Size(50, 50);
+            this.btn_Info.TabIndex = 20;
+            this.btn_Info.Text = "i";
+            this.toolTip1.SetToolTip(this.btn_Info, "Click to check input requirenments");
+            this.btn_Info.UseVisualStyleBackColor = false;
+            this.btn_Info.Click += new System.EventHandler(this.btn_Info_Click);
+            // 
             // frmCharacterEditor
             // 
             this.AcceptButton = this.btn_Save;
@@ -791,6 +810,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_Back;
             this.ClientSize = new System.Drawing.Size(1467, 831);
+            this.Controls.Add(this.btn_Info);
             this.Controls.Add(this.cbx_isCharacterNew);
             this.Controls.Add(this.pbx_CharacterImage);
             this.Controls.Add(this.gbx_CharacterStats);
@@ -877,5 +897,6 @@
         private System.Windows.Forms.Button btn_ClaimBonusPoints;
         private System.Windows.Forms.CheckBox cbx_isCharacterNew;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btn_Info;
     }
 }

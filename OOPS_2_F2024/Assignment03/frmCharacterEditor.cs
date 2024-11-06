@@ -23,6 +23,14 @@ namespace Assignment03
     public partial class frmCharacterEditor : Form
     {
         Character character;
+        private int attributePoints;
+        private int dexterityScore;
+        private int strengthScore;
+        private int constitutionScore;
+        private int intelligenceScore;
+        private int wisdomScore;
+        private int charismaScore;
+
         public frmCharacterEditor()
         {
             InitializeComponent();
@@ -36,6 +44,14 @@ namespace Assignment03
         public void SetCharacterDetails(Classes.Character tempCharacter, String characterStatus)
         {
             character = tempCharacter;
+            attributePoints = character.AttributePoints;
+            dexterityScore = character.Dexterity;
+            strengthScore = character.Strength;
+            constitutionScore = character.Constitution;
+            intelligenceScore = character.Intelligence;
+            wisdomScore = character.Wisdom;
+            charismaScore = character.Charisma;
+
             if (characterStatus == "old")
             {
                 cbo_Class.Enabled = false;
@@ -127,8 +143,8 @@ namespace Assignment03
             }
             catch
             {
-                Exception exception = new Exception("Invalid Values entered, Please try again!!");
-                MessageBox.Show(exception.Message, "Error while saving");
+                Exception exception = new Exception("Please check little info button on top-right corner and try again!!");
+                MessageBox.Show(exception.Message, "Invalid Values");
             }            
         }
 
@@ -152,32 +168,61 @@ namespace Assignment03
 
         private void nud_Strength_ValueChanged(object sender, EventArgs e)
         {
-            
+            if (IsChangeValid()) { strengthScore = (int)nud_Strength.Value; attributePoints = (int)nud_AttributePoints.Value; }
+            else { nud_Strength.Value = strengthScore; nud_AttributePoints.Value = attributePoints; MessageBox.Show("You can't spent more than 27 Attribute Points", "Insufficient Attribute Points"); }
         }
 
         private void nud_Dexterity_ValueChanged(object sender, EventArgs e)
         {
-            
+            if (IsChangeValid()) { dexterityScore = (int)nud_Dexterity.Value; attributePoints = (int)nud_AttributePoints.Value; }
+            else { nud_Dexterity.Value = dexterityScore; nud_AttributePoints.Value = attributePoints; MessageBox.Show("You can't spent more than 27 Attribute Points", "Insufficient Attribute Points"); }
         }
 
         private void nud_Constitution_ValueChanged(object sender, EventArgs e)
         {
-            
+            if (IsChangeValid()) { constitutionScore = (int)nud_Constitution.Value; attributePoints = (int)nud_AttributePoints.Value; }
+            else { nud_Constitution.Value = constitutionScore; nud_AttributePoints.Value = attributePoints; MessageBox.Show("You can't spent more than 27 Attribute Points", "Insufficient Attribute Points"); }
         }
 
         private void nud_Intelligence_ValueChanged(object sender, EventArgs e)
         {
-            
+            if (IsChangeValid()) { intelligenceScore = (int)nud_Intelligence.Value; attributePoints = (int)nud_AttributePoints.Value; }
+            else { nud_Intelligence.Value = intelligenceScore; nud_AttributePoints.Value = attributePoints; MessageBox.Show("You can't spent more than 27 Attribute Points", "Insufficient Attribute Points"); }
         }
 
         private void nud_Wisdom_ValueChanged(object sender, EventArgs e)
         {
-            
+            if (IsChangeValid()) { wisdomScore = (int)nud_Wisdom.Value; attributePoints = (int)nud_AttributePoints.Value; }
+            else { nud_Wisdom.Value = wisdomScore; nud_AttributePoints.Value = attributePoints; MessageBox.Show("You can't spent more than 27 Attribute Points", "Insufficient Attribute Points"); }
         }
 
         private void nud_Charisma_ValueChanged(object sender, EventArgs e)
         {
-            
+            if (IsChangeValid()) { charismaScore = (int)nud_Charisma.Value; attributePoints = (int)nud_AttributePoints.Value; }
+            else { nud_Charisma.Value = charismaScore; nud_AttributePoints.Value = attributePoints; MessageBox.Show("You can't spent more than 27 Attribute Points", "Insufficient Attribute Points"); }
+        }
+
+        private Boolean IsChangeValid() 
+        {
+            Boolean isChangeValid = true;
+            int totalAttributeSpent = CalculateAttributePointSpent(nud_Strength) + CalculateAttributePointSpent(nud_Dexterity) + CalculateAttributePointSpent(nud_Constitution) +
+                CalculateAttributePointSpent(nud_Intelligence) + CalculateAttributePointSpent(nud_Wisdom) + CalculateAttributePointSpent(nud_Charisma);
+            if (totalAttributeSpent <= 27) { nud_AttributePoints.Value = 27 - totalAttributeSpent; isChangeValid = true; }
+            else isChangeValid = false;
+
+            return isChangeValid;
+        }
+
+        private int CalculateAttributePointSpent(NumericUpDown nud) 
+        {
+            int attributePointSpent = 0;
+            for (int i = 9; i <= nud.Value; i++)
+            {
+                if (i >= 8 && i <= 13) attributePointSpent += 1;
+                if (i >= 14 && i <= 18) attributePointSpent += 2;
+                if (i == 19 || i == 20) attributePointSpent += 3;
+            }
+            return attributePointSpent;
         }
 
         private void nud_XP_ValueChanged(object sender, EventArgs e)
@@ -226,6 +271,16 @@ namespace Assignment03
                 nud_Wisdom.Value = character.Wisdom;
                 nud_Charisma.Value = character.Charisma;                
             }            
-        }        
+        }
+
+        private void btn_Info_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Name : Minimum 2 characters and maximum 20 characters.\n\n" +
+                "Class, Race, Alignment and Gender must be selected.\n\n" +
+                "Strength, Dexterity, Constitution, Intelligence, Wisdom and Charisma must be between 8 and 20 after all bonuses.\n\n" +
+                "Experience Points must be between 0 and 355000.\n\n" +
+                "Armor, Speed and Hit Points must be between 0 and 255.\n\n" +
+                "Initiative must be between 0 and 25.", "Input Requirenments");
+        }
     }
 }
