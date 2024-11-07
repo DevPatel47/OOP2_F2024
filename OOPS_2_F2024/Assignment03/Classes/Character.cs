@@ -16,19 +16,24 @@ using System.Xml.Schema;
 
 namespace Assignment03.Classes
 {
+    /// <summary>
+    /// Character Class
+    /// </summary>
     public class Character
     {
 
         #region Class Scope Variable
 
-        // Stores Classes
+        // Stores Characters
         public static List<Character> characters = new List<Character>();
 
         #endregion
 
-
         #region Properties
 
+        /// <summary>
+        /// Name property of Character class including its getter and setter 
+        /// </summary>
         private string _name;
         public string Name 
         {
@@ -50,7 +55,9 @@ namespace Assignment03.Classes
                 else throw new Exception("Invalid Name");
             } 
         }
-
+        /// <summary>
+        /// Class property of Character class including its getter and setter 
+        /// </summary>
         private Class _class;
         public Class CharacterClass 
         {
@@ -65,7 +72,9 @@ namespace Assignment03.Classes
             } 
         
         }
-
+        /// <summary>
+        /// Level property of Character class including its getter and setter 
+        /// </summary>
         private int _level;
         public int Level 
         {
@@ -79,7 +88,9 @@ namespace Assignment03.Classes
                 else throw new Exception("Invalid Level");
             } 
         }
-
+        /// <summary>
+        /// Race property of Character class including its getter and setter 
+        /// </summary>
         private Race _characterRace;
         public Race CharacterRace 
         {
@@ -93,8 +104,13 @@ namespace Assignment03.Classes
                 else throw new Exception("Invalid Race");
             }
         }
+        /// <summary>
+        /// Alignment property of Character class including its getter and setter 
+        /// </summary>
         public Constants.Alignment Alignment { get; set; }
-
+        /// <summary>
+        /// Gender property of Character class including its getter and setter 
+        /// </summary>
         private string _gender;
         public string Gender 
         { 
@@ -109,7 +125,9 @@ namespace Assignment03.Classes
             } 
         
         }
-
+        /// <summary>
+        /// Experience Point property of Character class including its getter and setter 
+        /// </summary>
         private int _experiencePoints;
         public int ExperiencePoints 
         {
@@ -123,7 +141,9 @@ namespace Assignment03.Classes
                 else throw new Exception("Invalid Experience Points");
             }
         }
-
+        /// <summary>
+        /// Strength property of Character class including its getter and setter 
+        /// </summary>
         private int _strength;
         public int Strength 
         {
@@ -137,7 +157,9 @@ namespace Assignment03.Classes
                 else throw new Exception("Invalid Strength");
             }
         }
-
+        /// <summary>
+        /// Dexterity property of Character class including its getter and setter 
+        /// </summary>
         private int _dexterity;
         public int Dexterity
         {
@@ -151,7 +173,9 @@ namespace Assignment03.Classes
                 else throw new Exception("Invalid Dexterity");
             }
         }
-
+        /// <summary>
+        /// Constitution property of Character class including its getter and setter 
+        /// </summary>
         private int _constitution;
         public int Constitution
         {
@@ -165,7 +189,9 @@ namespace Assignment03.Classes
                 else throw new Exception("Invalid Constitution");
             }
         }
-
+        /// <summary>
+        /// Intelligence property of Character class including its getter and setter 
+        /// </summary>
         private int _intelligence;
         public int Intelligence
         {
@@ -179,7 +205,9 @@ namespace Assignment03.Classes
                 else throw new Exception("Invalid Intelligence");
             }
         }
-
+        /// <summary>
+        /// Wisdom property of Character class including its getter and setter 
+        /// </summary>
         private int _wisdom;
         public int Wisdom
         {
@@ -193,7 +221,9 @@ namespace Assignment03.Classes
                 else throw new Exception("Invalid Wisdom");
             }
         }
-
+        /// <summary>
+        /// Charisma property of Character class including its getter and setter 
+        /// </summary>
         private int _charisma;
         public int Charisma
         {
@@ -207,7 +237,9 @@ namespace Assignment03.Classes
                 else throw new Exception("Invalid Charisma");
             }
         }
-
+        /// <summary>
+        /// Armor property of Character class including its getter and setter 
+        /// </summary>
         private int _armor;
         public int Armor
         {
@@ -221,7 +253,9 @@ namespace Assignment03.Classes
                 else throw new Exception("Invalid Armor");
             }
         }
-
+        /// <summary>
+        /// Initiative property of Character class including its getter and setter 
+        /// </summary>
         private int _initiative;
         public int Initiative
         {
@@ -235,7 +269,9 @@ namespace Assignment03.Classes
                 else throw new Exception("Invalid Initiative");
             }
         }
-
+        /// <summary>
+        /// Speed property of Character class including its getter and setter 
+        /// </summary>
         private int _speed;
         public int Speed
         {
@@ -249,7 +285,9 @@ namespace Assignment03.Classes
                 else throw new Exception("Invalid Speed");
             }
         }
-
+        /// <summary>
+        /// Hit Point property of Character class including its getter and setter 
+        /// </summary>
         private int _hitPoints;
         public int HitPoints
         {
@@ -263,7 +301,9 @@ namespace Assignment03.Classes
                 else throw new Exception("Invalid Hitpoints");
             }
         }
-
+        /// <summary>
+        /// Attribute Point property of Character class including its getter and setter 
+        /// </summary>
         private int _attributePoints;
         public int AttributePoints
         {
@@ -278,17 +318,38 @@ namespace Assignment03.Classes
             }
         }
 
-
         #endregion
-
 
         #region Constructor
 
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public Character()
         {
             SetDefault();
         }
-
+        /// <summary>
+        /// Parameterized Constructor
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="characterClass"></param>
+        /// <param name="level"></param>
+        /// <param name="characterRace"></param>
+        /// <param name="alignment"></param>
+        /// <param name="gender"></param>
+        /// <param name="experiencePoints"></param>
+        /// <param name="strength"></param>
+        /// <param name="dexterity"></param>
+        /// <param name="constitution"></param>
+        /// <param name="intelligence"></param>
+        /// <param name="wisdom"></param>
+        /// <param name="charisma"></param>
+        /// <param name="armor"></param>
+        /// <param name="intiative"></param>
+        /// <param name="speed"></param>
+        /// <param name="hitPoints"></param>
+        /// <param name="attributePoints"></param>
         public Character(string name, Class characterClass, int level, Race characterRace, Constants.Alignment alignment, string gender, int experiencePoints,
             int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int armor, int intiative, int speed, int hitPoints, int attributePoints)
         {
@@ -312,18 +373,24 @@ namespace Assignment03.Classes
             AttributePoints = attributePoints;
             
         }
+
         #endregion
 
-        public void SetDefault() 
+        #region Non-Staic Methods
+
+        /// <summary>
+        /// Method to set default values
+        /// </summary>
+        public void SetDefault()
         {
-            
+
             CharacterClass = Constants.DEFAULT_CLASS;
             Level = Constants.DEFAULT_LEVEL;
             CharacterRace = Constants.DEFAULT_RACE;
             Alignment = Constants.DEFAULT_ALIGNMENT;
             Gender = Constants.DEFAULT_GENDER;
             ExperiencePoints = Constants.DEFAULT_EXPERIENCE_POINTS;
-            Strength = Constants.DEFAULT_STRENGTH; 
+            Strength = Constants.DEFAULT_STRENGTH;
             Dexterity = Constants.DEFAULT_DEXTERITY;
             Constitution = Constants.DEFAULT_CONSTITUTION;
             Intelligence = Constants.DEFAULT_INTELLIGENCE;
@@ -334,9 +401,18 @@ namespace Assignment03.Classes
             Speed = Constants.DEFAULT_SPEED;
             HitPoints = Constants.DEFAULT_HIT_POINTS;
             AttributePoints = Constants.DEFAULT_ATTRIBUTE_POINTS;
-            
+
         }
 
+        #endregion
+
+        #region Static Methods
+
+        /// <summary>
+        /// Method to build a string to be shown on form
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public static string ShowCharacterDetails(string name)
         {
             Character character = FindCharacterByName(name);
@@ -370,7 +446,11 @@ namespace Assignment03.Classes
 
             return retString.ToString();
         }
-
+        /// <summary>
+        /// Method to find Character by its name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public static Character FindCharacterByName(string name)
         {
             foreach (Character character in characters)
@@ -379,8 +459,12 @@ namespace Assignment03.Classes
             }
             return null;
         }
-
-        public static void SetLevelUsingXP(NumericUpDown experiencePoint, NumericUpDown level) 
+        /// <summary>
+        /// Method to set level value using XP value
+        /// </summary>
+        /// <param name="experiencePoint"></param>
+        /// <param name="level"></param>
+        public static void SetLevelUsingXP(NumericUpDown experiencePoint, NumericUpDown level)
         {
             if (experiencePoint.Value < 300) level.Value = 1;
             else if (experiencePoint.Value >= 300 && experiencePoint.Value < 900) level.Value = 2;
@@ -403,5 +487,8 @@ namespace Assignment03.Classes
             else if (experiencePoint.Value >= 305000 && experiencePoint.Value < 355000) level.Value = 19;
             else if (experiencePoint.Value == 355000) level.Value = 20;
         }
+
+        #endregion
+
     }
 }

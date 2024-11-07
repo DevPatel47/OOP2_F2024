@@ -19,6 +19,10 @@ namespace Assignment03.Classes
     {
         
         #region Alignment Enums
+        
+        /// <summary>
+        /// Alignment Enums
+        /// </summary>
         public enum Alignment
         {
             LawfulGood = 0,
@@ -31,13 +35,12 @@ namespace Assignment03.Classes
             NeutralEvil = 7,
             ChaoticEvil = 8
         }
-
         
         #endregion
 
         #region Character Default Properties
 
-        
+        // Defaults values of Character class
         public static Class DEFAULT_CLASS = Class.FindClassByName("Barbarian");
         public const int DEFAULT_LEVEL = 1;
         public static Race DEFAULT_RACE = Race.FindRaceByName("Human");
@@ -54,9 +57,9 @@ namespace Assignment03.Classes
         public static int DEFAULT_INITIATIVE = 0;
         public const int DEFAULT_SPEED = 0;
         public const int DEFAULT_HIT_POINTS = 0;
-        public const int DEFAULT_ATTRIBUTE_POINTS = 27;
-        
+        public const int DEFAULT_ATTRIBUTE_POINTS = 27;        
 
         #endregion
+
     }
 }
