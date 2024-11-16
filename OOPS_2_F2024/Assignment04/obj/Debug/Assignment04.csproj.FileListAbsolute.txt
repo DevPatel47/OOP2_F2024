@@ -1,0 +1,12 @@
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment04\obj\Debug\Assignment04.csproj.AssemblyReference.cache
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment04\obj\Debug\Assignment04.frmMainScreen.resources
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment04\obj\Debug\Assignment04.Properties.Resources.resources
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment04\obj\Debug\Assignment04.csproj.GenerateResource.cache
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment04\obj\Debug\Assignment04.csproj.CoreCompileInputs.cache
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment04\bin\Debug\Assignment04.exe.config
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment04\bin\Debug\Assignment04.exe
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment04\bin\Debug\Assignment04.pdb
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment04\obj\Debug\Assignment04.exe
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment04\obj\Debug\Assignment04.pdb
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment04\obj\Debug\Assignment04.frmEditScreen.resources
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment04\obj\Debug\Assignment04.frmSplashScreen.resources
