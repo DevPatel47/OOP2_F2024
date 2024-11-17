@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditScreen));
+            this.btn_save = new System.Windows.Forms.Button();
             this.gbx_interface = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbo_cameraProspective = new System.Windows.Forms.ComboBox();
             this.pan_showCoordinates = new System.Windows.Forms.Panel();
-            this.rdn_showCoordinates_on = new System.Windows.Forms.RadioButton();
-            this.rdn_showCoordinates_off = new System.Windows.Forms.RadioButton();
+            this.rbn_showCoordinates_on = new System.Windows.Forms.RadioButton();
+            this.rbn_showCoordinates_off = new System.Windows.Forms.RadioButton();
             this.nud_HUDDTransparency = new System.Windows.Forms.NumericUpDown();
             this.lbl_huddTransparency = new System.Windows.Forms.Label();
             this.lbl_showCoordinates = new System.Windows.Forms.Label();
@@ -87,8 +89,9 @@
             this.lbl_autoJump = new System.Windows.Forms.Label();
             this.lbl_profileName = new System.Windows.Forms.Label();
             this.btn_exit = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
-            this.txt_profileName = new System.Windows.Forms.TextBox();
+            this.tbx_profileName = new System.Windows.Forms.TextBox();
+            this.cbx_setDefault = new System.Windows.Forms.CheckBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.gbx_interface.SuspendLayout();
             this.pan_showCoordinates.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_HUDDTransparency)).BeginInit();
@@ -111,10 +114,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_mouseSensitivity)).BeginInit();
             this.SuspendLayout();
             // 
+            // btn_save
+            // 
+            this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_save.Font = new System.Drawing.Font("Palatino Linotype", 14.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Location = new System.Drawing.Point(771, 504);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(85, 35);
+            this.btn_save.TabIndex = 6;
+            this.btn_save.Text = "&Save";
+            this.toolTip1.SetToolTip(this.btn_save, "Click to Save Profile");
+            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
             // gbx_interface
             // 
             this.gbx_interface.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.gbx_interface.Controls.Add(this.comboBox1);
+            this.gbx_interface.Controls.Add(this.cbo_cameraProspective);
             this.gbx_interface.Controls.Add(this.pan_showCoordinates);
             this.gbx_interface.Controls.Add(this.nud_HUDDTransparency);
             this.gbx_interface.Controls.Add(this.lbl_huddTransparency);
@@ -125,56 +142,59 @@
             this.gbx_interface.Name = "gbx_interface";
             this.gbx_interface.Padding = new System.Windows.Forms.Padding(2);
             this.gbx_interface.Size = new System.Drawing.Size(450, 155);
-            this.gbx_interface.TabIndex = 29;
+            this.gbx_interface.TabIndex = 2;
             this.gbx_interface.TabStop = false;
             this.gbx_interface.Text = "Interface";
             // 
-            // comboBox1
+            // cbo_cameraProspective
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbo_cameraProspective.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold);
+            this.cbo_cameraProspective.FormattingEnabled = true;
+            this.cbo_cameraProspective.Items.AddRange(new object[] {
             "First-person",
             "Third-person Front",
             "Third-person Back"});
-            this.comboBox1.Location = new System.Drawing.Point(187, 103);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(157, 25);
-            this.comboBox1.TabIndex = 30;
+            this.cbo_cameraProspective.Location = new System.Drawing.Point(187, 103);
+            this.cbo_cameraProspective.Name = "cbo_cameraProspective";
+            this.cbo_cameraProspective.Size = new System.Drawing.Size(157, 25);
+            this.cbo_cameraProspective.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.cbo_cameraProspective, "Click to Select Camera Perspective");
             // 
             // pan_showCoordinates
             // 
-            this.pan_showCoordinates.BackColor = System.Drawing.Color.Transparent;
-            this.pan_showCoordinates.Controls.Add(this.rdn_showCoordinates_on);
-            this.pan_showCoordinates.Controls.Add(this.rdn_showCoordinates_off);
+            this.pan_showCoordinates.BackColor = System.Drawing.Color.White;
+            this.pan_showCoordinates.Controls.Add(this.rbn_showCoordinates_on);
+            this.pan_showCoordinates.Controls.Add(this.rbn_showCoordinates_off);
             this.pan_showCoordinates.Location = new System.Drawing.Point(187, 70);
             this.pan_showCoordinates.Name = "pan_showCoordinates";
             this.pan_showCoordinates.Size = new System.Drawing.Size(157, 24);
-            this.pan_showCoordinates.TabIndex = 30;
+            this.pan_showCoordinates.TabIndex = 2;
             // 
-            // rdn_showCoordinates_on
+            // rbn_showCoordinates_on
             // 
-            this.rdn_showCoordinates_on.AutoSize = true;
-            this.rdn_showCoordinates_on.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold);
-            this.rdn_showCoordinates_on.Location = new System.Drawing.Point(20, 2);
-            this.rdn_showCoordinates_on.Name = "rdn_showCoordinates_on";
-            this.rdn_showCoordinates_on.Size = new System.Drawing.Size(43, 21);
-            this.rdn_showCoordinates_on.TabIndex = 22;
-            this.rdn_showCoordinates_on.Text = "On";
-            this.rdn_showCoordinates_on.UseVisualStyleBackColor = true;
+            this.rbn_showCoordinates_on.AutoSize = true;
+            this.rbn_showCoordinates_on.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold);
+            this.rbn_showCoordinates_on.Location = new System.Drawing.Point(20, 2);
+            this.rbn_showCoordinates_on.Name = "rbn_showCoordinates_on";
+            this.rbn_showCoordinates_on.Size = new System.Drawing.Size(43, 21);
+            this.rbn_showCoordinates_on.TabIndex = 1;
+            this.rbn_showCoordinates_on.Text = "On";
+            this.toolTip1.SetToolTip(this.rbn_showCoordinates_on, "Click to Enable Show Coordinates");
+            this.rbn_showCoordinates_on.UseVisualStyleBackColor = true;
             // 
-            // rdn_showCoordinates_off
+            // rbn_showCoordinates_off
             // 
-            this.rdn_showCoordinates_off.AutoSize = true;
-            this.rdn_showCoordinates_off.Checked = true;
-            this.rdn_showCoordinates_off.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold);
-            this.rdn_showCoordinates_off.Location = new System.Drawing.Point(97, 2);
-            this.rdn_showCoordinates_off.Name = "rdn_showCoordinates_off";
-            this.rdn_showCoordinates_off.Size = new System.Drawing.Size(41, 21);
-            this.rdn_showCoordinates_off.TabIndex = 23;
-            this.rdn_showCoordinates_off.TabStop = true;
-            this.rdn_showCoordinates_off.Text = "off";
-            this.rdn_showCoordinates_off.UseVisualStyleBackColor = true;
+            this.rbn_showCoordinates_off.AutoSize = true;
+            this.rbn_showCoordinates_off.Checked = true;
+            this.rbn_showCoordinates_off.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold);
+            this.rbn_showCoordinates_off.Location = new System.Drawing.Point(97, 2);
+            this.rbn_showCoordinates_off.Name = "rbn_showCoordinates_off";
+            this.rbn_showCoordinates_off.Size = new System.Drawing.Size(41, 21);
+            this.rbn_showCoordinates_off.TabIndex = 0;
+            this.rbn_showCoordinates_off.TabStop = true;
+            this.rbn_showCoordinates_off.Text = "off";
+            this.toolTip1.SetToolTip(this.rbn_showCoordinates_off, "Click to Disable Show Coordinates");
+            this.rbn_showCoordinates_off.UseVisualStyleBackColor = true;
             // 
             // nud_HUDDTransparency
             // 
@@ -187,8 +207,9 @@
             0});
             this.nud_HUDDTransparency.Name = "nud_HUDDTransparency";
             this.nud_HUDDTransparency.Size = new System.Drawing.Size(157, 24);
-            this.nud_HUDDTransparency.TabIndex = 30;
+            this.nud_HUDDTransparency.TabIndex = 0;
             this.nud_HUDDTransparency.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.nud_HUDDTransparency, "Click to change HUDD Transparency");
             this.nud_HUDDTransparency.Value = new decimal(new int[] {
             100,
             0,
@@ -258,7 +279,7 @@
             this.gbx_video.Name = "gbx_video";
             this.gbx_video.Padding = new System.Windows.Forms.Padding(2);
             this.gbx_video.Size = new System.Drawing.Size(450, 321);
-            this.gbx_video.TabIndex = 30;
+            this.gbx_video.TabIndex = 3;
             this.gbx_video.TabStop = false;
             this.gbx_video.Text = "Video";
             // 
@@ -278,8 +299,9 @@
             0});
             this.nud_fieldOfView.Name = "nud_fieldOfView";
             this.nud_fieldOfView.Size = new System.Drawing.Size(157, 24);
-            this.nud_fieldOfView.TabIndex = 37;
+            this.nud_fieldOfView.TabIndex = 5;
             this.nud_fieldOfView.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.nud_fieldOfView, "Click to Change Field Of View");
             this.nud_fieldOfView.Value = new decimal(new int[] {
             64,
             0,
@@ -308,8 +330,9 @@
             0});
             this.nud_renderDistance.Name = "nud_renderDistance";
             this.nud_renderDistance.Size = new System.Drawing.Size(157, 24);
-            this.nud_renderDistance.TabIndex = 36;
+            this.nud_renderDistance.TabIndex = 4;
             this.nud_renderDistance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.nud_renderDistance, "Click to Change Render Distance");
             this.nud_renderDistance.Value = new decimal(new int[] {
             16,
             0,
@@ -322,8 +345,9 @@
             this.nud_brightness.Location = new System.Drawing.Point(194, 34);
             this.nud_brightness.Name = "nud_brightness";
             this.nud_brightness.Size = new System.Drawing.Size(157, 24);
-            this.nud_brightness.TabIndex = 30;
+            this.nud_brightness.TabIndex = 0;
             this.nud_brightness.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.nud_brightness, "Click to Change Brightness");
             this.nud_brightness.Value = new decimal(new int[] {
             50,
             0,
@@ -332,13 +356,13 @@
             // 
             // pan_upscaling
             // 
-            this.pan_upscaling.BackColor = System.Drawing.Color.Transparent;
+            this.pan_upscaling.BackColor = System.Drawing.Color.White;
             this.pan_upscaling.Controls.Add(this.rbn_upscaling_on);
             this.pan_upscaling.Controls.Add(this.rbn_upscaling_off);
             this.pan_upscaling.Location = new System.Drawing.Point(194, 269);
             this.pan_upscaling.Name = "pan_upscaling";
             this.pan_upscaling.Size = new System.Drawing.Size(157, 24);
-            this.pan_upscaling.TabIndex = 35;
+            this.pan_upscaling.TabIndex = 7;
             // 
             // rbn_upscaling_on
             // 
@@ -347,8 +371,9 @@
             this.rbn_upscaling_on.Location = new System.Drawing.Point(20, 2);
             this.rbn_upscaling_on.Name = "rbn_upscaling_on";
             this.rbn_upscaling_on.Size = new System.Drawing.Size(43, 21);
-            this.rbn_upscaling_on.TabIndex = 22;
+            this.rbn_upscaling_on.TabIndex = 0;
             this.rbn_upscaling_on.Text = "On";
+            this.toolTip1.SetToolTip(this.rbn_upscaling_on, "Click to Enable Upscaling");
             this.rbn_upscaling_on.UseVisualStyleBackColor = true;
             // 
             // rbn_upscaling_off
@@ -359,20 +384,21 @@
             this.rbn_upscaling_off.Location = new System.Drawing.Point(97, 2);
             this.rbn_upscaling_off.Name = "rbn_upscaling_off";
             this.rbn_upscaling_off.Size = new System.Drawing.Size(41, 21);
-            this.rbn_upscaling_off.TabIndex = 23;
+            this.rbn_upscaling_off.TabIndex = 1;
             this.rbn_upscaling_off.TabStop = true;
             this.rbn_upscaling_off.Text = "off";
+            this.toolTip1.SetToolTip(this.rbn_upscaling_off, "Click to Disable Upscaling");
             this.rbn_upscaling_off.UseVisualStyleBackColor = true;
             // 
             // pan_rayTracing
             // 
-            this.pan_rayTracing.BackColor = System.Drawing.Color.Transparent;
+            this.pan_rayTracing.BackColor = System.Drawing.Color.White;
             this.pan_rayTracing.Controls.Add(this.rbn_rayTracing_on);
             this.pan_rayTracing.Controls.Add(this.rbn_rayTracing_off);
             this.pan_rayTracing.Location = new System.Drawing.Point(194, 236);
             this.pan_rayTracing.Name = "pan_rayTracing";
             this.pan_rayTracing.Size = new System.Drawing.Size(157, 24);
-            this.pan_rayTracing.TabIndex = 34;
+            this.pan_rayTracing.TabIndex = 6;
             // 
             // rbn_rayTracing_on
             // 
@@ -381,8 +407,9 @@
             this.rbn_rayTracing_on.Location = new System.Drawing.Point(20, 2);
             this.rbn_rayTracing_on.Name = "rbn_rayTracing_on";
             this.rbn_rayTracing_on.Size = new System.Drawing.Size(43, 21);
-            this.rbn_rayTracing_on.TabIndex = 22;
+            this.rbn_rayTracing_on.TabIndex = 0;
             this.rbn_rayTracing_on.Text = "On";
+            this.toolTip1.SetToolTip(this.rbn_rayTracing_on, "Click to Enable Ray Tracing");
             this.rbn_rayTracing_on.UseVisualStyleBackColor = true;
             // 
             // rbn_rayTracing_off
@@ -393,20 +420,21 @@
             this.rbn_rayTracing_off.Location = new System.Drawing.Point(97, 2);
             this.rbn_rayTracing_off.Name = "rbn_rayTracing_off";
             this.rbn_rayTracing_off.Size = new System.Drawing.Size(41, 21);
-            this.rbn_rayTracing_off.TabIndex = 23;
+            this.rbn_rayTracing_off.TabIndex = 1;
             this.rbn_rayTracing_off.TabStop = true;
             this.rbn_rayTracing_off.Text = "off";
+            this.toolTip1.SetToolTip(this.rbn_rayTracing_off, "Click to Disable Ray Tracing");
             this.rbn_rayTracing_off.UseVisualStyleBackColor = true;
             // 
             // pan_fullscreen
             // 
-            this.pan_fullscreen.BackColor = System.Drawing.Color.Transparent;
+            this.pan_fullscreen.BackColor = System.Drawing.Color.White;
             this.pan_fullscreen.Controls.Add(this.rbn_fullscreen_on);
             this.pan_fullscreen.Controls.Add(this.rbn_fullscreen_off);
             this.pan_fullscreen.Location = new System.Drawing.Point(194, 135);
             this.pan_fullscreen.Name = "pan_fullscreen";
             this.pan_fullscreen.Size = new System.Drawing.Size(157, 24);
-            this.pan_fullscreen.TabIndex = 33;
+            this.pan_fullscreen.TabIndex = 3;
             // 
             // rbn_fullscreen_on
             // 
@@ -415,8 +443,9 @@
             this.rbn_fullscreen_on.Location = new System.Drawing.Point(20, 2);
             this.rbn_fullscreen_on.Name = "rbn_fullscreen_on";
             this.rbn_fullscreen_on.Size = new System.Drawing.Size(43, 21);
-            this.rbn_fullscreen_on.TabIndex = 22;
+            this.rbn_fullscreen_on.TabIndex = 0;
             this.rbn_fullscreen_on.Text = "On";
+            this.toolTip1.SetToolTip(this.rbn_fullscreen_on, "Click to Enable Fullscreen");
             this.rbn_fullscreen_on.UseVisualStyleBackColor = true;
             // 
             // rbn_fullscreen_off
@@ -427,20 +456,21 @@
             this.rbn_fullscreen_off.Location = new System.Drawing.Point(97, 2);
             this.rbn_fullscreen_off.Name = "rbn_fullscreen_off";
             this.rbn_fullscreen_off.Size = new System.Drawing.Size(41, 21);
-            this.rbn_fullscreen_off.TabIndex = 23;
+            this.rbn_fullscreen_off.TabIndex = 1;
             this.rbn_fullscreen_off.TabStop = true;
             this.rbn_fullscreen_off.Text = "off";
+            this.toolTip1.SetToolTip(this.rbn_fullscreen_off, "Click to Disable Fullscreen");
             this.rbn_fullscreen_off.UseVisualStyleBackColor = true;
             // 
             // pan_vSync
             // 
-            this.pan_vSync.BackColor = System.Drawing.Color.Transparent;
+            this.pan_vSync.BackColor = System.Drawing.Color.White;
             this.pan_vSync.Controls.Add(this.rbn_vSync_on);
             this.pan_vSync.Controls.Add(this.rbn_vSync_off);
             this.pan_vSync.Location = new System.Drawing.Point(194, 101);
             this.pan_vSync.Name = "pan_vSync";
             this.pan_vSync.Size = new System.Drawing.Size(157, 24);
-            this.pan_vSync.TabIndex = 32;
+            this.pan_vSync.TabIndex = 2;
             // 
             // rbn_vSync_on
             // 
@@ -450,9 +480,10 @@
             this.rbn_vSync_on.Location = new System.Drawing.Point(20, 2);
             this.rbn_vSync_on.Name = "rbn_vSync_on";
             this.rbn_vSync_on.Size = new System.Drawing.Size(43, 21);
-            this.rbn_vSync_on.TabIndex = 22;
+            this.rbn_vSync_on.TabIndex = 0;
             this.rbn_vSync_on.TabStop = true;
             this.rbn_vSync_on.Text = "On";
+            this.toolTip1.SetToolTip(this.rbn_vSync_on, "Click to Enable V-Sync");
             this.rbn_vSync_on.UseVisualStyleBackColor = true;
             // 
             // rbn_vSync_off
@@ -462,19 +493,20 @@
             this.rbn_vSync_off.Location = new System.Drawing.Point(97, 2);
             this.rbn_vSync_off.Name = "rbn_vSync_off";
             this.rbn_vSync_off.Size = new System.Drawing.Size(41, 21);
-            this.rbn_vSync_off.TabIndex = 23;
+            this.rbn_vSync_off.TabIndex = 1;
             this.rbn_vSync_off.Text = "off";
+            this.toolTip1.SetToolTip(this.rbn_vSync_off, "Click to Disable V-Sync");
             this.rbn_vSync_off.UseVisualStyleBackColor = true;
             // 
             // pan_fancyGraphics
             // 
-            this.pan_fancyGraphics.BackColor = System.Drawing.Color.Transparent;
+            this.pan_fancyGraphics.BackColor = System.Drawing.Color.White;
             this.pan_fancyGraphics.Controls.Add(this.rbn_fancyGraphics_on);
             this.pan_fancyGraphics.Controls.Add(this.rbn_fancyGraphics_off);
             this.pan_fancyGraphics.Location = new System.Drawing.Point(194, 68);
             this.pan_fancyGraphics.Name = "pan_fancyGraphics";
             this.pan_fancyGraphics.Size = new System.Drawing.Size(157, 24);
-            this.pan_fancyGraphics.TabIndex = 31;
+            this.pan_fancyGraphics.TabIndex = 1;
             // 
             // rbn_fancyGraphics_on
             // 
@@ -484,9 +516,10 @@
             this.rbn_fancyGraphics_on.Location = new System.Drawing.Point(20, 2);
             this.rbn_fancyGraphics_on.Name = "rbn_fancyGraphics_on";
             this.rbn_fancyGraphics_on.Size = new System.Drawing.Size(43, 21);
-            this.rbn_fancyGraphics_on.TabIndex = 22;
+            this.rbn_fancyGraphics_on.TabIndex = 0;
             this.rbn_fancyGraphics_on.TabStop = true;
             this.rbn_fancyGraphics_on.Text = "On";
+            this.toolTip1.SetToolTip(this.rbn_fancyGraphics_on, "Click to Enable Fancy Graphics");
             this.rbn_fancyGraphics_on.UseVisualStyleBackColor = true;
             // 
             // rbn_fancyGraphics_off
@@ -496,8 +529,9 @@
             this.rbn_fancyGraphics_off.Location = new System.Drawing.Point(97, 2);
             this.rbn_fancyGraphics_off.Name = "rbn_fancyGraphics_off";
             this.rbn_fancyGraphics_off.Size = new System.Drawing.Size(41, 21);
-            this.rbn_fancyGraphics_off.TabIndex = 23;
+            this.rbn_fancyGraphics_off.TabIndex = 1;
             this.rbn_fancyGraphics_off.Text = "off";
+            this.toolTip1.SetToolTip(this.rbn_fancyGraphics_off, "Click to Disable Fancy Graphics");
             this.rbn_fancyGraphics_off.UseVisualStyleBackColor = true;
             // 
             // lbl_brightness
@@ -616,7 +650,7 @@
             this.gbx_audio.Name = "gbx_audio";
             this.gbx_audio.Padding = new System.Windows.Forms.Padding(2);
             this.gbx_audio.Size = new System.Drawing.Size(450, 119);
-            this.gbx_audio.TabIndex = 28;
+            this.gbx_audio.TabIndex = 4;
             this.gbx_audio.TabStop = false;
             this.gbx_audio.Text = "Audio";
             // 
@@ -629,7 +663,8 @@
             this.tbr_sound.Maximum = 100;
             this.tbr_sound.Name = "tbr_sound";
             this.tbr_sound.Size = new System.Drawing.Size(228, 23);
-            this.tbr_sound.TabIndex = 8;
+            this.tbr_sound.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.tbr_sound, "Slide to Adjust Sound");
             this.tbr_sound.Value = 100;
             // 
             // tbr_music
@@ -642,7 +677,8 @@
             this.tbr_music.Name = "tbr_music";
             this.tbr_music.Size = new System.Drawing.Size(228, 23);
             this.tbr_music.SmallChange = 5;
-            this.tbr_music.TabIndex = 7;
+            this.tbr_music.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.tbr_music, "Slide to Adjust Music");
             this.tbr_music.Value = 100;
             // 
             // lbl_music
@@ -689,19 +725,19 @@
             this.gbx_movement.Name = "gbx_movement";
             this.gbx_movement.Padding = new System.Windows.Forms.Padding(2);
             this.gbx_movement.Size = new System.Drawing.Size(450, 218);
-            this.gbx_movement.TabIndex = 27;
+            this.gbx_movement.TabIndex = 1;
             this.gbx_movement.TabStop = false;
             this.gbx_movement.Text = "Movement";
             // 
             // pan_invertYAxis
             // 
-            this.pan_invertYAxis.BackColor = System.Drawing.Color.Transparent;
+            this.pan_invertYAxis.BackColor = System.Drawing.Color.White;
             this.pan_invertYAxis.Controls.Add(this.rbn_invertYAxis_on);
             this.pan_invertYAxis.Controls.Add(this.rbn_invertYAxis_off);
             this.pan_invertYAxis.Location = new System.Drawing.Point(187, 171);
             this.pan_invertYAxis.Name = "pan_invertYAxis";
             this.pan_invertYAxis.Size = new System.Drawing.Size(157, 24);
-            this.pan_invertYAxis.TabIndex = 29;
+            this.pan_invertYAxis.TabIndex = 4;
             // 
             // rbn_invertYAxis_on
             // 
@@ -710,8 +746,9 @@
             this.rbn_invertYAxis_on.Location = new System.Drawing.Point(20, 2);
             this.rbn_invertYAxis_on.Name = "rbn_invertYAxis_on";
             this.rbn_invertYAxis_on.Size = new System.Drawing.Size(43, 21);
-            this.rbn_invertYAxis_on.TabIndex = 22;
+            this.rbn_invertYAxis_on.TabIndex = 0;
             this.rbn_invertYAxis_on.Text = "On";
+            this.toolTip1.SetToolTip(this.rbn_invertYAxis_on, "Click to enable Invert Y-Axis");
             this.rbn_invertYAxis_on.UseVisualStyleBackColor = true;
             // 
             // rbn_invertYAxis_off
@@ -722,20 +759,21 @@
             this.rbn_invertYAxis_off.Location = new System.Drawing.Point(97, 2);
             this.rbn_invertYAxis_off.Name = "rbn_invertYAxis_off";
             this.rbn_invertYAxis_off.Size = new System.Drawing.Size(41, 21);
-            this.rbn_invertYAxis_off.TabIndex = 23;
+            this.rbn_invertYAxis_off.TabIndex = 1;
             this.rbn_invertYAxis_off.TabStop = true;
             this.rbn_invertYAxis_off.Text = "off";
+            this.toolTip1.SetToolTip(this.rbn_invertYAxis_off, "Click to disable Invert Y-Axis");
             this.rbn_invertYAxis_off.UseVisualStyleBackColor = true;
             // 
             // pan_autoJump
             // 
-            this.pan_autoJump.BackColor = System.Drawing.Color.Transparent;
+            this.pan_autoJump.BackColor = System.Drawing.Color.White;
             this.pan_autoJump.Controls.Add(this.rbn_autoJump_on);
             this.pan_autoJump.Controls.Add(this.rbn_autoJump_off);
             this.pan_autoJump.Location = new System.Drawing.Point(187, 70);
             this.pan_autoJump.Name = "pan_autoJump";
             this.pan_autoJump.Size = new System.Drawing.Size(157, 24);
-            this.pan_autoJump.TabIndex = 28;
+            this.pan_autoJump.TabIndex = 1;
             // 
             // rbn_autoJump_on
             // 
@@ -745,9 +783,10 @@
             this.rbn_autoJump_on.Location = new System.Drawing.Point(20, 2);
             this.rbn_autoJump_on.Name = "rbn_autoJump_on";
             this.rbn_autoJump_on.Size = new System.Drawing.Size(43, 21);
-            this.rbn_autoJump_on.TabIndex = 22;
+            this.rbn_autoJump_on.TabIndex = 0;
             this.rbn_autoJump_on.TabStop = true;
             this.rbn_autoJump_on.Text = "On";
+            this.toolTip1.SetToolTip(this.rbn_autoJump_on, "Click to Enable Auto Jump");
             this.rbn_autoJump_on.UseVisualStyleBackColor = true;
             // 
             // rbn_autoJump_off
@@ -757,8 +796,9 @@
             this.rbn_autoJump_off.Location = new System.Drawing.Point(97, 2);
             this.rbn_autoJump_off.Name = "rbn_autoJump_off";
             this.rbn_autoJump_off.Size = new System.Drawing.Size(41, 21);
-            this.rbn_autoJump_off.TabIndex = 23;
+            this.rbn_autoJump_off.TabIndex = 1;
             this.rbn_autoJump_off.Text = "off";
+            this.toolTip1.SetToolTip(this.rbn_autoJump_off, "Click to Disable Auto Jump");
             this.rbn_autoJump_off.UseVisualStyleBackColor = true;
             // 
             // nud_controllerSensitivity
@@ -777,8 +817,9 @@
             0});
             this.nud_controllerSensitivity.Name = "nud_controllerSensitivity";
             this.nud_controllerSensitivity.Size = new System.Drawing.Size(157, 24);
-            this.nud_controllerSensitivity.TabIndex = 25;
+            this.nud_controllerSensitivity.TabIndex = 3;
             this.nud_controllerSensitivity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.nud_controllerSensitivity, "Click to Change Controller Sensitivity");
             this.nud_controllerSensitivity.Value = new decimal(new int[] {
             50,
             0,
@@ -801,8 +842,9 @@
             0});
             this.nud_mouseSensitivity.Name = "nud_mouseSensitivity";
             this.nud_mouseSensitivity.Size = new System.Drawing.Size(157, 24);
-            this.nud_mouseSensitivity.TabIndex = 24;
+            this.nud_mouseSensitivity.TabIndex = 2;
             this.nud_mouseSensitivity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.nud_mouseSensitivity, "Click to Change Mouse Sensitivity");
             this.nud_mouseSensitivity.Value = new decimal(new int[] {
             50,
             0,
@@ -820,7 +862,8 @@
             this.cbo_inputDevice.Location = new System.Drawing.Point(187, 35);
             this.cbo_inputDevice.Name = "cbo_inputDevice";
             this.cbo_inputDevice.Size = new System.Drawing.Size(157, 25);
-            this.cbo_inputDevice.TabIndex = 21;
+            this.cbo_inputDevice.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.cbo_inputDevice, "Click to Select Input Device");
             // 
             // lbl_inputDevice
             // 
@@ -896,55 +939,65 @@
             this.lbl_profileName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_profileName.Name = "lbl_profileName";
             this.lbl_profileName.Size = new System.Drawing.Size(137, 29);
-            this.lbl_profileName.TabIndex = 25;
+            this.lbl_profileName.TabIndex = 33;
             this.lbl_profileName.Text = "Profile Name";
             this.lbl_profileName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_exit
             // 
             this.btn_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_exit.Font = new System.Drawing.Font("Palatino Linotype", 14.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.Location = new System.Drawing.Point(870, 504);
             this.btn_exit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(85, 35);
-            this.btn_exit.TabIndex = 24;
+            this.btn_exit.TabIndex = 7;
             this.btn_exit.Text = "E&xit";
+            this.toolTip1.SetToolTip(this.btn_exit, "Click to Exit");
             this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
-            // btn_save
+            // tbx_profileName
             // 
-            this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_save.Font = new System.Drawing.Font("Palatino Linotype", 14.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(771, 504);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(85, 35);
-            this.btn_save.TabIndex = 31;
-            this.btn_save.Text = "&Save";
-            this.btn_save.UseVisualStyleBackColor = true;
+            this.tbx_profileName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbx_profileName.Location = new System.Drawing.Point(190, 22);
+            this.tbx_profileName.Name = "tbx_profileName";
+            this.tbx_profileName.Size = new System.Drawing.Size(289, 29);
+            this.tbx_profileName.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.tbx_profileName, "Click to Enter Profile Name");
             // 
-            // txt_profileName
+            // cbx_setDefault
             // 
-            this.txt_profileName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_profileName.Location = new System.Drawing.Point(190, 22);
-            this.txt_profileName.Name = "txt_profileName";
-            this.txt_profileName.Size = new System.Drawing.Size(289, 29);
-            this.txt_profileName.TabIndex = 32;
+            this.cbx_setDefault.AutoSize = true;
+            this.cbx_setDefault.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbx_setDefault.Font = new System.Drawing.Font("Palatino Linotype", 14.14286F, System.Drawing.FontStyle.Bold);
+            this.cbx_setDefault.ForeColor = System.Drawing.Color.White;
+            this.cbx_setDefault.Location = new System.Drawing.Point(29, 509);
+            this.cbx_setDefault.Name = "cbx_setDefault";
+            this.cbx_setDefault.Size = new System.Drawing.Size(224, 30);
+            this.cbx_setDefault.TabIndex = 5;
+            this.cbx_setDefault.Text = "Set As Default Profile";
+            this.toolTip1.SetToolTip(this.cbx_setDefault, "Click to Set Profile as Default Profile");
+            this.cbx_setDefault.UseVisualStyleBackColor = false;
             // 
             // frmEditScreen
             // 
+            this.AcceptButton = this.btn_save;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Assignment04.Properties.Resources.Minecreaft_BG1;
+            this.CancelButton = this.btn_exit;
             this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.txt_profileName);
-            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.cbx_setDefault);
+            this.Controls.Add(this.tbx_profileName);
             this.Controls.Add(this.gbx_interface);
             this.Controls.Add(this.gbx_video);
             this.Controls.Add(this.gbx_audio);
             this.Controls.Add(this.gbx_movement);
             this.Controls.Add(this.lbl_profileName);
             this.Controls.Add(this.btn_exit);
+            this.Controls.Add(this.btn_save);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1000, 600);
             this.MinimumSize = new System.Drawing.Size(1000, 600);
@@ -985,12 +1038,12 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.GroupBox gbx_interface;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbo_cameraProspective;
         private System.Windows.Forms.Panel pan_showCoordinates;
-        private System.Windows.Forms.RadioButton rdn_showCoordinates_on;
-        private System.Windows.Forms.RadioButton rdn_showCoordinates_off;
+        private System.Windows.Forms.RadioButton rbn_showCoordinates_on;
+        private System.Windows.Forms.RadioButton rbn_showCoordinates_off;
         private System.Windows.Forms.NumericUpDown nud_HUDDTransparency;
         private System.Windows.Forms.Label lbl_huddTransparency;
         private System.Windows.Forms.Label lbl_showCoordinates;
@@ -1044,7 +1097,8 @@
         private System.Windows.Forms.Label lbl_autoJump;
         private System.Windows.Forms.Label lbl_profileName;
         private System.Windows.Forms.Button btn_exit;
-        private System.Windows.Forms.Button btn_save;
-        private System.Windows.Forms.TextBox txt_profileName;
+        private System.Windows.Forms.TextBox tbx_profileName;
+        private System.Windows.Forms.CheckBox cbx_setDefault;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
