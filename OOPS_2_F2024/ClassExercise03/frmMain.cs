@@ -22,11 +22,22 @@ namespace ClassExercise03
             // TODO: This line of code loads data into the 'sportleaguesDataSet.teams' table. You can move, or remove it, as needed.
             this.teamsTableAdapter.Fill(this.sportleaguesDataSet.teams);
 
+            if (cbo_teams.SelectedItem != null)
+            {
+                int teamValue = (int)cbo_teams.SelectedValue;
+                this.teamPlayersTableAdapter.FillPlayers(this.sportleaguesDataSet.TeamPlayers, teamValue);
+
+            }
         }
 
         private void cbo_teams_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cbo_teams.SelectedItem != null) 
+            {
+                int teamValue = (int)cbo_teams.SelectedValue;
+                this.teamPlayersTableAdapter.FillPlayers(this.sportleaguesDataSet.TeamPlayers, teamValue);
 
+            }
         }
     }
 }

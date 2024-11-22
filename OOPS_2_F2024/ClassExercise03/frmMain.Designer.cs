@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.lbl_header = new System.Windows.Forms.Label();
             this.lbl_selectTeam = new System.Windows.Forms.Label();
@@ -40,9 +42,6 @@
             this.teamPlayersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.teamsTableAdapter = new ClassExercise03.SportleaguesDataSetTableAdapters.teamsTableAdapter();
             this.teamPlayersTableAdapter = new ClassExercise03.SportleaguesDataSetTableAdapters.TeamPlayersTableAdapter();
-            this.teamidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rosteridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playeridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jerseynumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,10 +83,11 @@
             this.cbo_teams.DataSource = this.teamsBindingSource;
             this.cbo_teams.DisplayMember = "teamname";
             this.cbo_teams.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_teams.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbo_teams.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_teams.FormattingEnabled = true;
             this.cbo_teams.Location = new System.Drawing.Point(241, 64);
-            this.cbo_teams.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbo_teams.Margin = new System.Windows.Forms.Padding(2);
             this.cbo_teams.Name = "cbo_teams";
             this.cbo_teams.Size = new System.Drawing.Size(337, 26);
             this.cbo_teams.TabIndex = 2;
@@ -114,19 +114,33 @@
             this.dgv_playerList.AllowUserToAddRows = false;
             this.dgv_playerList.AllowUserToDeleteRows = false;
             this.dgv_playerList.AutoGenerateColumns = false;
+            this.dgv_playerList.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_playerList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_playerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_playerList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.teamidDataGridViewTextBoxColumn,
-            this.rosteridDataGridViewTextBoxColumn,
-            this.playeridDataGridViewTextBoxColumn,
             this.fullnameDataGridViewTextBoxColumn,
             this.jerseynumberDataGridViewTextBoxColumn,
             this.regnumberDataGridViewTextBoxColumn,
             this.isactiveDataGridViewTextBoxColumn});
             this.dgv_playerList.DataSource = this.teamPlayersBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_playerList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_playerList.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv_playerList.Location = new System.Drawing.Point(0, 105);
-            this.dgv_playerList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_playerList.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_playerList.Name = "dgv_playerList";
             this.dgv_playerList.ReadOnly = true;
             this.dgv_playerList.RowHeadersWidth = 72;
@@ -147,68 +161,47 @@
             // 
             this.teamPlayersTableAdapter.ClearBeforeFill = true;
             // 
-            // teamidDataGridViewTextBoxColumn
-            // 
-            this.teamidDataGridViewTextBoxColumn.DataPropertyName = "teamid";
-            this.teamidDataGridViewTextBoxColumn.HeaderText = "teamid";
-            this.teamidDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.teamidDataGridViewTextBoxColumn.Name = "teamidDataGridViewTextBoxColumn";
-            this.teamidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.teamidDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // rosteridDataGridViewTextBoxColumn
-            // 
-            this.rosteridDataGridViewTextBoxColumn.DataPropertyName = "rosterid";
-            this.rosteridDataGridViewTextBoxColumn.HeaderText = "rosterid";
-            this.rosteridDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.rosteridDataGridViewTextBoxColumn.Name = "rosteridDataGridViewTextBoxColumn";
-            this.rosteridDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rosteridDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // playeridDataGridViewTextBoxColumn
-            // 
-            this.playeridDataGridViewTextBoxColumn.DataPropertyName = "playerid";
-            this.playeridDataGridViewTextBoxColumn.HeaderText = "playerid";
-            this.playeridDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.playeridDataGridViewTextBoxColumn.Name = "playeridDataGridViewTextBoxColumn";
-            this.playeridDataGridViewTextBoxColumn.ReadOnly = true;
-            this.playeridDataGridViewTextBoxColumn.Width = 75;
-            // 
             // fullnameDataGridViewTextBoxColumn
             // 
+            this.fullnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.fullnameDataGridViewTextBoxColumn.DataPropertyName = "fullname";
-            this.fullnameDataGridViewTextBoxColumn.HeaderText = "fullname";
+            this.fullnameDataGridViewTextBoxColumn.HeaderText = "Player Name";
             this.fullnameDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.fullnameDataGridViewTextBoxColumn.Name = "fullnameDataGridViewTextBoxColumn";
             this.fullnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fullnameDataGridViewTextBoxColumn.Width = 125;
+            this.fullnameDataGridViewTextBoxColumn.Width = 150;
             // 
             // jerseynumberDataGridViewTextBoxColumn
             // 
+            this.jerseynumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.jerseynumberDataGridViewTextBoxColumn.DataPropertyName = "jerseynumber";
-            this.jerseynumberDataGridViewTextBoxColumn.HeaderText = "jerseynumber";
+            this.jerseynumberDataGridViewTextBoxColumn.HeaderText = "Jersey Number";
             this.jerseynumberDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.jerseynumberDataGridViewTextBoxColumn.Name = "jerseynumberDataGridViewTextBoxColumn";
             this.jerseynumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.jerseynumberDataGridViewTextBoxColumn.Width = 150;
             // 
             // regnumberDataGridViewTextBoxColumn
             // 
+            this.regnumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.regnumberDataGridViewTextBoxColumn.DataPropertyName = "regnumber";
-            this.regnumberDataGridViewTextBoxColumn.HeaderText = "regnumber";
+            this.regnumberDataGridViewTextBoxColumn.HeaderText = "Registration Number";
             this.regnumberDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.regnumberDataGridViewTextBoxColumn.Name = "regnumberDataGridViewTextBoxColumn";
             this.regnumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.regnumberDataGridViewTextBoxColumn.Width = 75;
+            this.regnumberDataGridViewTextBoxColumn.Width = 150;
             // 
             // isactiveDataGridViewTextBoxColumn
             // 
+            this.isactiveDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.isactiveDataGridViewTextBoxColumn.DataPropertyName = "isactive";
-            this.isactiveDataGridViewTextBoxColumn.HeaderText = "isactive";
+            this.isactiveDataGridViewTextBoxColumn.HeaderText = "Is Active";
             this.isactiveDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.isactiveDataGridViewTextBoxColumn.Name = "isactiveDataGridViewTextBoxColumn";
             this.isactiveDataGridViewTextBoxColumn.ReadOnly = true;
             this.isactiveDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.isactiveDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.isactiveDataGridViewTextBoxColumn.Width = 140;
             // 
             // frmMain
             // 
@@ -221,7 +214,7 @@
             this.Controls.Add(this.lbl_selectTeam);
             this.Controls.Add(this.lbl_header);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(700, 700);
             this.MinimumSize = new System.Drawing.Size(700, 700);
             this.Name = "frmMain";
@@ -250,9 +243,6 @@
         private SportleaguesDataSetTableAdapters.teamsTableAdapter teamsTableAdapter;
         private System.Windows.Forms.BindingSource teamPlayersBindingSource;
         private SportleaguesDataSetTableAdapters.TeamPlayersTableAdapter teamPlayersTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teamidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rosteridDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playeridDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jerseynumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn regnumberDataGridViewTextBoxColumn;
