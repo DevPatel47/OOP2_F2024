@@ -1,0 +1,10 @@
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\ClassExercise03\bin\Debug\ClassExercise03.exe.config
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\ClassExercise03\bin\Debug\ClassExercise03.exe
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\ClassExercise03\bin\Debug\ClassExercise03.pdb
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\ClassExercise03\obj\Debug\ClassExercise03.csproj.AssemblyReference.cache
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\ClassExercise03\obj\Debug\ClassExercise03.frmMain.resources
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\ClassExercise03\obj\Debug\ClassExercise03.Properties.Resources.resources
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\ClassExercise03\obj\Debug\ClassExercise03.csproj.GenerateResource.cache
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\ClassExercise03\obj\Debug\ClassExercise03.csproj.CoreCompileInputs.cache
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\ClassExercise03\obj\Debug\ClassExercise03.exe
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\ClassExercise03\obj\Debug\ClassExercise03.pdb
