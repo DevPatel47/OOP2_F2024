@@ -35,12 +35,16 @@ namespace ClassExercise03
         private void frmMain_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sportleaguesDataSet.teams' table. You can move, or remove it, as needed.
+            cbo_teams_SelectedIndexChanged(sender, e);
             this.teamsTableAdapter.Fill(this.sportleaguesDataSet.teams);
             if (cbo_teams.SelectedItem != null)
             {
-                int teamValue = (int)cbo_teams.SelectedValue;
-                this.teamPlayersTableAdapter.FillPlayers(this.sportleaguesDataSet.TeamPlayers, teamValue);
-
+                try
+                {
+                    int teamValue = (int)cbo_teams.SelectedValue;
+                    this.teamPlayersTableAdapter.FillPlayers(this.sportleaguesDataSet.TeamPlayers, teamValue);
+                }
+                catch { MessageBox.Show("Team ID must be an Integer", "Invalid selected value"); }
             }
         }
         /// <summary>
@@ -52,9 +56,12 @@ namespace ClassExercise03
         {
             if (cbo_teams.SelectedItem != null) 
             {
-                int teamValue = (int)cbo_teams.SelectedValue;
-                this.teamPlayersTableAdapter.FillPlayers(this.sportleaguesDataSet.TeamPlayers, teamValue);
-
+                try
+                {
+                    int teamValue = (int)cbo_teams.SelectedValue;
+                    this.teamPlayersTableAdapter.FillPlayers(this.sportleaguesDataSet.TeamPlayers, teamValue);
+                }
+                catch { MessageBox.Show("Team ID must be an Integer", "Invalid selected value"); }     
             }
         }
     }

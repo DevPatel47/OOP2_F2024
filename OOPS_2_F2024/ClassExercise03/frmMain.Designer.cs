@@ -39,13 +39,14 @@
             this.bds_sportleagues = new System.Windows.Forms.BindingSource(this.components);
             this.sportleaguesDataSet = new ClassExercise03.SportleaguesDataSet();
             this.dgv_playerList = new System.Windows.Forms.DataGridView();
-            this.teamPlayersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.teamsTableAdapter = new ClassExercise03.SportleaguesDataSetTableAdapters.teamsTableAdapter();
-            this.teamPlayersTableAdapter = new ClassExercise03.SportleaguesDataSetTableAdapters.TeamPlayersTableAdapter();
             this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jerseynumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isactiveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.teamPlayersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.teamsTableAdapter = new ClassExercise03.SportleaguesDataSetTableAdapters.teamsTableAdapter();
+            this.teamPlayersTableAdapter = new ClassExercise03.SportleaguesDataSetTableAdapters.TeamPlayersTableAdapter();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_sportleagues)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sportleaguesDataSet)).BeginInit();
@@ -91,6 +92,7 @@
             this.cbo_teams.Name = "cbo_teams";
             this.cbo_teams.Size = new System.Drawing.Size(337, 26);
             this.cbo_teams.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.cbo_teams, "Click to Select Team");
             this.cbo_teams.ValueMember = "teamid";
             this.cbo_teams.SelectedIndexChanged += new System.EventHandler(this.cbo_teams_SelectedIndexChanged);
             // 
@@ -148,19 +150,6 @@
             this.dgv_playerList.Size = new System.Drawing.Size(684, 556);
             this.dgv_playerList.TabIndex = 3;
             // 
-            // teamPlayersBindingSource
-            // 
-            this.teamPlayersBindingSource.DataMember = "TeamPlayers";
-            this.teamPlayersBindingSource.DataSource = this.bds_sportleagues;
-            // 
-            // teamsTableAdapter
-            // 
-            this.teamsTableAdapter.ClearBeforeFill = true;
-            // 
-            // teamPlayersTableAdapter
-            // 
-            this.teamPlayersTableAdapter.ClearBeforeFill = true;
-            // 
             // fullnameDataGridViewTextBoxColumn
             // 
             this.fullnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -202,6 +191,19 @@
             this.isactiveDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.isactiveDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.isactiveDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // teamPlayersBindingSource
+            // 
+            this.teamPlayersBindingSource.DataMember = "TeamPlayers";
+            this.teamPlayersBindingSource.DataSource = this.bds_sportleagues;
+            // 
+            // teamsTableAdapter
+            // 
+            this.teamsTableAdapter.ClearBeforeFill = true;
+            // 
+            // teamPlayersTableAdapter
+            // 
+            this.teamPlayersTableAdapter.ClearBeforeFill = true;
             // 
             // frmMain
             // 
@@ -247,5 +249,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jerseynumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn regnumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isactiveDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
