@@ -1,0 +1,12 @@
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment05\bin\Debug\Assignment05.exe.config
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment05\bin\Debug\Assignment05.exe
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment05\bin\Debug\Assignment05.pdb
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment05\obj\Debug\Assignment05.csproj.AssemblyReference.cache
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment05\obj\Debug\Assignment05.frmMain.resources
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment05\obj\Debug\Assignment05.Properties.Resources.resources
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment05\obj\Debug\Assignment05.csproj.GenerateResource.cache
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment05\obj\Debug\Assignment05.csproj.CoreCompileInputs.cache
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment05\obj\Debug\Assignment05.exe
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment05\obj\Debug\Assignment05.pdb
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment05\obj\Debug\Assignment05.frmLogin.resources
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment05\obj\Debug\Assignment05.frmRegistration.resources
