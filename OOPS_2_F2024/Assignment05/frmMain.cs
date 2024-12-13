@@ -34,9 +34,18 @@ namespace Assignment05
         public frmMain()
         {
             InitializeComponent();
-            DBAL.Game.FillGames();
-            DBAL.User.FillUsers();
-            DBAL.Review.FillReviews();
+            try 
+            {
+                DBAL.Game.FillGames();
+                DBAL.User.FillUsers();
+                DBAL.Review.FillReviews();
+            }
+            catch
+            {
+                MessageBox.Show("Error in Loading Data, Please cleck your connection and try again!!", "Connection Error");
+                Application.Exit();
+            }
+
         }
 
         #region Event Methods
