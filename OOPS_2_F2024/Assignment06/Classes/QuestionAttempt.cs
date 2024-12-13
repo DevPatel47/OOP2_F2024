@@ -188,8 +188,9 @@ namespace DBAL
         /// <summary>
         /// Method to fill questionAttempts list from database
         /// </summary>
-        public static void FillQuestionAttempts()
+        public static bool FillQuestionAttempts()
         {
+            bool retBool = false;
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
 
             try
@@ -209,6 +210,7 @@ namespace DBAL
                     );
                     questionAttempts.Add(attempt);
                 }
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -218,6 +220,7 @@ namespace DBAL
             {
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>
@@ -237,8 +240,9 @@ namespace DBAL
         /// <summary>
         /// Method to delete a question attempt
         /// </summary>
-        public static void DeleteQuestionAttempt(int questionAttemptID)
+        public static bool DeleteQuestionAttempt(int questionAttemptID)
         {
+            bool retBool = false;
             string sql = "spDeleteQuestionAttempts";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -251,6 +255,8 @@ namespace DBAL
                 };
                 command.Parameters.AddWithValue("@QuestionAttemptID", questionAttemptID);
                 command.ExecuteNonQuery();
+                FillQuestionAttempts();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -258,9 +264,9 @@ namespace DBAL
             }
             finally
             {
-                FillQuestionAttempts();
                 connection.Close();
             }
+            return retBool;
         }
 
         #endregion
@@ -281,8 +287,9 @@ namespace DBAL
         /// <summary>
         /// Method to insert a new question attempt
         /// </summary>
-        public void InsertQuestionAttempt()
+        public bool InsertQuestionAttempt()
         {
+            bool retBool = false;
             string sql = "spInsertNewQuestionAttempts";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -299,6 +306,8 @@ namespace DBAL
                 command.Parameters.AddWithValue("@StudentAnswer", this.StudentAnswer);
                 command.Parameters.AddWithValue("@IsCorrect", this.IsCorrect);
                 command.ExecuteNonQuery();
+                FillQuestionAttempts();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -306,16 +315,17 @@ namespace DBAL
             }
             finally
             {
-                FillQuestionAttempts();
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>
         /// Method to update an existing question attempt
         /// </summary>
-        public void UpdateQuestionAttempt()
+        public bool UpdateQuestionAttempt()
         {
+            bool retBool = false;
             string sql = "spUpdateQuestionAttempts";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -332,6 +342,8 @@ namespace DBAL
                 command.Parameters.AddWithValue("@StudentAnswer", this.StudentAnswer);
                 command.Parameters.AddWithValue("@IsCorrect", this.IsCorrect);
                 command.ExecuteNonQuery();
+                FillQuestionAttempts();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -339,9 +351,9 @@ namespace DBAL
             }
             finally
             {
-                FillQuestionAttempts();
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>

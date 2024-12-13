@@ -125,8 +125,9 @@ namespace DBAL
         /// <summary>
         /// Method to fill courses list from database
         /// </summary>
-        public static void FillCourses()
+        public static bool FillCourses()
         {
+            bool retBool = false;
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
 
             try
@@ -144,6 +145,7 @@ namespace DBAL
                     );
                     courses.Add(course);
                 }
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -153,6 +155,7 @@ namespace DBAL
             {
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>
@@ -171,8 +174,9 @@ namespace DBAL
         /// <summary>
         /// Method to delete a course
         /// </summary>
-        public static void DeleteCourse(string courseID)
+        public static bool DeleteCourse(string courseID)
         {
+            bool retBool = false;
             string sql = "spDeleteCourse";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -185,6 +189,8 @@ namespace DBAL
                 };
                 command.Parameters.AddWithValue("@CourseID", courseID);
                 command.ExecuteNonQuery();
+                FillCourses();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -192,9 +198,9 @@ namespace DBAL
             }
             finally
             {
-                FillCourses();
                 connection.Close();
             }
+            return retBool;
         }
 
         #endregion
@@ -212,8 +218,9 @@ namespace DBAL
         /// <summary>
         /// Method to insert a new course
         /// </summary>
-        public void InsertCourse()
+        public bool InsertCourse()
         {
+            bool retBool = false;
             string sql = "spInsertNewCourse";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -232,6 +239,8 @@ namespace DBAL
                 else { command.Parameters.AddWithValue("@ProfessorID", this.ProfessorID); }
                 command.Parameters.AddWithValue("@Name", this.Name);
                 command.ExecuteNonQuery();
+                FillCourses();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -239,16 +248,17 @@ namespace DBAL
             }
             finally
             {
-                FillCourses();
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>
         /// Method to update an existing course
         /// </summary>
-        public void UpdateCourse()
+        public bool UpdateCourse()
         {
+            bool retBool = false;
             string sql = "spUpdateCourse";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -267,6 +277,8 @@ namespace DBAL
                 else { command.Parameters.AddWithValue("@ProfessorID", this.ProfessorID); }
                 command.Parameters.AddWithValue("@Name", this.Name);
                 command.ExecuteNonQuery();
+                FillCourses();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -274,9 +286,9 @@ namespace DBAL
             }
             finally
             {
-                FillCourses();
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>

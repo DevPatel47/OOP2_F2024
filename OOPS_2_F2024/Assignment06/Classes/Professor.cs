@@ -17,6 +17,10 @@ namespace DBAL
     /// </summary>
     public class Professor
     {
+        /// <summary>
+        /// Stores Current Professor
+        /// </summary>
+        public static Professor professor;
 
         #region Default Values
 
@@ -179,8 +183,9 @@ namespace DBAL
         /// Method to fill professors list from database
         /// </summary>
         /// <exception cref="Exception"></exception>
-        public static void FillProfessors()
+        public static bool FillProfessors()
         {
+            bool retBool = false;
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
 
             try
@@ -200,6 +205,7 @@ namespace DBAL
                     );
                     professors.Add(professor);
                 }
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -209,6 +215,7 @@ namespace DBAL
             {
                 connection.Close();
             }
+            return retBool;
         }
         /// <summary>
         /// Method to find professor by id
@@ -220,6 +227,20 @@ namespace DBAL
             foreach (Professor professor in professors)
             {
                 if (professor.ProfessorID == professorID) return professor;
+            }
+            return null;
+        }
+        /// <summary>
+        /// Method to return Professor by email and password
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="passKey"></param>
+        /// <returns></returns>
+        public static Professor GetProfessor(string email, int password)
+        {
+            foreach (Professor professor in professors)
+            {
+                if (professor.Email == email && professor.Password == password) return professor;
             }
             return null;
         }
@@ -241,8 +262,9 @@ namespace DBAL
         /// </summary>
         /// <param name="studentID"></param>
         /// <exception cref="Exception"></exception>
-        public static void DeleteProfessor(int professorID)
+        public static bool DeleteProfessor(int professorID)
         {
+            bool retBool = false;
             string sql = "spDeleteProfessor";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -255,6 +277,8 @@ namespace DBAL
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@ProfessorID", professorID);
                 command.ExecuteNonQuery();
+                FillProfessors();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -262,9 +286,9 @@ namespace DBAL
             }
             finally
             {
-                FillProfessors();
                 connection.Close();
             }
+            return retBool;
         }
         #endregion
 
@@ -292,8 +316,9 @@ namespace DBAL
         /// Method to insert new Professor 
         /// </summary>
         /// <exception cref="Exception"></exception>
-        public void InsertProfessor()
+        public bool InsertProfessor()
         {
+            bool retBool = false;
             string sql = "spInsertNewProfessor";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -310,6 +335,8 @@ namespace DBAL
                 command.Parameters.AddWithValue("@Email", this.Email);
                 command.Parameters.AddWithValue("@Password", this.Password);
                 command.ExecuteNonQuery();
+                FillProfessors();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -317,16 +344,17 @@ namespace DBAL
             }
             finally
             {
-                FillProfessors();
                 connection.Close();
             }
+            return retBool;
         }
         /// <summary>
         /// Method to update Professor
         /// </summary>
         /// <exception cref="Exception"></exception>
-        public void UpdateProfessor()
+        public bool UpdateProfessor()
         {
+            bool retBool = false;
             string sql = "spUpdateProfessor";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -343,6 +371,8 @@ namespace DBAL
                 command.Parameters.AddWithValue("@Email", this.Email);
                 command.Parameters.AddWithValue("@Password", this.Password);
                 command.ExecuteNonQuery();
+                FillProfessors();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -350,9 +380,9 @@ namespace DBAL
             }
             finally
             {
-                FillProfessors();
                 connection.Close();
             }
+            return retBool;
         }
 
         #endregion

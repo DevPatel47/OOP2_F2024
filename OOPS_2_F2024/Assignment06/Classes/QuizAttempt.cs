@@ -171,8 +171,9 @@ namespace DBAL
         /// <summary>
         /// Method to fill quiz attempts list from database
         /// </summary>
-        public static void FillQuizAttempts()
+        public static bool FillQuizAttempts()
         {
+            bool retBool = false;
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
 
             try
@@ -191,6 +192,7 @@ namespace DBAL
                         reader.GetDateTime(4) // AttemptTime
                     );
                     quizAttempts.Add(quizAttempt);
+                    retBool = true;
                 }
             }
             catch (Exception ex)
@@ -201,6 +203,7 @@ namespace DBAL
             {
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>
@@ -220,8 +223,9 @@ namespace DBAL
         /// <summary>
         /// Method to delete a quiz attempt
         /// </summary>
-        public static void DeleteQuizAttempt(int quizAttemptID)
+        public static bool DeleteQuizAttempt(int quizAttemptID)
         {
+            bool retBool = false;
             string sql = "spDeleteQuizAttempts";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -234,6 +238,8 @@ namespace DBAL
                 };
                 command.Parameters.AddWithValue("@QuizAttemptID", quizAttemptID);
                 command.ExecuteNonQuery();
+                FillQuizAttempts();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -241,9 +247,9 @@ namespace DBAL
             }
             finally
             {
-                FillQuizAttempts();
                 connection.Close();
             }
+            return retBool;
         }
 
         #endregion
@@ -264,8 +270,9 @@ namespace DBAL
         /// <summary>
         /// Method to insert a new quiz attempt
         /// </summary>
-        public void InsertQuizAttempt()
+        public bool InsertQuizAttempt()
         {
+            bool retBool = false;
             string sql = "spInsertNewQuizAttempts";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -282,6 +289,8 @@ namespace DBAL
                 command.Parameters.AddWithValue("@MarksObtained", this.MarksObtained);
                 command.Parameters.AddWithValue("@AttemptTime", this.AttemptTime);
                 command.ExecuteNonQuery();
+                FillQuizAttempts();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -289,16 +298,17 @@ namespace DBAL
             }
             finally
             {
-                FillQuizAttempts();
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>
         /// Method to update an existing quiz attempt
         /// </summary>
-        public void UpdateQuizAttempt()
+        public bool UpdateQuizAttempt()
         {
+            bool retBool = false;
             string sql = "spUpdateQuizAttempts";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -315,6 +325,8 @@ namespace DBAL
                 command.Parameters.AddWithValue("@MarksObtained", this.MarksObtained);
                 command.Parameters.AddWithValue("@AttemptTime", this.AttemptTime);
                 command.ExecuteNonQuery();
+                FillQuizAttempts();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -322,9 +334,9 @@ namespace DBAL
             }
             finally
             {
-                FillQuizAttempts();
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>

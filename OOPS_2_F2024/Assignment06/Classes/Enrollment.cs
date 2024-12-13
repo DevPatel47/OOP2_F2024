@@ -132,8 +132,9 @@ namespace DBAL
         /// <summary>
         /// Method to fill enrollments list from database
         /// </summary>
-        public static void FillEnrollments()
+        public static bool FillEnrollments()
         {
+            bool retBool = false;
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
 
             try
@@ -151,6 +152,7 @@ namespace DBAL
                     );
                     enrollments.Add(enrollment);
                 }
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -160,6 +162,7 @@ namespace DBAL
             {
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>
@@ -179,8 +182,9 @@ namespace DBAL
         /// <summary>
         /// Method to delete an enrollment
         /// </summary>
-        public static void DeleteEnrollment(int enrollmentID)
+        public static bool DeleteEnrollment(int enrollmentID)
         {
+            bool retBool = false;
             string sql = "spDeleteEnrollment";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -193,6 +197,8 @@ namespace DBAL
                 };
                 command.Parameters.AddWithValue("@EnrollmentID", enrollmentID);
                 command.ExecuteNonQuery();
+                FillEnrollments();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -200,9 +206,9 @@ namespace DBAL
             }
             finally
             {
-                FillEnrollments();
                 connection.Close();
             }
+            return retBool;
         }
 
         #endregion
@@ -212,8 +218,9 @@ namespace DBAL
         /// <summary>
         /// Method to insert a new enrollment
         /// </summary>
-        public void InsertEnrollment()
+        public bool InsertEnrollment()
         {
+            bool retBool = false;
             string sql = "spInsertNewEnrollment";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -228,6 +235,8 @@ namespace DBAL
                 command.Parameters.AddWithValue("@StudentID", this.StudentID);
                 command.Parameters.AddWithValue("@CourseID", this.CourseID);
                 command.ExecuteNonQuery();
+                FillEnrollments();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -235,16 +244,17 @@ namespace DBAL
             }
             finally
             {
-                FillEnrollments();
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>
         /// Method to update an existing enrollment
         /// </summary>
-        public void UpdateEnrollment()
+        public bool UpdateEnrollment()
         {
+            bool retBool = false;
             string sql = "spUpdateEnrollment";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -259,6 +269,8 @@ namespace DBAL
                 command.Parameters.AddWithValue("@StudentID", this.StudentID);
                 command.Parameters.AddWithValue("@CourseID", this.CourseID);
                 command.ExecuteNonQuery();
+                FillEnrollments();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -266,9 +278,9 @@ namespace DBAL
             }
             finally
             {
-                FillEnrollments();
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>

@@ -17,6 +17,10 @@ namespace DBAL
     /// </summary>
     public class Student
     {
+        /// <summary>
+        /// Stores Current User
+        /// </summary>
+        public static Student student;
 
         #region Default Values
 
@@ -181,8 +185,9 @@ namespace DBAL
         /// Method to fill students list from database
         /// </summary>
         /// <exception cref="Exception"></exception>
-        public static void FillStudents()
+        public static bool FillStudents()
         {
+            bool retBool = false;
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
             try
             {
@@ -201,6 +206,7 @@ namespace DBAL
                     );
                     students.Add(student);
                 }
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -210,6 +216,7 @@ namespace DBAL
             {
                 connection.Close();
             }
+            return retBool;
         }
         /// <summary>
         /// Method to find Student by id
@@ -238,12 +245,27 @@ namespace DBAL
             return null;
         }
         /// <summary>
+        /// Method to return student by email and password
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="passKey"></param>
+        /// <returns></returns>
+        public static Student GetStudent(string email, int password)
+        {
+            foreach (Student student in students)
+            {
+                if (student.Email == email && student.Password == password) return student;
+            }
+            return null;
+        }
+        /// <summary>
         /// Method to delete Student
         /// </summary>
         /// <param name="studentID"></param>
         /// <exception cref="Exception"></exception>
-        public static void DeleteStudent(int studentID)
+        public static bool DeleteStudent(int studentID)
         {
+            bool retBool = false;
             string sql = "spDeleteStudent";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -256,6 +278,9 @@ namespace DBAL
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@StudentID", studentID);
                 command.ExecuteNonQuery();
+                FillStudents();
+                retBool = true;
+
             }
             catch (Exception ex)
             {
@@ -263,9 +288,9 @@ namespace DBAL
             }
             finally
             {
-                FillStudents();
                 connection.Close();
             }
+            return retBool;
         }
 
         #endregion
@@ -294,8 +319,9 @@ namespace DBAL
         /// Method to insert new student 
         /// </summary>
         /// <exception cref="Exception"></exception>
-        public void InsertStudent()
+        public bool InsertStudent()
         {
+            bool retBool = false;
             string sql = "spInsertNewStudent";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -312,6 +338,8 @@ namespace DBAL
                 command.Parameters.AddWithValue("@email", this.Email);
                 command.Parameters.AddWithValue("@password", this.Password);
                 command.ExecuteNonQuery();
+                FillStudents();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -319,17 +347,17 @@ namespace DBAL
             }
             finally
             {
-                FillStudents();
                 connection.Close();
             }
-
+            return retBool;
         }
         /// <summary>
         /// Method to update student
         /// </summary>
         /// <exception cref="Exception"></exception>
-        public void UpdateStudent()
+        public bool UpdateStudent()
         {
+            bool retBool = false;
             string sql = "spUpdateStudent";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -346,6 +374,8 @@ namespace DBAL
                 command.Parameters.AddWithValue("@email", this.Email);
                 command.Parameters.AddWithValue("@Password", this.Password);
                 command.ExecuteNonQuery();
+                FillStudents();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -353,10 +383,9 @@ namespace DBAL
             }
             finally
             {
-                FillStudents();
                 connection.Close();
             }
-
+            return retBool;
         }
 
         #endregion

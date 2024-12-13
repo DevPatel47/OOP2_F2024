@@ -266,8 +266,9 @@ namespace DBAL
         /// <summary>
         /// Method to fill questions list from database
         /// </summary>
-        public static void FillQuestions()
+        public static bool FillQuestions()
         {
+            bool retBool = false;
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
 
             try
@@ -291,6 +292,7 @@ namespace DBAL
                     );
                     questions.Add(question);
                 }
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -300,6 +302,7 @@ namespace DBAL
             {
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>
@@ -319,8 +322,9 @@ namespace DBAL
         /// <summary>
         /// Method to delete a question
         /// </summary>
-        public static void DeleteQuestion(int questionID)
+        public static bool DeleteQuestion(int questionID)
         {
+            bool retBool = false;
             string sql = "spDeleteQuestion";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -333,6 +337,8 @@ namespace DBAL
                 };
                 command.Parameters.AddWithValue("@QuestionID", questionID);
                 command.ExecuteNonQuery();
+                FillQuestions();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -340,9 +346,9 @@ namespace DBAL
             }
             finally
             {
-                FillQuestions();
                 connection.Close();
             }
+            return retBool;
         }
 
         #endregion
@@ -366,8 +372,9 @@ namespace DBAL
         /// <summary>
         /// Method to insert a new question
         /// </summary>
-        public void InsertQuestion()
+        public bool InsertQuestion()
         {
+            bool retBool = false;
             string sql = "spInsertNewQuestion";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -388,6 +395,8 @@ namespace DBAL
                 command.Parameters.AddWithValue("@FourthOption", this.FourthOption);
                 command.Parameters.AddWithValue("@Answer", this.Answer);
                 command.ExecuteNonQuery();
+                FillQuestions();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -395,16 +404,17 @@ namespace DBAL
             }
             finally
             {
-                FillQuestions();
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>
         /// Method to update an existing question
         /// </summary>
-        public void UpdateQuestion()
+        public bool UpdateQuestion()
         {
+            bool retBool = false;
             string sql = "spUpdateQuestion";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -425,6 +435,8 @@ namespace DBAL
                 command.Parameters.AddWithValue("@FourthOption", this.FourthOption);
                 command.Parameters.AddWithValue("@Answer", this.Answer);
                 command.ExecuteNonQuery();
+                FillQuestions();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -432,9 +444,9 @@ namespace DBAL
             }
             finally
             {
-                FillQuestions();
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>

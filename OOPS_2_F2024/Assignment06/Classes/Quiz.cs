@@ -176,8 +176,9 @@ namespace DBAL
         /// <summary>
         /// Method to fill quizzes list from database
         /// </summary>
-        public static void FillQuizzes()
+        public static bool FillQuizzes()
         {
+            bool retBool = false;
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
 
             try
@@ -198,6 +199,7 @@ namespace DBAL
                     );
                     quizzes.Add(quiz);
                 }
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -207,6 +209,7 @@ namespace DBAL
             {
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>
@@ -226,8 +229,9 @@ namespace DBAL
         /// <summary>
         /// Method to delete a quiz
         /// </summary>
-        public static void DeleteQuiz(int quizID)
+        public static bool DeleteQuiz(int quizID)
         {
+            bool retBool = false;
             string sql = "spDeleteQuiz";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -240,6 +244,8 @@ namespace DBAL
                 };
                 command.Parameters.AddWithValue("@QuizID", quizID);
                 command.ExecuteNonQuery();
+                FillQuizzes();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -247,9 +253,9 @@ namespace DBAL
             }
             finally
             {
-                FillQuizzes();
                 connection.Close();
             }
+            return retBool;
         }
         #endregion
 
@@ -269,8 +275,9 @@ namespace DBAL
         /// <summary>
         /// Method to insert a new quiz
         /// </summary>
-        public void InsertQuiz()
+        public bool InsertQuiz()
         {
+            bool retBool = false;
             string sql = "spInsertNewQuiz";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -288,6 +295,8 @@ namespace DBAL
                 command.Parameters.AddWithValue("@StartTime", this.StartTime);
                 command.Parameters.AddWithValue("@EndTime", this.EndTime);
                 command.ExecuteNonQuery();
+                FillQuizzes();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -295,16 +304,17 @@ namespace DBAL
             }
             finally
             {
-                FillQuizzes();
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>
         /// Method to update an existing quiz
         /// </summary>
-        public void UpdateQuiz()
+        public bool UpdateQuiz()
         {
+            bool retBool = false;
             string sql = "spUpdateQuiz";
 
             SqlConnection connection = new SqlConnection(Settings.Default.dbConnect);
@@ -322,6 +332,8 @@ namespace DBAL
                 command.Parameters.AddWithValue("@StartTime", this.StartTime);
                 command.Parameters.AddWithValue("@EndTime", this.EndTime);
                 command.ExecuteNonQuery();
+                FillQuizzes();
+                retBool = true;
             }
             catch (Exception ex)
             {
@@ -329,9 +341,9 @@ namespace DBAL
             }
             finally
             {
-                FillQuizzes();
                 connection.Close();
             }
+            return retBool;
         }
 
         /// <summary>
