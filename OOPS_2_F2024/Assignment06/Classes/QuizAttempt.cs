@@ -5,6 +5,15 @@
  * Purpose  :   QuizAttempt Class file
  *===========================================================*/
 
+/*
+ * This code was developed with assistance from ChatGPT during a conversation on 10 December 2024.
+ * Summary of the collaboration:
+ * 1. I provided my SQL table and a sample class file for reference.
+ * 2. ChatGPT helped generate the necessary class file for database interaction, incorporating the SQL table structure and foreign key relationships.
+ * 
+ * This final code combines all the methods and classes, ensuring proper database interactions and functionality.
+ */
+
 using Assignment06.Properties;
 using System;
 using System.Collections.Generic;
