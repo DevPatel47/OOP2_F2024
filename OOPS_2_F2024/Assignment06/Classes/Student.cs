@@ -20,7 +20,7 @@ namespace DBAL
         /// <summary>
         /// Stores Current User
         /// </summary>
-        public static Student student;
+        public static Student tempStudent;
 
         #region Default Values
 

@@ -45,7 +45,7 @@
             // 
             this.lbl_email.AutoSize = true;
             this.lbl_email.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_email.Location = new System.Drawing.Point(17, 137);
+            this.lbl_email.Location = new System.Drawing.Point(23, 122);
             this.lbl_email.Name = "lbl_email";
             this.lbl_email.Size = new System.Drawing.Size(60, 23);
             this.lbl_email.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             this.lbl_password.AutoSize = true;
             this.lbl_password.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_password.Location = new System.Drawing.Point(17, 219);
+            this.lbl_password.Location = new System.Drawing.Point(23, 171);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(91, 23);
             this.lbl_password.TabIndex = 1;
@@ -79,7 +79,7 @@
             // tbx_email
             // 
             this.tbx_email.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbx_email.Location = new System.Drawing.Point(83, 134);
+            this.tbx_email.Location = new System.Drawing.Point(89, 119);
             this.tbx_email.Name = "tbx_email";
             this.tbx_email.Size = new System.Drawing.Size(272, 26);
             this.tbx_email.TabIndex = 0;
@@ -88,7 +88,7 @@
             // tbx_password
             // 
             this.tbx_password.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbx_password.Location = new System.Drawing.Point(114, 216);
+            this.tbx_password.Location = new System.Drawing.Point(120, 168);
             this.tbx_password.Name = "tbx_password";
             this.tbx_password.Size = new System.Drawing.Size(241, 26);
             this.tbx_password.TabIndex = 1;
@@ -97,7 +97,7 @@
             // btn_login
             // 
             this.btn_login.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F);
-            this.btn_login.Location = new System.Drawing.Point(74, 343);
+            this.btn_login.Location = new System.Drawing.Point(74, 221);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(102, 36);
             this.btn_login.TabIndex = 2;
@@ -110,7 +110,7 @@
             // 
             this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancel.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F);
-            this.btn_cancel.Location = new System.Drawing.Point(209, 343);
+            this.btn_cancel.Location = new System.Drawing.Point(209, 221);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(102, 36);
             this.btn_cancel.TabIndex = 3;
@@ -133,7 +133,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancel;
-            this.ClientSize = new System.Drawing.Size(384, 484);
+            this.ClientSize = new System.Drawing.Size(384, 284);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_cancel);
@@ -144,8 +144,8 @@
             this.Controls.Add(this.lbl_password);
             this.Controls.Add(this.lbl_email);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(400, 500);
-            this.MinimumSize = new System.Drawing.Size(400, 500);
+            this.MaximumSize = new System.Drawing.Size(400, 300);
+            this.MinimumSize = new System.Drawing.Size(400, 300);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);

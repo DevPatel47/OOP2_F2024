@@ -1,11 +1,12 @@
 ﻿/*============================================================
- * Title    :   Assignment 5: Data Storage - Video Game Reviews
+ * Title    :   Assignment-6: Final Assignment
  * Name     :   Dev Mayurkumar Patel
- * Date     :   5 December 2024
- * Purpose  :   Login form class file
+ * Date     :   13 December 2024
+ * Purpose  :   Common Screen Form Class file
  *===========================================================*/
 
 using Assignment06.Properties;
+using DBAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,16 +26,14 @@ namespace Assignment06
     /// </summary>
     public partial class frmLogin : Form
     {
-        // Stores Main Form
-        private frmMain frmMain;
+        private string userType;
         /// <summary>
         /// Method to initailize form
         /// </summary>
-        /// <param name="tempFrmMain"></param>
-        public frmLogin(frmMain tempFrmMain)
+        public frmLogin(string tempUserType)
         {
+            userType = tempUserType;
             InitializeComponent();
-            frmMain = tempFrmMain;
         }
 
         #region Event Methods
@@ -46,7 +45,41 @@ namespace Assignment06
         /// <param name="e"></param>
         private void btn_login_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                Student student = null;
+                Professor professor = null;
+                if (userType == "student")
+                {
+                    student = Student.GetStudent(tbx_email.Text.Trim(), int.Parse(tbx_password.Text.Trim()));
+                }
+                else if (userType == "professor") 
+                {
+                    professor = Professor.GetProfessor(tbx_email.Text.Trim(), int.Parse(tbx_password.Text.Trim()));
+                }
+                if (student != null)
+                {
+                    Student.tempStudent = student;
+                    this.Close();
+                }
+                else if (professor != null)
+                {
+                    Professor.tempProfessor = professor;
+                    this.Close();
+                }
+                else if (student == null && professor == null) 
+                {
+                    MessageBox.Show("Invalid Email and Password, Please Try Again!!", "Invalid Credentials");
+                    tbx_email.Text = "";
+                    tbx_password.Text = "";
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+                tbx_email.Text = "";
+                tbx_password.Text = "";
+            }
 
 
         }
@@ -57,7 +90,8 @@ namespace Assignment06
         /// <param name="e"></param>
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            
         }
 
         #endregion

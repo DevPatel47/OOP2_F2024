@@ -9,3 +9,9 @@ C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment06\obj\Debug\Assignment06.csproj
 C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment06\obj\Debug\Assignment06.exe
 C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment06\obj\Debug\Assignment06.pdb
 C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment06\obj\Debug\Assignment06.frmLogin.resources
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment06\obj\Debug\Assignment06.frmStudentGrades.resources
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment06\obj\Debug\Assignment06.frmStudentQuizzes.resources
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment06\obj\Debug\Assignment06.frmCommonScreen.resources
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment06\obj\Debug\Assignment06.frmSplashScreen.resources
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment06\obj\Debug\Assignment06.frmStudentCourse.resources
+C:\COSC_OOP_2\OOP2_F2024\OOPS_2_F2024\Assignment06\obj\Debug\Assignment06.frmProfessorScreen.resources

@@ -20,7 +20,7 @@ namespace DBAL
         /// <summary>
         /// Stores Current Professor
         /// </summary>
-        public static Professor professor;
+        public static Professor tempProfessor;
 
         #region Default Values
 
